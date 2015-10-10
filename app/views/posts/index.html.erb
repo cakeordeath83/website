@@ -19,6 +19,7 @@
       <% @posts.group_by{|post| post.category}.each do |category, value| %>
       <li><%= category %></li>
       <% end %><br>
+      
       <p>By month </p>
       <% @posts.group_by{|post| post.created_at.month}.each do |month, value| %>
       <li><%= month %></li>
@@ -27,4 +28,3 @@
     
   </div><!-- row -->
 </div><!-- container -->
-<!--sanitize(post.content.truncate(580, separator: '</p>'))-->

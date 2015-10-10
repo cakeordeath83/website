@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-    
   end
   
   def new
@@ -38,6 +37,8 @@ class PostsController < ApplicationController
   def show
     add_breadcrumb "#{@post.title.upcase}", post_path(@post)
   end
+  
+
   
 private
   
