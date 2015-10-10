@@ -1,0 +1,6 @@
+<div class = "container" >
+<h1><%= @snippet.title %></h1>
+  <p><%= sanitize @snippet.content %></p>
+  <%= link_to "All snippets", snippets_path, class:"btn btn-default" %>
+</div>
+

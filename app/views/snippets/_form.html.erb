@@ -1,12 +1,8 @@
 <div class="container">
-  <%= form_for @post do |form| %>
+  <%= form_for @snippet do |form| %>
   <%= form.text_field :title %>
   <%= form.cktext_area :content %>
-  <%= form.text_field :category %>
+ 
   <%= form.submit %>
   <% end %>
 </div>
-
-
-
- 

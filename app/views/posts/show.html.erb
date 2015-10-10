@@ -1,0 +1,5 @@
+<div class="container">
+  <h1><%= @post.title %></h1>
+  <p><%= sanitize @post.content %></p>
+  <%=link_to "Back to all posts", posts_path, class: "btn btn-default" %>
+</div>
