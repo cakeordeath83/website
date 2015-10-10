@@ -9,15 +9,19 @@
         <% @posts.each do |post| %>
           <h3 ><%= link_to post.title, post_path(post) %></h3>
       <p><%= sanitize(post.content.truncate(300)) %></p>
-          <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %>
+          <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %><br>
         <% end %>
         <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
     </div>
 
-    <div class="col-md-2 side-column">
+    <div class="col-md-2 side-column-<%=params[:controller] %>">
       <p>Blog navigation</p>
       <% @posts.group_by{|post| post.category}.each do |category, value| %>
       <li><%= category %></li>
+      <% end %><br>
+      <p>By month </p>
+      <% @posts.group_by{|post| post.created_at.month}.each do |month, value| %>
+      <li><%= month %></li>
       <% end %>
     </div>
     
