@@ -1,16 +1,17 @@
-<div class="container-fluid", style="border: solid 1px red">
+<div class="container-fluid">
+  <h1 style="text-align:center;">Blog posts</h1>
   <div class="row">
-    <div class=" col-md-offset-2 col-md-8", style="border: solid 1px red">
-      <h1>Hello world!</h1>
+    <div class=" col-md-offset-2 col-md-7">
+      
         <% @posts.each do |post| %>
-          <h3><%= link_to post.title, post_path(post) %></h3><br>
-          <p><%= sanitize post.content %></p><br>
+          <h3 ><%= link_to post.title, post_path(post) %></h3>
+          <p><%= sanitize post.content %></p>
           <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %>
         <% end %>
         <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
     </div>
 
-    <div class="col-md-2", style="border: solid 1px red">
+    <div class="col-md-2">
         <p>Side column</p>
         <p>This is the side column bit that should house all of the links etc</p>
     </div>

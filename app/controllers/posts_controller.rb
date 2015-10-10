@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-    add_breadcrumb "index", posts_path
+    add_breadcrumb "All Posts", posts_path
   end
   
   def new
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
   
   def show
-    add_breadcrumb "Post name here", post_path(@post)
+    add_breadcrumb "#{@post.title}", post_path(@post)
   end
   
 private

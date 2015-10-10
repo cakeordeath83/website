@@ -1,9 +1,11 @@
 class SnippetsController < ApplicationController
   
   before_action :find_snippet, only: [:show, :update, :edit, :destroy]
+  add_breadcrumb "How to's", :snippets_path
   
   def index
     @snippets = Snippet.all
+    
   end
   
   def new
@@ -17,6 +19,10 @@ class SnippetsController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def show
+    add_breadcrumb "#{@snippet.title}", snippet_path(@snippet)
   end
   
   private
