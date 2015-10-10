@@ -1,8 +1,22 @@
 <div class="container">
   <%= form_for @snippet do |form| %>
-  <%= form.text_field :title %>
-  <%= form.cktext_area :content %>
+  <div class="formtitle">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+    <%= form.cktext_area :content %><br>
  
   <%= form.submit %>
   <% end %>
+  
+  <div class="form-categories-<%=params[:controller]%>">
+    <h4 class="heading">Current categories</h4>
+    <ul>
+      <% @snippets.group_by{|snippet| snippet.category}.each do |category, value| %>
+      <li><%= category %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

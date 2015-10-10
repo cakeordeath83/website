@@ -1,14 +1,80 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* ALL */
+* {
+  border-radius: 0 !important;
+}
+
 #static_pages {
-  background-color: blue;
+  background-color: #E25041;
 }
 
 #posts {
-  background-color: red;
+  background-color: #1ABC9C;
 }
 
 #snippets {
-  background-color: green;
+  background-color: #54ACD2;
+}
+
+/* NAVBAR */
+
+/* TEXT */
+.nav.navbar-nav.navbar-left li a {
+  color: white;
+}
+.nav.navbar-nav.navbar-right li a {
+  color: white;
+}
+
+#Home > a {
+  color: white;
+  text-decoration: none;
+}
+
+/* BODY */
+
+body{
+  font-family: "Roboto", Arial, sans-serif;
+  
+}
+/* ALL PAGES */
+
+.heading {
+  text-align: center;
+}
+
+/* POSTS */
+.side-column {
+  background-color: #1ABC9C;
+  color: white;
+  padding: 10px;
+}
+
+
+
+/* SNIPPETS */
+.side-column-snippets {
+  background-color: #54ACD2;
+  color: white;
+  padding: 10px;
+}
+
+/* FORMS */
+
+.formtitle {
+  margin: 20px 0px;
+}
+
+.form-categories-posts {
+  border: solid 2px #1ABC9C;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.form-categories-snippets {
+ border: solid 2px #54ACD2;
+ margin-top: 10px;
+ padding: 10px;
 }

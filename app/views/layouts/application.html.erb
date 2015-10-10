@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Website</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -23,15 +24,19 @@
       
       <!-- Home link -->
       <div class="navbar-brand" id="Home">
-        <%= link_to "Home", homepage_path %>
+        <%= link_to "HOME", homepage_path %>
       </div>
        <ul class="nav navbar-nav navbar-left">
-         <li><%= link_to "Blog", posts_path %></li>
-         <li><%= link_to "How to's", snippets_path %></li>
-    </ul>
-      
-      
+         <li><%= link_to "BLOG", posts_path %></li>
+         <li><%= link_to "GUIDES", snippets_path %></li>
+       </ul>
     </div>
+       <ul class="nav navbar-nav navbar-right">
+         <li><%= link_to "ABOUT", about_path %></li>
+       </ul>
+      
+      
+    
     </div>
   </nav>
   

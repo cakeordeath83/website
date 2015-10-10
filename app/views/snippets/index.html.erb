@@ -1,10 +1,22 @@
-<div class="container" %>
-  <h1>How to's</h1>
-  <p>These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place
-  but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
-  <% @snippets.each do |snippet| %>
-  <h4><%= link_to snippet.title, snippet_path(snippet) %></h4><br>
-   <% end %>
+<div class="container-fluid" %>
   
-  <%= link_to "Add a new code snippet", new_snippet_path, class:"btn btn-default" %>
+    <div class="col-md-offset-2 col-md-7">
+      <h1 style="text-align: center;">GUIDES</h1>
+        <p>These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place
+          but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
+  </div>
+    <div class="row">
+    <div class="col-md-offset-2 col-md-7">
+      <% @snippets.each do |snippet| %>
+      <h4><%= link_to snippet.title, snippet_path(snippet) %></h4><br>
+      <% end %>
+      <%= link_to "Add a new code snippet", new_snippet_path, class:"btn btn-default" %>
+    </div>
+  <div class="col-md-2 side-column-snippets">
+        <p>Blog navigation</p>
+    <% @snippets.each do |post| %>
+      <li><%= post.title %></li>
+      <%end %>
+    </div>
+  </div>
 </div>

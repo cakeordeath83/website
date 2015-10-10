@@ -1,20 +1,26 @@
 <div class="container-fluid">
-  <h1 style="text-align:center;">Blog posts</h1>
+  <div class="col-md-offset-2 col-md-6">
+  <h1 style="text-align:center;">BLOG POSTS</h1>
+  <p>Learning to code is hard. This is my place to vent, question and generally comment on what I'm learning</p>
+</div>
   <div class="row">
-    <div class=" col-md-offset-2 col-md-7">
+    <div class=" col-md-offset-2 col-md-6">
       
         <% @posts.each do |post| %>
           <h3 ><%= link_to post.title, post_path(post) %></h3>
-          <p><%= sanitize post.content %></p>
+      <p><%= sanitize(post.content.truncate(300)) %></p>
           <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %>
         <% end %>
         <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
     </div>
 
-    <div class="col-md-2">
-        <p>Side column</p>
-        <p>This is the side column bit that should house all of the links etc</p>
+    <div class="col-md-2 side-column">
+      <p>Blog navigation</p>
+      <% @posts.group_by{|post| post.category}.each do |category, value| %>
+      <li><%= category %></li>
+      <% end %>
     </div>
     
   </div><!-- row -->
 </div><!-- container -->
+<!--sanitize(post.content.truncate(580, separator: '</p>'))-->
