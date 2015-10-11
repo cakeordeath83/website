@@ -9,7 +9,10 @@
     
     <div class="col-md-offset-2 col-md-7">
       <% @snippets.each do |snippet| %>
-      <h4><%= link_to snippet.title, snippet_path(snippet) %></h4><br>
+      
+      <h5 class="individual-entry"><%= link_to snippet.title, snippet_path(snippet) %></h5>
+      <p ><%= snippet.created_at.to_date %></p>
+      
       <% end %>
       <%= link_to "Add a new code snippet", new_snippet_path, class:"btn btn-default" %>
     </div>

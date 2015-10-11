@@ -9,6 +9,7 @@ class SnippetsController < ApplicationController
   end
   
   def new
+    @snippets = Snippet.all
     @snippet = Snippet.new
   end
   
