@@ -2,15 +2,8 @@
 <h1><%= @snippet.title %></h1>
   <p><%= sanitize @snippet.content %></p>
   
-  <h5>Comments</h5>
-  <% @snippet.comments.each do |comment| %>
-    
-  <p><%= sanitize comment.comment %></p>
-  <% end %>
-    
-  <%=link_to "Back to all snippets", snippets_path, class: "btn btn-default" %>
-  <%=link_to "Add comment", new_snippet_comment_path(@snippet), class: "btn btn-default" %>
+   <%=link_to "Back to all snippets", snippets_path, class: "btn btn-default" %>
   
-  <%= render 'disqus' %>
+ <%= render 'disqus' %>
 </div>
 

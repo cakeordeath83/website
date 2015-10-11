@@ -4,16 +4,9 @@
     <p><%= sanitize @post.content %></p>
   </div>
   
-  <h5>Comments</h5>
-    <% @post.comments.each do |comment| %>
-    
-  <p><%= sanitize comment.comment %></p>
-  <% end %>
-  
-  
-  <%= render 'disqus' %>
-    
   <%=link_to "Back to all posts", posts_path, class: "btn btn-default" %>
-  <%=link_to "Add comment", new_post_comment_path(@post), class: "btn btn-default" %>
-  <%= params %>
+ 
+  <%= render 'disqus' %>
+ 
+  
 </div>
