@@ -6,6 +6,10 @@
   border-radius: 0 !important;
 }
 
+.header {
+  background-color: #D14841;
+}
+
 .breadcrumb {
   background-color: white;
   text-decoration: none;
@@ -22,6 +26,7 @@
 #snippets {
   background-color: #54ACD2;
 }
+
 
 /* NAVBAR */
 
@@ -114,7 +119,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #990000;
+  background-color: #D14841;
   padding: auto;
   margin-top: 40px;
 }
