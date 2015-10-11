@@ -10,5 +10,7 @@
     
   <%=link_to "Back to all snippets", snippets_path, class: "btn btn-default" %>
   <%=link_to "Add comment", new_snippet_comment_path(@snippet), class: "btn btn-default" %>
+  
+  <%= render 'disqus' %>
 </div>
 
