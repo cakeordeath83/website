@@ -1,7 +1,11 @@
 <div class = "container" >
 <h1><%= @snippet.title %></h1>
   <p><%= sanitize @snippet.content %></p>
+  
+  <% if user_signed_in? %>
   <%= link_to "Edit", edit_snippet_path(@snippet), class: "btn btn-default" %>
+  <% end %>
+  
    <%=link_to "Back to all snippets", snippets_path, class: "btn btn-default" %>
   
  <%= render 'disqus' %>
