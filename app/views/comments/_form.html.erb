@@ -1,16 +1,6 @@
-<% if request.url =~ /(post)\w/ %>
 <%= form_for [@post, @comment] do |form| %>
   
  <%= form.cktext_area :comment %>
  
   <%= form.submit %>
   <% end %>
-
-<% else %>
-<%= form_for [@snippet, @comment] do |form| %>
-  
- <%= form.cktext_area :comment %>
- 
-  <%= form.submit %>
-  <% end %>
-<% end %>
