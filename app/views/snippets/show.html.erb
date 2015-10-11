@@ -1,7 +1,14 @@
 <div class = "container" >
 <h1><%= @snippet.title %></h1>
   <p><%= sanitize @snippet.content %></p>
-  <%= link_to "Edit", edit_snippet_path(@snippet), class:"btn btn-default" %>
-  <%= link_to "All snippets", snippets_path, class:"btn btn-default" %>
+  
+  <h5>Comments</h5>
+  <% @snippet.comments.each do |comment| %>
+    
+  <p><%= sanitize comment.comment %></p>
+  <% end %>
+    
+  <%=link_to "Back to all snippets", snippets_path, class: "btn btn-default" %>
+  <%=link_to "Add comment", new_snippet_comment_path(@snippet), class: "btn btn-default" %>
 </div>
 
