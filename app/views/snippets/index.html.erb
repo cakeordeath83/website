@@ -1,20 +1,23 @@
 <div class="container-fluid" %>
   
   <div class="col-md-offset-2 col-md-7">
-    <h1 style="text-align: center;">GUIDES</h1>
-    <p>These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
+    <h1 style="text-align: center; margin-bottom: 30px;">GUIDES</h1>
+    <p style="margin-bottom: 40px;">These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
   </div>
   
   <div class="row">
     
-    <div class="col-md-offset-2 col-md-7">
+    <div class="col-md-offset-2 col-md-6">
       <% @snippets.each do |snippet| %>
       
       <h5 class="individual-entry"><%= link_to snippet.title, snippet_path(snippet) %></h5>
-      <p ><%= snippet.created_at.to_date %></p>
+      <p>Added <%= snippet.created_at.to_date %></p>
       
       <% end %>
+      
+      <% if user_signed_in? %>
       <%= link_to "Add a new code snippet", new_snippet_path, class:"btn btn-default" %>
+      <% end %>
     </div>
 
     <div class="col-md-2 side-column-<%=params[:controller]%>">

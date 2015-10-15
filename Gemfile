@@ -18,6 +18,7 @@ gem 'bootstrap_form', '~>2.3.0'
 gem 'ckeditor'
 gem'breadcrumbs_on_rails'
 gem 'devise'
+gem 'high_voltage', '~> 2.4.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

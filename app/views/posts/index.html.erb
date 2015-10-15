@@ -9,9 +9,13 @@
         <% @posts.each do |post| %>
           <h3 ><%= link_to post.title, post_path(post) %></h3>
       <p><%= sanitize(post.content.truncate(300)) %></p>
+      
+      <% if user_signed_in? %>
           <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %><br>
-        <% end %>
+        
         <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
+      <% end %>
+     <% end %>
     </div>
 
     <div class="col-md-2 side-column-<%=params[:controller] %>">

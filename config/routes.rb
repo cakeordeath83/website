@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root 'static_pages#welcome'
   get 'homepage' => "static_pages#welcome"
   get 'about' => "static_pages#about"
-  
+  get 'categoryindex' => "snippets#categoryindex"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
