@@ -1,5 +1,22 @@
-<div class="container">
-  <h1>Add a new code snippet</h1>
-  <%= render "form" %>
+<div class="container-fluid">
+  <div class="col-md-offset-2 col-md-8">
+    <h1 style="text-align: center; margin-bottom: 30px;">Add a new code snippet</h1>
+    <p style="margin-bottom: 40px;">Don't forget to put which file you are in at each part</p>
+  </div>
   
+  <div class="row">
+   <div class="col-md-offset-2 col-md-7">
+    <%= render "form" %>
+    </div>
+    
+  <!-- Side navigation -->
+    <div class="col-md-2 side-column-<%=params[:controller]%>">
+      <h4>Current categories</h4>
+        <% @allsnippets.group_by{|snippet| snippet.category}.each do |category, value| %>
+        <ul class="list-unstyled">
+        <li><%= category%></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
 </div>

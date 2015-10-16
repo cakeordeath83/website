@@ -1,4 +1,4 @@
-<div class="container">
+
   <%= form_for @post do |form| %>
   <div class="formtitle">
     <%= form.label :title %>
@@ -11,15 +11,7 @@
   <%= form.submit %>
   <% end %>
   
-  <div class="form-categories-<%=params[:controller]%>">
-    <h4 class="heading">Current categories</h4>
-    <ul>
-    <% @posts.group_by{|post| post.category}.each do |category, value| %>
-      <li><%= category %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+  
 
 
 

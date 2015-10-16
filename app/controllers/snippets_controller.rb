@@ -14,7 +14,7 @@ class SnippetsController < ApplicationController
  end
   
   def new
-    @snippets = Snippet.all
+    @allsnippets = Snippet.all
     @snippet = Snippet.new
   end
   

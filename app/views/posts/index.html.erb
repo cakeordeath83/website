@@ -1,34 +1,46 @@
 <div class="container-fluid">
-  <div class="col-md-offset-2 col-md-6">
-  <h1 style="text-align:center;">BLOG POSTS</h1>
-  <p>Learning to code is hard. This is my place to vent, question and generally comment on what I'm learning</p>
-</div>
+  
+  <!-- Headings -->
+  <div class="col-md-offset-2 col-md-8">
+  <h1 style="text-align:center; margin-bottom: 30px;">BLOG POSTS</h1>
+  <p style="margin-bottom: 40px;">Learning to code is hard. This is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments</p>
+  </div>
+
+
+  <!-- Main body -->
   <div class="row">
-    <div class=" col-md-offset-2 col-md-6">
+    <div class="col-md-offset-2 col-md-6" style="padding-right: 20px;">
+      <% @posts.each do |post| %>
+        <p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong></p>
+        <p><%= sanitize(post.content.truncate(500)) %></p>
       
-        <% @posts.each do |post| %>
-          <h3 ><%= link_to post.title, post_path(post) %></h3>
-      <p><%= sanitize(post.content.truncate(300)) %></p>
-      
-      <% if user_signed_in? %>
+        <!-- ADMIN -->
+        <% if user_signed_in? %>
           <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %><br>
-        
-        <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
+        <% end %>
+      
+      <% end %> <!-- @posts iteration -->
+      
+      <!-- ADMIN -->
+       <% if user_signed_in? %>
+      <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
       <% end %>
-     <% end %>
     </div>
 
+    <!-- Side navigation -->
     <div class="col-md-2 side-column-<%=params[:controller] %>">
       <h4>Blog navigation</h4>
-      <% @posts.group_by{|post| post.category}.each do |category, value| %>
-      <li class="list-unstyled"><%= category %></li>
+      <% @allposts.group_by{|post| post.category}.each do |category, value| %>
+      
+      <li class="list-unstyled"><%= link_to category, posts_path(:category => category) %></li>
+      
       <% end %><br>
       
       <h4>By month </h4>
-      <% @posts.group_by{|post| post.created_at.month}.each do |month, value| %>
+      <% @posts.group_by{|post| post.created_at.strftime("%B")}.each do |month, value| %>
       <li class="list-unstyled"><%= month %></li>
       <% end %>
     </div>
     
-  </div><!-- row -->
+  </div><!-- row --> 
 </div><!-- container -->

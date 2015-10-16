@@ -5,11 +5,16 @@ class PostsController < ApplicationController
   
   
   def index
+    if params[:category]
+      @posts = Post.where(:category => params[:category])
+    else
     @posts = Post.all
+    end
+    @allposts = Post.all
   end
   
   def new
-    @posts = Post.all
+    @allposts = Post.all
     @post = Post.new
   end
   
