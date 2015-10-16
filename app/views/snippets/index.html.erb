@@ -6,22 +6,31 @@
     <p style="margin-bottom: 40px;">These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
   </div>
   
-  <!-- Main body -->
-  <div class="row">
-    <div class="col-md-offset-2 col-md-6">
-      <% @snippets.each do |snippet| %>
-      <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> Added <%= snippet.created_at.to_date %></p>
-      <!-- ADMIN -->
-       <% if user_signed_in? %>
-         <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
-       <% end %>
-      
-      <% end %> <!-- @snippets iteration -->
-      
-      <!-- ADMIN -->
+  
+  <!-- ADMIN -->
        <% if user_signed_in? %>
       <%= link_to "Add new snippet", new_snippet_path, class: "btn btn-default" %>
       <% end %>
+  
+  <!-- Main body -->
+  <div class="row">
+    <div class="col-md-offset-2 col-md-6">
+      
+        <% @snippets.each do |snippet| %>
+      <div class="individualpost">
+        <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> Added <%= snippet.created_at.to_date %></p>
+        
+      <!-- ADMIN -->
+         <% if user_signed_in? %>
+           <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
+         <% end %>
+      </div>
+      
+      <div class="snippetseperator">
+        </div>
+        <% end %> <!-- @snippets iteration -->
+      
+      
     </div>
 
     <!-- Side navigation -->

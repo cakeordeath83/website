@@ -1,12 +1,16 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
+    <div class="col-md-offset-2 col-md-8" >
+      <p style="text-align: center;"><%= image_tag @post.image.url(:medium)%></p>
     <h1><%= @post.title %></h1>
-    <p><%= sanitize @post.content %></p>
+      <h5>Posted on <%= @post.created_at.to_date %></h5>
+      <p style="border: solid 1px #1ABC9C;"><%= sanitize @post.content %></p>
   </div>
   
   <%=link_to "Back to all posts", posts_path, class: "btn btn-default" %>
  
   <%= render 'disqus' %>
  
+</div>
   
 </div>

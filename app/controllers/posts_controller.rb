@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   
   def index
     if params[:category]
-      @posts = Post.where(:category => params[:category])
+      @posts = Post.where(:category => params[:category]).order(created_at: :desc)
     else
-    @posts = Post.all
+      @posts = Post.all.order(created_at: :desc)
     end
     @allposts = Post.all
   end
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 private
   
   def post_params
-    params.require(:post).permit(:title, :content, :category)
+    params.require(:post).permit(:title, :content, :category, :image)
   end
   
   def find_post

@@ -19,7 +19,7 @@ gem 'ckeditor'
 gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'high_voltage', '~> 2.4.0'
-gem 'paperclip'
+gem "paperclip", "~> 4.3"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

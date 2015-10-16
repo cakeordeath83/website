@@ -6,6 +6,11 @@
   border-radius: 0 !important;
 }
 
+.a {
+  text-decoration: none;
+  color: white;
+}
+
 .header {
   background-color: #D14841;
 }
@@ -66,6 +71,17 @@ body{
   margin-top: 10px;
 }
 
+.postseperator{
+  border-bottom: solid 1px #1ABC9C;
+  
+}
+
+.individualpost {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
 
 
 /* SNIPPETS */
@@ -73,6 +89,11 @@ body{
   background-color: #54ACD2;
   color: white;
   padding: 10px;
+}
+
+.snippetseperator{
+  border-bottom: solid 1px #54ACD2;
+  
 }
 
 /* FORMS */

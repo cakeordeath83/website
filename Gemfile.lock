@@ -186,7 +186,7 @@ DEPENDENCIES
   high_voltage (~> 2.4.0)
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip
+  paperclip (~> 4.3)
   rails (= 4.2.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
