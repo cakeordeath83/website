@@ -21,9 +21,12 @@
     </div>
 
     <div class="col-md-2 side-column-<%=params[:controller]%>">
-      <p>Guide navigation</p>
-        <% @snippets.group_by{|snippet| snippet.category}.each do |category, value| %>
-      <li><%= category %></li>
+      <h4>Guide navigation</h4>
+        <% @allsnippets.group_by{|snippet| snippet.category}.each do |category, value| %>
+      <ul class="list-unstyled">
+        <li><%= link_to category, snippets_path(:category => category) %></li>
+        
+      </ul>
       <% end %>
     </div>
   

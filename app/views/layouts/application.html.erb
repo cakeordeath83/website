@@ -30,11 +30,12 @@
        <ul class="nav navbar-nav navbar-left">
          <li><%= link_to "BLOG", posts_path %></li>
          <li><%= link_to "GUIDES", snippets_path %></li>
+         <li><%= link_to "PORTFOLIO", page_path('portfolio/porfoliohome') %></li>
        </ul>
     </div>
        <ul class="nav navbar-nav navbar-right">
          <% if user_signed_in? %>
-           <li><%= link_to "sign out", destroy_user_session_path, method: :delete %> </li>
+         <li><%= link_to "SIGN OUT", destroy_user_session_path %> </li>
         <% end %>
            <li><a href="http://github.com/cakeordeath83">GITHUB</a></li>
            <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>

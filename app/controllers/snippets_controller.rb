@@ -4,9 +4,14 @@ class SnippetsController < ApplicationController
   add_breadcrumb "GUIDES", :snippets_path
   
   def index
-    @snippets = Snippet.all
-    
-  end
+    if params[:category]
+      @snippets = Snippet.where(:category => params[:category])      
+    else
+       @snippets = Snippet.all
+    end
+    @allsnippets = Snippet.all
+   
+ end
   
   def new
     @snippets = Snippet.all

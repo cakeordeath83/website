@@ -19,14 +19,14 @@
     </div>
 
     <div class="col-md-2 side-column-<%=params[:controller] %>">
-      <p>Blog navigation</p>
+      <h4>Blog navigation</h4>
       <% @posts.group_by{|post| post.category}.each do |category, value| %>
-      <li><%= category %></li>
+      <li class="list-unstyled"><%= category %></li>
       <% end %><br>
       
-      <p>By month </p>
+      <h4>By month </h4>
       <% @posts.group_by{|post| post.created_at.month}.each do |month, value| %>
-      <li><%= month %></li>
+      <li class="list-unstyled"><%= month %></li>
       <% end %>
     </div>
     

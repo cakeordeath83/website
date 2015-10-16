@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'static_pages#welcome'
   get 'homepage' => "static_pages#welcome"
   get 'about' => "static_pages#about"
-  get 'categoryindex' => "snippets#categoryindex"
+  get 'snippetcategory' => "snippets#snippetcategory"
 
 
   # Example of regular route:
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :posts, :snippets
+  resources :posts, :snippets 
   
   
 
