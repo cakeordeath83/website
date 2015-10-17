@@ -18,7 +18,7 @@
       
         <% @snippets.each do |snippet| %>
       <div class="individualpost">
-        <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> Added <%= snippet.created_at.to_date %></p>
+        <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
         
       <!-- ADMIN -->
          <% if user_signed_in? %>

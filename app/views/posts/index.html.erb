@@ -6,6 +6,7 @@
   <p style="margin-bottom: 40px;">Learning to code is hard. This is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments</p>
   </div>
 
+  
   <!-- ADMIN -->
        <% if user_signed_in? %>
       <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
@@ -17,7 +18,7 @@
       <% @posts.each do |post| %>
       
       <div class="individualpost">
-        <p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> Posted on <%= post.created_at.to_date %></p>
+        <p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
         <div class="row">
           <div class="col-md-2" style="padding-top:20px;">
             <p><%= image_tag post.image.url(:thumb)%> </p>
@@ -42,17 +43,17 @@
 
     <!-- Side navigation -->
     <div class="col-md-2 side-column-<%=params[:controller] %>">
-      <h4>Blog navigation</h4>
+      <h4>By category</h4>
       <% @allposts.group_by{|post| post.category}.each do |category, value| %>
-      
       <li class="list-unstyled"><%= link_to category, posts_path(:category => category) %></li>
-      
-      <% end %><br>
+      <% end %>
       
       <h4>By month </h4>
-      <% @posts.group_by{|post| post.created_at.strftime("%B")}.each do |month, value| %>
-      <li class="list-unstyled"><%= month %></li>
+      <% @allposts.group_by{|post| post.created_at.strftime("%B")}.each do |month, values| %>
+      <li class="list-unstyled"><%= link_to month, posts_path(:month => month) %></li>
       <% end %>
+      
+      <li class="list-unstyled">
     </div>
     
   </div><!-- row --> 

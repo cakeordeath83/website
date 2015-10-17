@@ -5,12 +5,13 @@ class SnippetsController < ApplicationController
   
   def index
     if params[:category]
-      @snippets = Snippet.where(:category => params[:category])      
+      add_breadcrumb "#{params[:category].upcase}", :snippets_path
+      @snippets = Snippet.where(:category => params[:category])   
+    
     else
-       @snippets = Snippet.all
+      @snippets = Snippet.all
     end
-    @allsnippets = Snippet.all
-   
+    @allsnippets = Snippet.all 
  end
   
   def new

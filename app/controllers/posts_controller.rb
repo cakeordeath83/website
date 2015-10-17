@@ -6,11 +6,15 @@ class PostsController < ApplicationController
   
   def index
     if params[:category]
-      @posts = Post.where(:category => params[:category]).order(created_at: :desc)
+      add_breadcrumb "#{params[:category].upcase}"
+      @posts = Post.where(:category => params[:category]).order(created_at: :desc) 
+    elsif params[:month]
+      add_breadcrumb "#{params[:month].upcase}"
+      @posts = Post.where("trim(to_char(created_at, 'month')) = ?", params[:month].downcase).order(created_at: :desc)
     else
       @posts = Post.all.order(created_at: :desc)
     end
-    @allposts = Post.all
+      @allposts = Post.all
   end
   
   def new
@@ -48,7 +52,7 @@ class PostsController < ApplicationController
 private
   
   def post_params
-    params.require(:post).permit(:title, :content, :category, :image)
+    params.require(:post).permit(:title, :content, :category, :image, :created_at)
   end
   
   def find_post
