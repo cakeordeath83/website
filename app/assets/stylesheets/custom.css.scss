@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.active > span {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
 /* ALL */
 * {
   border-radius: 0 !important;
@@ -12,7 +17,7 @@
 }
 
 .header {
-  background-color: #D14841;
+  background-color: #00A885;
 }
 
 .breadcrumb {
@@ -21,15 +26,15 @@
 }
 
 #static_pages {
-  background-color: #D14841;
+  background-color: #00A885;
 }
 
 #posts {
-  background-color: #1ABC9C;
+  background-color: #655F7E;
 }
 
 #snippets {
-  background-color: #54ACD2;
+  background-color: #2980b9;
 }
 
 /* HEADINGS */
@@ -77,15 +82,19 @@ body{
 
 /* POSTS */
 .side-column-posts {
-  background-color: #1ABC9C;
+  background-color: #655F7E ;
   color: white;
   margin-top: 10px;
   padding: 20px;
 }
 
+.side-column-posts li > a{
+  text-decoration: none;
+  color: white;
+}
+
 .postseperator{
-  border-bottom: solid 1px #1ABC9C;
-  
+  border-bottom: solid 1px #655F7E;  
 }
 
 .individualpost {
@@ -94,18 +103,50 @@ body{
   padding-right: 20px;
 }
 
+.individualpost > p > strong > a {
+  color: #655F7E;
+}
 
+
+body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li.active > span {
+  background-color: #655F7E;
+  border-color: #655F7E;
+}
+
+body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li:nth-child > a {
+  color: #655F7E;
+}
+
+body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li > a{
+  color: #655F7E;
+}
 
 /* SNIPPETS */
 .side-column-snippets {
-  background-color: #54ACD2;
+  background-color: #2980b9;
   color: white;
   padding: 10px;
+}
+
+.side-column-snippets li > a{
+  text-decoration: none;
+  color: white;
 }
 
 .snippetseperator{
   border-bottom: solid 1px #54ACD2;
   
+}
+
+.individualsnippet {
+  
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+.individualsnippet > p > strong > a {
+  color: #54ACD2;
 }
 
 /* FORMS */
@@ -115,7 +156,7 @@ body{
 }
 
 .form-categories-posts {
-  border: solid 2px #1ABC9C;
+  border: solid 2px #655F7E;
   margin-top: 10px;
   padding: 10px;
 }
@@ -152,7 +193,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #D14841;
+  background-color: #00A885;
   padding: auto;
   margin-top: 40px;
 }
@@ -160,11 +201,11 @@ body > footer > div > div > ul > li  {
   text-decoration: none;
   color: white;
 }
-body > footer > div > div > ul > li > a:hover {
+.footer > div > div > ul > li > a:hover {
   text-decoration: none;
   background-color: #990000;
 }
-body > footer > div > div > ul > li > a:visited {
+.footer > div > div > ul > li > a:visited {
   text-decoration: none;
   background-color: #990000;
   color: white;

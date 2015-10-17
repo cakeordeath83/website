@@ -20,6 +20,8 @@ gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'high_voltage', '~> 2.4.0'
 gem "paperclip", "~> 4.3"
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 
 # Use jquery as the JavaScript library

@@ -12,9 +12,11 @@
       <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
       <% end %>
 
+  
   <!-- Main body -->
   <div class="row">
     <div class="col-md-offset-2 col-md-6">
+     
       <% @posts.each do |post| %>
       <div class="individualpost">
         <p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
@@ -38,7 +40,7 @@
        </div>
       
       <% end %> <!-- @posts iteration -->
-      
+      <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
    </div> <!-- col-md -->
    
 
@@ -46,4 +48,5 @@
     <%= render partial: 'layouts/sidenav' %>
     
   </div><!-- row --> 
+ 
 </div><!-- container -->

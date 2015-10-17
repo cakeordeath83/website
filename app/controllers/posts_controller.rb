@@ -7,14 +7,15 @@ class PostsController < ApplicationController
   def index
     if params[:category]
       add_breadcrumb "#{params[:category].upcase}"
-      @posts = Post.where(:category => params[:category]).order(created_at: :desc) 
+      @posts = Post.where(:category => params[:category]).order(created_at: :desc).paginate(page: params[:page], :per_page => 3) 
     elsif params[:month]
       add_breadcrumb "#{params[:month].upcase}"
-      @posts = Post.where("trim(to_char(created_at, 'month')) = ?", params[:month].downcase).order(created_at: :desc)
+      @posts = Post.where("trim(to_char(created_at, 'month')) = ?", params[:month].downcase).order(created_at: :desc).paginate(page: params[:page], :per_page => 3)
     else
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], :per_page => 3)
     end
       @allposts = Post.all
+    
   end
   
   def new

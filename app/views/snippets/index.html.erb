@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-md-offset-2 col-md-6">
       <% @snippets.each do |snippet| %>
-      <div class="individualpost">
+      <div class="individualsnippet">
         <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
       
  
@@ -34,8 +34,9 @@
       <div class="snippetseperator">
         </div>
         <% end %> <!-- @snippets iteration -->
-      
-      
+      <div class="paginatesnippets">
+      <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+      </div>
     </div><!-- col-md -->
 
     <!-- Side navigation -->
