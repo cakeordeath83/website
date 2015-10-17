@@ -5,9 +5,10 @@
       <h1><%= @post.title %></h1>
       <h5>Posted on <%= @post.created_at.to_date %></h5>
       <p style="border: solid 1px #655F7E;"><%= sanitize @post.content %></p>
+       <%= render 'disqus' %>
     </div>
   
      <%=link_to "Back to blog", posts_path, class: "btn btn-default" %>
-     <%= render 'disqus' %>
+    
   </div>  
 </div>

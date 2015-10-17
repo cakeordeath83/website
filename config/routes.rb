@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#welcome'
+  root 'posts#index'
   get 'homepage' => "static_pages#welcome"
   get 'about' => "static_pages#about"
   get 'snippetcategory' => "snippets#snippetcategory"

@@ -1,14 +1,26 @@
 <div class="container">
-  <div class="row">
-  <div class="col-md-6 col-offset-2">
+  
+  <div class="col-md-offset-1 col-md-9 headings">
 <h1>Welcome to the Coding with Clair website</h1>
-
-<h4>Please click on the link below to navigate the site</h4>
-
-<%= link_to "Blog", posts_path %><br>
-  <%= link_to "How to's", snippets_path %>
-    </div><!-- content --> 
-    
-    
-  </div><!-- row -->
+    </div>
+<div class="row">
+    <div class="col-md-4 welcomethirds">
+      <h3>BLOG</h3>
+     <p>I'm currently teaching myself how to code (specifically Ruby on Rails)</p>
+      <%= link_to "GO TO BLOG", posts_path, class:"btn btn-default"%>
+  </div> 
+     <div class="col-md-4 welcomethirds">
+        <h3>GUIDES</h3>
+        <p>I've picked up lots of snippets of code along my way, so this is a place to keep them all for whenever I may need them again.</p>
+       <%= link_to "GO TO GUIDES", snippets_path, class:"btn btn-default"%>
+     </div>
+        
+        <!-- Find a retailer -->
+        <div class="col-md-4 welcomethirds">
+        <h3>PORTFOLIO</h3>
+            <p>See what I can do! I've worked on several apps as at part of learning and the results are here!</p>
+          <%= link_to "PORTFOLIO", page_path('portfolio/portfoliohome'), class:"btn btn-default"%>
+        </div>
+     
+  </div>
 </div><!-- container -->
