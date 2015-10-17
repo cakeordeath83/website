@@ -1,0 +1,23 @@
+<div class="col-md-2 side-column-<%=params[:controller] %>" style="padding-left: 40px;" >
+  <% if params[:controller] == "posts" %>
+  <h4>Categories</h4>
+    <% @allposts.group_by{|post| post.category}.each do |category, value| %>
+    <li class="list-unstyled"><%= link_to category, posts_path(:category => category) %></li>
+    <% end %>
+      
+  
+  <h4>Months </h4>
+    <% @allposts.group_by{|post| post.created_at.strftime("%B")}.each do |month, values| %>
+    <li class="list-unstyled"><%= link_to month, posts_path(:month => month) %></li>
+    <% end %>
+  
+  <% else %>
+    <h4>Categories</h4>
+      <% @allsnippets.group_by{|snippet| snippet.category}.each do |category, value| %>
+      <ul class="list-unstyled">
+      <li><%= category%></li>
+      </ul>
+      <% end %>
+  <% end %>
+  
+</div>

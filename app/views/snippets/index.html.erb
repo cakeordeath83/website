@@ -1,9 +1,9 @@
 <div class="container-fluid" %>
   
   <!-- Headings -->
-  <div class="col-md-offset-2 col-md-8">
-    <h1 style="text-align: center; margin-bottom: 30px;">GUIDES</h1>
-    <p style="margin-bottom: 40px;">These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
+  <div class="col-md-offset-2 col-md-8 headings">
+    <h1>GUIDES</h1>
+    <p>These mini how to guides are very short instructions on how to perform certain actions within your code. I've used them all and wanted to keep them in a safe place but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
   </div>
   
   
@@ -15,33 +15,31 @@
   <!-- Main body -->
   <div class="row">
     <div class="col-md-offset-2 col-md-6">
-      
-        <% @snippets.each do |snippet| %>
+      <% @snippets.each do |snippet| %>
       <div class="individualpost">
         <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
+      
+ 
+
+        
+        
         
       <!-- ADMIN -->
          <% if user_signed_in? %>
            <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
          <% end %>
-      </div>
+        </div><!-- individualpost -->
+      
       
       <div class="snippetseperator">
         </div>
         <% end %> <!-- @snippets iteration -->
       
       
-    </div>
+    </div><!-- col-md -->
 
     <!-- Side navigation -->
-    <div class="col-md-2 side-column-<%=params[:controller]%>">
-      <h4>Guide navigation</h4>
-        <% @allsnippets.group_by{|snippet| snippet.category}.each do |category, value| %>
-        <ul class="list-unstyled">
-        <li><%= link_to category, snippets_path(:category => category) %></li>
-        </ul>
-      <% end %>
-    </div>
+    <%= render partial: 'layouts/sidenav' %>
   
   </div><!-- row -->
 </div><!-- container -->

@@ -34,6 +34,7 @@ class SnippetsController < ApplicationController
   
   def edit
     @snippets = Snippet.all
+     @allsnippets = Snippet.all 
   end
   
   def update

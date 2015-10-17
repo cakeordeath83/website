@@ -1,6 +1,15 @@
-<div class="container">
-  <div class="heading">
+<div class="container-fluid">
+  <div class="col-md-offset-2 col-md-8 headings">
     <h1>Editing <%= @post.title %></h1>
+    
   </div>
+    <!-- Form -->
+  <div class="row">
+   <div class="col-md-offset-2 col-md-7">
     <%= render "form" %>
+   </div>
+    
+  <!-- Navigation -->
+    <%= render partial: 'layouts/sidenav' %>
+  </div>
 </div>

@@ -1,9 +1,9 @@
 <div class="container-fluid">
   
   <!-- Headings -->
-  <div class="col-md-offset-2 col-md-8">
-  <h1 style="text-align:center; margin-bottom: 30px;">BLOG POSTS</h1>
-  <p style="margin-bottom: 40px;">Learning to code is hard. This is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments</p>
+  <div class="col-md-offset-2 col-md-8 headings">
+  <h1>BLOG POSTS</h1>
+  <p>Learning to code is hard. This is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments</p>
   </div>
 
   
@@ -16,45 +16,34 @@
   <div class="row">
     <div class="col-md-offset-2 col-md-6">
       <% @posts.each do |post| %>
-      
       <div class="individualpost">
         <p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
+        
         <div class="row">
           <div class="col-md-2" style="padding-top:20px;">
             <p><%= image_tag post.image.url(:thumb)%> </p>
           </div>
           <div class="col-md-10">
           <p><%= sanitize(post.content.truncate(500)) %></p>
-          
-        </div>
-        </div>
+          </div>
+        </div><!-- row -->
+        
         <!-- ADMIN -->
         <% if user_signed_in? %>
           <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %><br>
         <% end %>
-     </div>
-     <div class="postseperator">
-     </div>
+        
+       </div><!-- individual post -->
+       <div class="postseperator">
+       </div>
       
       <% end %> <!-- @posts iteration -->
       
-   </div>  
+   </div> <!-- col-md -->
    
 
     <!-- Side navigation -->
-    <div class="col-md-2 side-column-<%=params[:controller] %>">
-      <h4>By category</h4>
-      <% @allposts.group_by{|post| post.category}.each do |category, value| %>
-      <li class="list-unstyled"><%= link_to category, posts_path(:category => category) %></li>
-      <% end %>
-      
-      <h4>By month </h4>
-      <% @allposts.group_by{|post| post.created_at.strftime("%B")}.each do |month, values| %>
-      <li class="list-unstyled"><%= link_to month, posts_path(:month => month) %></li>
-      <% end %>
-      
-      <li class="list-unstyled">
-    </div>
+    <%= render partial: 'layouts/sidenav' %>
     
   </div><!-- row --> 
 </div><!-- container -->

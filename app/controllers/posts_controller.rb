@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   
   def edit
     @posts = Post.all
+     @allposts = Post.all
   end
   
   def update
