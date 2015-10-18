@@ -20,7 +20,6 @@ require 'rails_helper'
   it "Adds a new post" do
     signup
     click_link "Add new post"
-    
     expect(page).to have_content("Add a new post")
     
     fill_in "Title", with: "My post"
@@ -29,4 +28,17 @@ require 'rails_helper'
     
     expect(page).to have_content("My post")
   end
+   
+   it "Doesn't save without a title" do
+    signup
+    click_link "Add new post"
+    expect(page).to have_content("Add a new post")
+    
+    fill_in "Title", with: ""
+    fill_in "Category", with: "Learning"
+    click_button "Create Post"
+    
+    expect(Page.count).to eql(0)
+    expect(page).to have_content("Error")
+   end
 end

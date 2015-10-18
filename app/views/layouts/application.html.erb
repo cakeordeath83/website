@@ -45,12 +45,7 @@
   </nav>
   
  
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+  <div class="flash"><%= render 'layouts/messages' %></div>
   
   <ol class="breadcrumb">
     <%= render_breadcrumbs :tag => :li, :separator => "" %>

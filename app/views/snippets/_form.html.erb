@@ -1,6 +1,16 @@
 
   <%= form_for @snippet do |form| %>
   <div class="formtitle">
+    <% if @snippet.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@snippet.errors.count, "error") %> prohibited this snippet from being saved:</h5>
+
+        <ul>
+          <% @snippet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     <%= form.label :title %>
     <%= form.text_field :title %>
     <%= form.label :category %>
