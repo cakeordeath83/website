@@ -1,6 +1,7 @@
 class SnippetsController < ApplicationController
   
   before_action :find_snippet, only: [:show, :update, :edit, :destroy]
+	before_action :allsnippets
   add_breadcrumb "GUIDES", :snippets_path
   
   def index
@@ -15,7 +16,7 @@ class SnippetsController < ApplicationController
  end
   
   def new
-    @allsnippets = Snippet.all
+    
     @snippet = Snippet.new
   end
   
@@ -34,7 +35,7 @@ class SnippetsController < ApplicationController
   
   def edit
     @snippets = Snippet.all
-     @allsnippets = Snippet.all 
+    
   end
   
   def update
@@ -46,6 +47,10 @@ class SnippetsController < ApplicationController
   end
   
   private
+	
+	def allsnippets
+		@allsnippets = Snippet.all
+	end
   
   def snippet_params
     params.require(:snippet).permit(:title, :content, :category)
