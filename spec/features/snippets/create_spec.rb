@@ -60,4 +60,20 @@ describe "Creating snippets" do
 		 expect(Snippet.count).to eql(0)
      expect(page).to have_content("error")
    end
+	
+	it "Displays a new category in the side navigation" do
+		 
+		signup
+		click_link "GUIDES"
+		click_link "Add new snippet"
+		expect(page).to have_content("Add a new code snippet")
+    
+		fill_in "Title", with: "My snippet"
+    fill_in "Category", with: "Learning" 
+    click_button "Create Snippet"
+		 
+		click_link "Back to guides"
+    
+		expect(page).to have_content("Learning")
+	end
 end

@@ -76,7 +76,6 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 
 body{
   font-family: "Roboto", Arial, sans-serif;
-  
 }
 /* ALL PAGES */
 
@@ -155,6 +154,18 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li > a{
 
 .individualsnippet > p > strong > a {
   color: #54ACD2;
+}
+
+/* PORTFOLIO */
+
+.portfolioseperator {
+	border-bottom: solid 1px #00A885;
+	margin: 20px 0px;
+}
+
+/* links */
+.individualportfolio {
+  color: #00A885;
 }
 
 /* FORMS */

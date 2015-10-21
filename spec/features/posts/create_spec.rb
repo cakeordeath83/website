@@ -54,4 +54,21 @@ require 'rails_helper'
     expect(Post.count).to eql(0)
      expect(page).to have_content("error")
    end
+	 
+	 it "Displays a new category in the side navigation" do
+		 
+		signup
+    click_link "Add new post"
+    expect(page).to have_content("Add a new post")
+    
+    fill_in "Title", with: "My post"
+    fill_in "Category", with: "Learning" 
+    click_button "Create Post"
+		 
+		click_link "Back to blog"
+    
+		expect(page).to have_content("Learning")
+		 
+	 end
+	 
 end
