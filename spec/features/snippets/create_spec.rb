@@ -75,5 +75,6 @@ describe "Creating snippets" do
 		click_link "Back to guides"
     
 		expect(page).to have_content("Learning")
+		# Doesn't actually check the sidebar, just that it is on the page. Could probably do it with a CSS selector..
 	end
 end

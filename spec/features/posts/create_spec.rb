@@ -56,7 +56,6 @@ require 'rails_helper'
    end
 	 
 	 it "Displays a new category in the side navigation" do
-		 
 		signup
     click_link "Add new post"
     expect(page).to have_content("Add a new post")
@@ -68,7 +67,7 @@ require 'rails_helper'
 		click_link "Back to blog"
     
 		expect(page).to have_content("Learning")
-		 
+		 # Doesn't actually check the sidebar, just that it is on the page. Could probably do it with a CSS selector...
 	 end
 	 
 end
