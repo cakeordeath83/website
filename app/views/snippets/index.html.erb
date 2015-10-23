@@ -2,7 +2,7 @@
   
   <!-- Headings -->
   <div class="col-md-offset-2 col-md-8 headings">
-    <h1>GUIDES</h1>
+    <h1>LEARNING GUIDES</h1>
     <p>These mini how to guides are very short instructions on how to perform certain actions within your Ruby or Rails code. I've used them all and wanted to keep them in a safe place but also I wanted to explain what I was doing in plain english since some guides are a little too techy for me. Enjoy!</p>
   </div>
   
@@ -19,11 +19,7 @@
       <div class="individualsnippet">
         <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
       
- 
-
-        
-        
-        
+   
       <!-- ADMIN -->
          <% if user_signed_in? %>
            <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>

@@ -7,10 +7,10 @@ class SnippetsController < ApplicationController
   def index
     if params[:category]
       add_breadcrumb "#{params[:category].upcase}", :snippets_path
-      @snippets = Snippet.where(:category => params[:category]).paginate(page: params[:page], :per_page => 6)   
+      @snippets = Snippet.where(:category => params[:category]).paginate(page: params[:page], :per_page => 6).order(created_at: :desc)   
     
     else
-      @snippets = Snippet.all.paginate(page: params[:page], :per_page => 6)
+      @snippets = Snippet.all.paginate(page: params[:page], :per_page => 6).order(created_at: :desc)
     end
     @allsnippets = Snippet.all 
  end
