@@ -23,7 +23,7 @@ gem "paperclip", "~> 4.3"
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'shareable'
-
+gem 'aws-sdk'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
