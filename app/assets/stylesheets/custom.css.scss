@@ -239,15 +239,15 @@ body {
   padding: auto;
   margin-top: 40px;
 }
-body > footer > div > div > ul > li  {
+body > footer > div div >> div > ul > li  {
   text-decoration: none;
   color: white;
 }
-.footer > div > div > ul > li > a:hover {
+.footer > div > div > div >ul > li > a:hover {
   text-decoration: none;
   background-color: #990000;
 }
-.footer > div > div > ul > li > a:visited {
+.footer > div > div > div >ul > li > a:visited {
   text-decoration: none;
   background-color: #990000;
   color: white;
