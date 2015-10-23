@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,7 +10,8 @@ Rails.application.routes.draw do
   get 'homepage' => "static_pages#welcome"
   get 'about' => "static_pages#about"
   get 'snippetcategory' => "snippets#snippetcategory"
-
+  get "/404" => "errors#not_found"
+  get "/500" => "errors#internal_server_error"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
