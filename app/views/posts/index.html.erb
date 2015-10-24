@@ -19,14 +19,15 @@
      
       <% @posts.each do |post| %>
       <div class="individualpost">
-        <p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
+        
         
         <div class="row">
           <div class="col-md-4" style="padding-top:20px;">
-            <p style="text-align: center;"><%= image_tag post.image.url(:thumb)%> </p>
+            <p style="text-align: center;"><%= image_tag post.image.url(:thumb), class:"img-responsive"%> </p>
           </div>
           <div class="col-md-8">
-          <p><%= sanitize(post.content.truncate(500)) %></p>
+						<p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
+          <p><%= sanitize(post.content.truncate(600)) %></p>
           </div>
         </div><!-- row -->
         
