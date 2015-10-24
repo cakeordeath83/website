@@ -9,31 +9,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-  <nav class="navbar navbar-default header" id="<%= params[:controller]%>">
+	
+	<nav class="navbar navbar-default header" id="<%= params[:controller]%>">
   <div class="container-fluid">
-    
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      
-      <!-- Something to do with collapsing the navbar -->
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
-      <!-- Home link -->
       <div class="navbar-brand" id="Home">
         <%= link_to "HOME", posts_path %>
       </div>
-       <ul class="nav navbar-nav navbar-left">
-         <li><%= link_to "BLOG", posts_path %></li>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+				 <li><%= link_to "BLOG", posts_path %></li>
          <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
          <li><%= link_to "PORTFOLIO", page_path('portfolio/portfoliohome') %></li>
-       </ul>
-    </div>
-       <ul class="nav navbar-nav navbar-right">
+      </ul>
+			
+      
+      <ul class="nav navbar-nav navbar-right">
          <% if user_signed_in? %>
          <li><%= link_to "SIGN OUT", destroy_user_session_path %> </li>
         <% end %>
@@ -41,8 +42,10 @@
            <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
          <li><%= link_to "ABOUT", page_path('about') %></li>
        </ul>
-    </div>
-  </nav>
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
   
  
   <div class="flash"><%= render 'layouts/messages' %></div>

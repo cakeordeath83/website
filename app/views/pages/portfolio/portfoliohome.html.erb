@@ -3,9 +3,11 @@
 
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">PORTFOLIO</h1>
-      <p class="opening-paragraph-portfolio">Since starting to learn to code, I've created 3 different apps. I find that, for me, the best way to learn is  by doing, so even though they are sample pretend apps, they've helped me to understand what I'm doing and put some of the things I've learned into practice</p>
+			<div class="opening-paragraph-portfolio">
+      <p>Since starting to learn to code, I've created 3 different apps. I find that, for me, the best way to learn is  by doing, so even though they are sample pretend apps, they've helped me to understand what I'm doing and put some of the things I've learned into practice</p>
 
 			<p><strong>DISCLAIMER - </strong>I am no designer. I have no eye for design, knowing which colours go together or picking the best images. I figured this out right at the beginning and even now seem to far too long getting these sites to look passable. Please take the design of these sites with a pinch of salt and instead marvel at the functionality behind them. Life is too short to worry about margins and padding. </p>
+</div>
 		</div>
 	
 	
@@ -19,30 +21,32 @@
 		</div>
 	
 		<div class="col-md-5">
-			<%= link_to image_tag("indexpage.JPG", height: '300', width: '500'), page_path('portfolio/musicalindex')%>
+			<p style="text-align: center;"><%= link_to image_tag("indexpage.JPG", height: '300', width: '500'), page_path('portfolio/musicalindex'), class:"img-responsive image"%></p>
 		</div>
-		
-  
+	</div><! -- row -->
+	
+	<div class="col-md-offset-1 col-md-10 headings">
+			<div class="portfolioseperator col-md-offset-1">
   </div>
-	<div class="portfolioseperator">
-  </div>
-</div><! -- row -->
+
+	</div>
 
 		
 	
-	<div class="row" style="border-bottom: 1px solid red">
+	<div class="row">
 		<div class="col-md-offset-1 col-md-5">
-			<%= link_to image_tag("Menu app.JPG", height: '250', width: '500'), page_path('portfolio/menu')%>
+			<p style="text-align: center;"><%= link_to image_tag("Menu app.JPG", height: '250', width: '500'), page_path('portfolio/menu'), class:"img-responsive image"%></p>
 		</div>
 		<div class="col-md-5">
 			<h3><%=link_to "Menu", page_path('portfolio/menu'), class: "individualportfolio"%> </h3>
     	<p>A Just Eat clone without the delivery, designed for those that can't decide what to have for lunch</p>
 			<p><strong>Best feature: </strong>Both the theatre name and city are passed as parameters to the Geocoder gem in order to render a map.</p>
 		</div>
-	</div>
+	</div><!-- row -->
 	
   
-	<div class="portfolioseperator col-md-offset-1">
+	<div class="col-md-offset-1 col-md-10 headings">
+			<div class="portfolioseperator col-md-offset-1">
   </div>
 	
   <div>

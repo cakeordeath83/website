@@ -68,12 +68,10 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 /* NAVBAR */
 
 /* TEXT */
-.nav.navbar-nav.navbar-left li a {
+#bs-example-navbar-collapse-1 > ul > li > a {
   color: white;
 }
-.nav.navbar-nav.navbar-right li a {
-  color: white;
-}
+
 
 #Home > a {
   color: white;
@@ -133,6 +131,12 @@ body{
 
 .individualpost > p > strong > a {
   color: #655F7E;
+}
+
+.image {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
 /* Pagination */
@@ -199,6 +203,7 @@ body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li > a{
 	padding: 30px;
 	font-size: 16px;
 	border: 2px solid #00A885;
+	margin-bottom: 20px;
 }
 
 .portfolioseperator {
