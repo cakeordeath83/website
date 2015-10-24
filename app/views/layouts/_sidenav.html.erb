@@ -7,7 +7,7 @@
   <br>
   
 	<h4>MONTHS </h4>
-    <% @allposts.group_by{|post| post.created_at.strftime("%B")}.each do |month, values| %>
+	<% @allposts.order(created_at: :desc).group_by{|post| post.created_at.strftime("%B")}.each do |month, values| %>
     <li class="list-unstyled"><%= link_to month, posts_path(:month => month) %></li>
     <% end %>
   

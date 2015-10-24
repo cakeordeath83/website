@@ -97,7 +97,7 @@ body{
 
 /* POSTS */
 
-.opening-paragraph {
+.opening-paragraph-posts {
 	padding: 30px;
 	font-size: 16px;
 	border: 2px solid #655F7E;
@@ -144,6 +144,12 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li > a{
 }
 
 /* SNIPPETS */
+
+.opening-paragraph-snippets {
+	padding: 30px;
+	font-size: 16px;
+	border: 2px solid #2980b9;
+}
 .side-column-tags {
   background-color: #2980b9;
   color: white;
@@ -182,6 +188,12 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li > a{
 }
 
 /* PORTFOLIO */
+
+.opening-paragraph-portfolio {
+	padding: 30px;
+	font-size: 16px;
+	border: 2px solid #00A885;
+}
 
 .portfolioseperator {
 	border-bottom: solid 1px #00A885;
