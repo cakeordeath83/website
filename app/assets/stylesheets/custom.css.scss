@@ -41,6 +41,10 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
   background-color: #2980b9;
 }
 
+#tags {
+  background-color: #2980b9;
+}
+
 #error_explanation {
   color: red;
 }
@@ -140,6 +144,16 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li > a{
 }
 
 /* SNIPPETS */
+.side-column-tags {
+  background-color: #2980b9;
+  color: white;
+  padding: 10px;
+}
+
+.side-column-tags li > a{
+  text-decoration: none;
+  color: white;
+}
 .side-column-snippets {
   background-color: #2980b9;
   color: white;

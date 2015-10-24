@@ -13,6 +13,7 @@ class SnippetsController < ApplicationController
       @snippets = Snippet.all.paginate(page: params[:page], :per_page => 6).order(created_at: :desc)
     end
     @allsnippets = Snippet.all 
+		
  end
   
   def new
@@ -53,7 +54,7 @@ class SnippetsController < ApplicationController
 	end
   
   def snippet_params
-    params.require(:snippet).permit(:title, :content, :category)
+    params.require(:snippet).permit(:title, :content, :category, :tag_list)
   end
   
   def find_snippet
