@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       add_breadcrumb "#{params[:month].upcase}"
       @posts = Post.where("trim(to_char(created_at, 'month')) = ?", params[:month].downcase).order(created_at: :desc).paginate(page: params[:page], :per_page => 3)
     else
-      @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], :per_page => 3)
+      @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], :per_page => 5)
     end
       
  end

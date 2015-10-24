@@ -1,10 +1,16 @@
+<title>Title here</title>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-offset-2 col-md-8" >
       <p style="text-align: center;"><%= image_tag @post.image.url(:medium)%></p>
       <h1><%= @post.title %></h1>
       <h5>Posted on <%= @post.created_at.to_date %></h5>
-      <p style="border: solid 1px #655F7E;"><%= sanitize @post.content %></p>
+      <div class="postseperator">
+			</div>
+			<div class="content">
+      	<p> <%= sanitize @post.content %></p>
+			</div>
 			<%= render_shareable :buttons=> ['twitter', 'facebook'] %>
        <%= render 'disqus' %>
     </div>

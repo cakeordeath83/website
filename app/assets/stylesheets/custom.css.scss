@@ -85,6 +85,12 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 body{
   font-family: "Roboto", Arial, sans-serif;
 }
+
+.content {
+	padding: 20px 0px;
+}
+
+
 /* ALL PAGES */
 
 .heading {
@@ -129,17 +135,17 @@ body{
   color: #655F7E;
 }
 
-
-body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li.active > span {
+/* Pagination */
+body > div.container-fluid > div.row > div.col-md-offset-1.col-md-8 > ul > li.active > span {
   background-color: #655F7E;
   border-color: #655F7E;
 }
 
-body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li:nth-child > a {
+body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li:nth-child > a {
   color: #655F7E;
 }
 
-body > div > div.row > div.col-md-offset-2.col-md-6 > ul > li > a{
+body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li > a{
   color: #655F7E;
 }
 
