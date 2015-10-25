@@ -1,11 +1,12 @@
 <div class="container-fluid">
-  
+  <% provide(:title, "| Blog") %>
   <!-- Headings -->
-  <div class="col-md-offset-1 col-md-10 headings">
-  <h1 style="margin-top: 0px; margin-bottom: 50px;">CODING WITH CLAIR</h1>
-  <p class="opening-paragraph-<%= params[:controller]%>">Hello and welcome to my Blog/Portfolio! I'm currently teaching myself to code and...well...its tough. This blog is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments. If you are learning to code then I have some guides full of things that I've learnt and, of course, feel free to check out my portfolio!</p>
-  </div>
-
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 headings">
+			<h1 style="margin-top: 0px; margin-bottom: 50px;">CODING WITH CLAIR</h1>
+			<p class="opening-paragraph-<%= params[:controller]%>">Hello and welcome to my Blog/Portfolio! I'm currently teaching myself to code and...well...its tough. This blog is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments. If you are learning to code then I have some guides full of things that I've learnt and, of course, feel free to check out my portfolio!</p>
+		</div>
+	</div>
   
   <!-- ADMIN -->
        <% if user_signed_in? %>
