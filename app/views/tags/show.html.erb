@@ -1,12 +1,12 @@
 <div class="container-fluid">
 	<div class="row">
 		
-		<div class="col-md-offset-2 col-md-8 headings">
+		<div class="col-md-offset-1 col-md-10 headings">
 			<h1><%= @tag.name.upcase %></h1>
     
   </div>
 		
-			<div class="col-md-offset-2 col-md-6">
+			<div class="col-md-offset-1 col-md-8">
 				<% @tag.snippets.each do |snippet| %>
 				<div class="individualsnippet">
 					<p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
