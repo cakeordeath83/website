@@ -1,6 +1,7 @@
 class TagsController < ApplicationController
 	
 	before_action :find_tag, only: [:show, :edit, :update]
+	
 	add_breadcrumb "LEARNING GUIDES", :snippets_path
 	
 	def show
