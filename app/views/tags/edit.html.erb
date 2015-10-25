@@ -1,0 +1,10 @@
+<h1>Edit tag category</h1>
+
+<h5>Name: <%= @tag.name %></h5>
+
+<%= form_for @tag do |f| %>
+<%= f.label :category %>
+<%= f.text_field :category %>
+<%= f.submit %>
+<% end %>
+
