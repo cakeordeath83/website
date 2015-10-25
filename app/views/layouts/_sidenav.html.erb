@@ -13,10 +13,16 @@
   
   <% else %>
     
-		<h4>TAGS</h4>
-			<% Tag.all.each do |tag| %>
-      <li class="list-unstyled"><%= link_to tag.name, tag_path(tag)%></li>
-			<% end %>
+		<h4 style="padding-bottom: 10px;">TAGS</h4>
+			<% Tag.all.group_by{|tag| tag.category}.each do |category, value| %>
+				<h5><%= category %></h5>
+				<% value.each do |value| %>
+					<ul style="padding-left: 20px; margin: 2px;">
+						<li class="list-unstyled"><%= link_to value.name, tag_path(value.id) %></li>
+					</ul>
+				<% end %>
+	    <% end %>
+	
   <% end %>
   
 </div>
