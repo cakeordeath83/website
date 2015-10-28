@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
-  
+	
+	
+	
   before_action :find_post, only: [:show, :edit, :update, :delete]
   before_action :allposts
   add_breadcrumb "ALL POSTS", :posts_path
   
+	
   
   def index
     if params[:category]
@@ -15,12 +18,10 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], :per_page => 5)
     end
-      
  end
   
   def new
-    
-    @post = Post.new
+     @post = Post.new
   end
   
   def create
@@ -30,13 +31,11 @@ class PostsController < ApplicationController
     else
       flash[:error]="Post was not saved"
       render :new
-      
     end
   end
   
   def edit
     @posts = Post.all
-     
   end
   
   def update
@@ -52,6 +51,9 @@ class PostsController < ApplicationController
     add_breadcrumb "#{@post.title.upcase}", post_path(@post)
   end
   
+	
+	
+	
 
   
 private
@@ -61,11 +63,11 @@ private
   end
   
   def post_params
-    params.require(:post).permit(:title, :content, :category, :image, :created_at)
+    params.require(:post).permit(:title, :content, :category, :image, :created_at, :slug)
   end
   
   def find_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
   end
   
 end

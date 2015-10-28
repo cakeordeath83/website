@@ -22,5 +22,5 @@ xml.urlset(
       xml.changefreq("monthly")
 		end
       end
-    
+
 end

@@ -54,10 +54,10 @@ class SnippetsController < ApplicationController
 	end
   
   def snippet_params
-    params.require(:snippet).permit(:title, :content, :category, :tag_list)
+    params.require(:snippet).permit(:title, :content, :category, :tag_list, :slug)
   end
   
   def find_snippet
-    @snippet = Snippet.find(params[:id])
+		@snippet = Snippet.find_by_slug(params[:id])
   end
 end

@@ -1,10 +1,22 @@
 class Snippet < ActiveRecord::Base
-  
+	
+  before_validation :create_slug
+	
 	has_many :taggings
 	has_many :tags, through: :taggings
 	
   validates :title, presence: true
+	
   
+	def to_param
+		slug
+	end
+	
+	def create_slug
+		self.slug = self.title.parameterize + "-in-rails"
+	end
+	
+	
 	
 	# Collect each of the entries in the 'tag' input box, take their name and then join them by a comma?
 	def tag_list
