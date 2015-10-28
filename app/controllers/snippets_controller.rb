@@ -24,7 +24,7 @@ class SnippetsController < ApplicationController
   def create 
     @snippet = Snippet.new(snippet_params)
     if @snippet.save
-      redirect_to snippet_path(@snippet)
+      redirect_to tags_path
     else
       render :new
     end
@@ -54,7 +54,7 @@ class SnippetsController < ApplicationController
 	end
   
   def snippet_params
-    params.require(:snippet).permit(:title, :content, :category, :tag_list, :slug)
+    params.require(:snippet).permit(:title, :content, :category, :tag_list, :slug, :tags_attributes => [:category])
   end
   
   def find_snippet

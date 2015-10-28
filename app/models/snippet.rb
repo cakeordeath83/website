@@ -4,6 +4,7 @@ class Snippet < ActiveRecord::Base
 	
 	has_many :taggings
 	has_many :tags, through: :taggings
+	accepts_nested_attributes_for :tags
 	
   validates :title, presence: true
 	

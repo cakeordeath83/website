@@ -12,7 +12,7 @@ class TagsController < ApplicationController
 	end
 	
 	def index
-		@tags = Tag.all
+		@tags = Tag.all.order(created_at: :desc)
 	end
 	
 	def edit
