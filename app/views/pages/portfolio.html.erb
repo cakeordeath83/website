@@ -15,13 +15,13 @@
 
 	<div class="row">
 		<div class="col-md-offset-1 col-md-5 headings" style="padding: 35px;">
-    	<h3><%= link_to "Musicals", page_path('portfolio/musicals'), class: "individualportfolio"%></h3>
+    	<h3><%= link_to "Musicals", page_path('musicals'), class: "individualportfolio"%></h3>
     	<p>My first ever app! A place to log the musicals that you have seen and the places you have seen them. Built in a week, full of rookie mistakes but up and running and currently being used by my mum.</p>
 			<p><strong>Best feature: </strong>Both the theatre name and city are passed as parameters to the Geocoder gem in order to render a map.</p>
 		</div>
 	
 		<div class="col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("musicals/indexpage.JPG", height: '300', width: '500'), page_path('portfolio/musicals'), class:"img-responsive image"%></p>
+			<p style="text-align: center;"><%= link_to image_tag("musicals/indexpage.JPG", height: '300', width: '500'), page_path('musicals'), class:"img-responsive image"%></p>
 		</div>
 	</div><! -- row -->
 	
@@ -33,12 +33,12 @@
 	
 	<div class="row">
 		<div class="col-md-offset-1 col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("menu/Menu landing.PNG", height: '250', width: '500'), page_path('portfolio/menu'), class:"img-responsive image"%></p>
+			<p style="text-align: center;"><%= link_to image_tag("menu/Menu landing.PNG", height: '250', width: '500'), page_path('menu'), class:"img-responsive image"%></p>
 		</div>
 		<div class="col-md-5" style="padding: 35px;">
-			<h3><%=link_to "Menu", page_path('portfolio/menu'), class: "individualportfolio"%> </h3>
+			<h3><%=link_to "Menu", page_path('menu'), class: "individualportfolio"%> </h3>
     	<p>A Just Eat clone without the delivery, designed for those that can't decide what to have for lunch</p>
-			<p><strong>Best feature: </strong>Both the theatre name and city are passed as parameters to the Geocoder gem in order to render a map.</p>
+			<p><strong>Best feature: </strong>A randomiser for those indecisive people that don't quite know what they fancy for lunch. Only suggests items from certain categories</p>
 		</div>
 	</div><!-- row -->
 	
@@ -49,15 +49,19 @@
 	
   <div class="row">
 		<div class="col-md-offset-1 col-md-5" style="padding: 35px;">
-			<h3><%=link_to "Website", page_path('portfolio/website'), class: "individualportfolio"%></h3>
+			<h3><%=link_to "Website", page_path('website'), class: "individualportfolio"%></h3>
     	<p>This very blog! A place to show off my portfolio, blog about learning to code and store useful code snippets I pick up along the way</p>
 			<p><strong>Best feature: </strong>Different colours depending on which part of the site you are visiting</p>
 		</div>
-	</div>
+	
+	
+	<div class="col-md-5">
+		<p style="text-align: center;"><%= link_to image_tag("website/posts.PNG", height: '300', width: '500'), page_path('musicals'), class:"img-responsive image"%></p>
+		</div>
 	
 	<div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;">
   		</div>
-
+	</div><!-- row -->
 		
 	
 	<div class="row">
@@ -65,7 +69,7 @@
 			<p style="text-align: center;"><%= link_to image_tag("campaign/coming soon.jpg", height: '250', width: '500'), page_path('portfolio/campaign'), class:"img-responsive image"%></p>
 		</div>
 		<div class="col-md-5" style="padding: 35px;">
-			<h3><%=link_to "Campaign Management", page_path('portfolio/campaign'), class: "individualportfolio"%> </h3>
+			<h3><%=link_to "Campaign Management", page_path('campaign'), class: "individualportfolio"%> </h3>
     	<p>A campaign management app that would have helped me out in my old job!</p>
 			
 		</div>
