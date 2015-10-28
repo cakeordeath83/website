@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'snippetcategory' => "snippets#snippetcategory"
   get "/404" => "errors#not_found"
   get "/500" => "errors#internal_server_error"
-
+	get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

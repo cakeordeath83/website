@@ -25,7 +25,6 @@ gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'shareable'
 gem 'aws-sdk', '< 2.0'
 
-gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
