@@ -20,11 +20,7 @@ xml.urlset(
       xml.loc "#{post_url(post)}"
       xml.lastmod post.updated_at.strftime("%F")
       xml.changefreq("monthly")
-      if post.photo?
-        xml.image :image do
-          xml.image :loc, "#{request.protocol}#{request.host_with_port}#{post.photo(:medium)}"
-        end
+		end
       end
-    end
-  end
+    
 end
