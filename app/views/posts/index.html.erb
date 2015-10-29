@@ -24,7 +24,7 @@
         
         <div class="row">
           <div class="col-md-3" style="padding-top:20px;">
-						<p style="text-align: center;"><%= image_tag post.image.url(:thumb), class:"img-responsive image"%> </p>
+						<p style="text-align: center;"><%= link_to image_tag(post.image.url(:thumb)), post_path(post), class:"img-responsive image"%> </p>
           </div>
           <div class="col-md-8">
 						<p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
