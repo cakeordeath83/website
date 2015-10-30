@@ -37,7 +37,7 @@
       
       <ul class="nav navbar-nav navbar-right">
          <% if user_signed_in? %>
-         <li><%= link_to "SIGN OUT", destroy_user_session_path %> </li>
+         <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete %> </li>
 				<li><%= link_to "ASSIGN TAG CATEGORIES", tags_path %> </li>
         <% end %>
            <li><a href="http://github.com/cakeordeath83">GITHUB</a></li>
