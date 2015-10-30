@@ -27,61 +27,46 @@ describe "Login" do
 		log_in
 	end
 	
-	describe "Create posts" do
+	describe "Edit posts" do
+		
+		let!(:post){Post.create(title: "My new post", category: "Questions")}
 		
 		# Method to create a post (must stay within the describe block)
-		def create_post(options={})
-			options[:title] ||= "My new post"
-			options[:category] ||= "Questions"
+		def edit_post(options={})
+			options[:title] ||= "My updated post"
+			options[:category] ||= "Update"
 
 			visit '/'
-			click_link "Add new post"
+				within "#post_#{post.id}" do
+				click_link "Edit"
+				end
+			
 			fill_in "Title", with: options[:title]
 			fill_in "Category", with: options[:category]
-			click_button "Create Post"
+			click_button "Update Post"
 		end
-		
 		
 		it "Saves a post on success" do
-			create_post
-			expect(page).to have_content("My new post")
+			edit_post
+			expect(page).to have_content("My updated post")
 	  end
 
-
-		it "Doesn't save post without title" do
-			create_post title: ""
-			expect(page).to have_content("error")
-		end
-	
-		it "Doesn't save post without category" do
-			create_post category: ""
-			expect(page).to have_content("error")
-		end
-
 		it "Displays the correct slug" do
-			create_post
-			expect(title).to have_content "Coding with Clair | My new post"
-		end
-
-		it "Displays the correct date" do
-			create_post
-			expect(page).to have_content(Date.today)
+			edit_post
+			expect(title).to have_content "Coding with Clair | My updated post"
 		end
 
 		it "Displays the sharing icons" do
-			create_post
+			edit_post
 			expect(page).to have_content("Tweet")
 		end
 
 		it "Shows the new post on the post index page" do
-			create_post
+			edit_post
 			click_link("Back to blog")
-			expect(page).to have_content("My new post")
+			expect(page).to have_content("My updated post")
 		end
-
+		
 	end
 end
-
-
 	 
-	

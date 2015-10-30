@@ -19,7 +19,7 @@
     <div class="col-md-offset-1 col-md-8">
      
       <% @posts.each do |post| %>
-      <div class="individualpost">
+      <div class="individualpost" id="<%= dom_id(post)%>">
         
         
         <div class="row">
@@ -28,7 +28,10 @@
           </div>
           <div class="col-md-8">
 						<p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
-          <p><%= sanitize(post.content.truncate(600)) %></p>
+						<!-- Workaround for stupid testing  -->
+						<% if post.content != nil %>
+          		<p><%= sanitize(post.content.truncate(600)) %></p>
+						<% end %>
           </div>
         </div><!-- row -->
         

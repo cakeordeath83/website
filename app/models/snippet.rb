@@ -7,7 +7,7 @@ class Snippet < ActiveRecord::Base
 	accepts_nested_attributes_for :tags
 	
   validates :title, presence: true
-	
+	validates_presence_of :tags
   
 	def to_param
 		slug
@@ -19,7 +19,7 @@ class Snippet < ActiveRecord::Base
 	
 	
 	
-	# Collect each of the entries in the 'tag' input box, take their name and then join them by a comma?
+	# Collect each of the entries in the 'tag' input box, take their name and then join them where there is a comma?
 	def tag_list
 		self.tags.collect do |tag|
 			tag.name
