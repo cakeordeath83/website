@@ -18,16 +18,18 @@
 
   
   <!-- Main body -->
+	
+	
   <div class="row">
     <div class="col-md-offset-1 col-md-8">
-     
+    
       <% @posts.each do |post| %>
       <div class="individualpost" id="<%= dom_id(post)%>">
         
         
         <div class="row">
           <div class="col-md-3" style="padding-top:20px;">
-						<div style="text-align: center;">
+						<div style="text-align: center; ">
 						<%= link_to image_tag(post.image.url(:thumb),  class:"img-responsive center-block"), post %> 
 						</div>
           </div>
@@ -35,7 +37,7 @@
 						<p class="center-block"><strong style="font-size: large;"><%= link_to post.title, post_path(post)%></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
 						<!-- Workaround for stupid testing  -->
 						<% if post.content != nil %>
-          		<p><%= sanitize(post.content.truncate(600)) %></p>
+						<p><%= sanitize(post.content.truncate(800)) %></p>
 						<% end %>
           </div>
         </div><!-- row -->
