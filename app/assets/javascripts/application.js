@@ -16,5 +16,4 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require bootstrap
-
 //= require_tree .
