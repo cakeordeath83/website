@@ -21,7 +21,7 @@
 		</div>
 	
 		<div class="col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("musicals/indexpage.JPG", height: '300', width: '500'), page_path('musicals'), class:"img-responsive image"%></p>
+			<p style="text-align: center;"><%= link_to image_tag("musicals/indexpage.JPG", height: '300', width: '500',class:"img-responsive image" ), page_path('musicals') %></p>
 		</div>
 	</div><! -- row -->
 	
@@ -33,7 +33,7 @@
 	
 	<div class="row">
 		<div class="col-md-offset-1 col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("menu/Menu landing.PNG", height: '250', width: '500'), page_path('menu'), class:"img-responsive image"%></p>
+			<p style="text-align: center;"><%= link_to image_tag("menu/Menu landing.PNG", height: '250', width: '500', class:"img-responsive image"), page_path('menu') %></p>
 		</div>
 		<div class="col-md-5" style="padding: 35px;">
 			<h3><%=link_to "Menu", page_path('menu'), class: "individualportfolio"%> </h3>
@@ -56,7 +56,7 @@
 	
 	
 	<div class="col-md-5">
-		<p style="text-align: center;"><%= link_to image_tag("website/posts.PNG", height: '300', width: '500'), page_path('musicals'), class:"img-responsive image"%></p>
+		<p style="text-align: center;"><%= link_to image_tag("website/posts.PNG", height: '300', width: '500', class:"img-responsive image"), page_path('musicals') %></p>
 		</div>
 	
 	<div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;">
@@ -66,7 +66,7 @@
 	
 	<div class="row">
 		<div class="col-md-offset-1 col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("campaign/coming soon.jpg", height: '250', width: '500'), page_path('portfolio/campaign'), class:"img-responsive image"%></p>
+			<p style="text-align: center;"><%= link_to image_tag("campaign/coming soon.jpg", height: '250', width: '500', class:"img-responsive image"), page_path('portfolio/campaign') %></p>
 		</div>
 		<div class="col-md-5" style="padding: 35px;">
 			<h3><%=link_to "Campaign Management", page_path('campaign'), class: "individualportfolio"%> </h3>
