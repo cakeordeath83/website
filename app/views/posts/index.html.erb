@@ -1,5 +1,8 @@
 <div class="container-fluid">
-  <% provide(:title, "| Blog") %>
+  
+		<% provide(:title, "| Blog") %>
+	
+	
   <!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
@@ -25,11 +28,11 @@
         <div class="row">
           <div class="col-md-3" style="padding-top:20px;">
 						<div style="text-align: center;">
-						<%= link_to image_tag(post.image.url(:thumb),  class:"img-responsive"), post %> 
+						<%= link_to image_tag(post.image.url(:thumb),  class:"img-responsive center-block"), post %> 
 						</div>
           </div>
           <div class="col-md-8">
-						<p><strong style="font-size: large;"><%= link_to post.title, post_path(post) %></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
+						<p class="center-block"><strong style="font-size: large;"><%= link_to post.title, post_path(post)%></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
 						<!-- Workaround for stupid testing  -->
 						<% if post.content != nil %>
           		<p><%= sanitize(post.content.truncate(600)) %></p>

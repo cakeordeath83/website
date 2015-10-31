@@ -10,7 +10,7 @@ class SnippetsController < ApplicationController
       @snippets = Snippet.where(:category => params[:category]).paginate(page: params[:page], :per_page => 6).order(created_at: :desc)   
     
     else
-      @snippets = Snippet.all.paginate(page: params[:page], :per_page => 6).order(created_at: :desc)
+      @snippets = Snippet.all.paginate(page: params[:page], :per_page => 10).order(created_at: :desc)
     end
     @allsnippets = Snippet.all 
 		
