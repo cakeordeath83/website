@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
 	
-	before_action :find_tag, only: [:show, :edit, :update]
+	before_action :find_tag, only: [:show, :edit, :update, :destroy]
 	
 	add_breadcrumb "LEARNING GUIDES", :snippets_path
 	
@@ -24,6 +24,11 @@ class TagsController < ApplicationController
 		else
 			render :edit
 		end
+	end
+	
+	def destroy
+		@tag.destroy
+		redirect_to tags_path
 	end
 	
 	private

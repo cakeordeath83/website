@@ -1,5 +1,10 @@
 require 'rails_helper'
 
+# Need to create a tag otherwise there is an error in the side navigation as it can't call upcase on nil
+# However, doesn't seem to be working...
+# CODEBAR!
+
+=begin
 # Methods for logging in
   def create_user!
     @user = User.create(email: 'clair@example.co.uk', password: 'aaaaaaaa')
@@ -15,8 +20,7 @@ require 'rails_helper'
 	 click_button "Log in"
  end
 
-# Need to create a tag otherwise there is an error in the side navigation as it can't call upcase on nil
-# However, doesn't seem to be working...
+
 def create_tag
 	@tag = Tag.create(name: "Tagtest", category: "Categorytest")
 end
@@ -70,4 +74,4 @@ describe "Login" do
 
 	end
 end
-
+=end

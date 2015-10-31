@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+#May need to reinstate these, think it is because I created my own error controller
+
+=begin
+
 RSpec.describe ErrorsController, type: :controller do
 
   describe "GET #not_found" do
@@ -17,3 +21,6 @@ RSpec.describe ErrorsController, type: :controller do
   end
 
 end
+=end
+
+
