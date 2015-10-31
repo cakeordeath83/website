@@ -6,6 +6,7 @@ class TagsController < ApplicationController
 	
 	def show
 		add_breadcrumb "#{@tag.name.upcase}"
+		@title = @tag.name
 	end
 	
 	def new

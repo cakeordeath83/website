@@ -1,10 +1,11 @@
 <div class="container-fluid" %>
 	<% if params[:controller] == "snippets" %>
-	<% provide(:title, "| Category") %>
-	<% else %>
 	<% provide(:title, "| Guides") %>
+	<% else %>
+	<!-- this isn't working CODEBAR -->
+	<% provide(:title, "| Categories") %>
 	<% end %>
-	<%= params %>
+	
 	
   <!-- Headings -->
 	<div class="row">
