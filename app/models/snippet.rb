@@ -3,7 +3,7 @@ class Snippet < ActiveRecord::Base
   before_validation :create_slug
 	
 	has_many :taggings
-	has_many :tags, through: :taggings
+	has_many :tags, through: :taggings, :dependent => :destroy
 	accepts_nested_attributes_for :tags
 	
   validates :title, presence: true
