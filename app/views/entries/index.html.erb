@@ -1,6 +1,54 @@
-<h1>Entries</h1>
+<div class="container-fluid" %>
+  <% if params[:controller] == "entries" %>
+  <% provide(:title, "| Jargon Buster") %>
+	<% else %>
+	<!-- this isn't working CODEBAR -->
+	<% provide(:title, "| Categories") %>
+	<% end %>
 
-<% @entries.each do |entry| %>
-  <%= entry.title %>
-  <%= entry.description %>
-<% end %>
+	
+  <!-- Headings -->
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 headings">
+			<h1 style="margin-top: 0px; margin-bottom: 50px;">JARGON BUSTER</h1>
+			<p class="opening-paragraph-<%= params[:controller] %>">A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, %, !, ?</p>
+		</div>
+	</div>
+	
+  
+ 
+	
+  <!-- ADMIN -->
+       <% if user_signed_in? %>
+  <%= link_to "Add new entry", new_entry_path, class: "btn btn-default" %>
+      <% end %>
+  
+  <!-- Main body -->
+  <div class="row">
+    <div class="col-md-offset-1 col-md-8">
+      <% @entries.each do |entry| %>
+      <div class="individualsnippet"> 
+        <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
+        <p><%= entry.description %></p>
+      
+   
+      <!-- ADMIN -->
+         <% if user_signed_in? %>
+        <%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
+         <% end %>
+        </div><!-- individualpost -->
+      
+      
+      <div class="snippetseperator">
+        </div>
+        <% end %> <!-- @snippets iteration -->
+      <div class="paginatesnippets">
+        <!-- NEED PAGINATION CODE HERE!!-->
+      </div>
+    </div><!-- col-md -->
+
+    <!-- Side navigation -->
+    
+  
+  </div><!-- row -->
+</div><!-- container -->
