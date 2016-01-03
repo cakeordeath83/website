@@ -3,7 +3,11 @@ class EntriesController < ApplicationController
   before_action :find_entry, only:[:show, :edit, :update, :delete]
   
   def index
+    if params[:letter] 
+      @entries = Entry.select{|entry| entry.title.first == params[:letter]}
+    else
     @entries = Entry.all
+    end
   end
   
   def new
