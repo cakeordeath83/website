@@ -29,7 +29,7 @@
       <% @entries.each do |entry| %>
       <div class="individualsnippet"> 
         <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
-        <p><%= entry.description %></p>
+        <p><%= sanitize(entry.description.truncate(100, seperator: /\n/)) %></p>
       
    
       <!-- ADMIN -->
