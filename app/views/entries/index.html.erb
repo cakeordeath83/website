@@ -12,12 +12,13 @@
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">JARGON BUSTER</h1>
       <p><%= link_to 'ALL |', entries_path %>
-      <% ("A".."Z").each do |letter| %>
+        <% group = @all_entries.group_by{|entry| entry.title.first} %>
+        <% group.each do |letter, value| %>
         <%= link_to "#{letter} | ", entries_path(:letter => letter) %>
       <% end %>
-        <%= link_to '% |', entries_path(:letter => "%") %>
       </p>
 		</div>
+    
 	</div>
 	
   
