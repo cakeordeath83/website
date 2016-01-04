@@ -41,6 +41,10 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
   background-color: #2980b9;
 }
 
+#entries {
+  background-color: #6F532A;
+}
+
 #tags {
   background-color: #2980b9;
 }
@@ -211,6 +215,34 @@ body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li > a{
 .individualsnippet > p > strong > a {
   color: #54ACD2;
 }
+
+/* ENTRIES */ **********************************************************************************
+
+.opening-paragraph-entries {
+	padding: 30px;
+	font-size: 16px;
+	border: 2px solid #6F532A;
+}
+
+.entryseperator{
+  border-bottom: solid 1px #6F532A;  
+}
+
+.individualentry {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+.individualentry > p > strong > a {
+  color: #6F532A;
+}
+
+#entry > p > a {
+  color: #6F532A;
+}
+
+
 
 /* PORTFOLIO */
 

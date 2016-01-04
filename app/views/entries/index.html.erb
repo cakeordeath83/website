@@ -9,9 +9,10 @@
 	
   <!-- Headings -->
 	<div class="row">
-		<div class="col-md-offset-1 col-md-10 headings">
+		<div class="col-md-offset-2 col-md-8 headings" id="entry">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">JARGON BUSTER</h1>
       <p><%= link_to 'ALL |', entries_path %>
+        <!-- Needs putting into model somehow.... -->
         <% group = @all_entries.group_by{|entry| entry.title.first} %>
         <% group.each do |letter, value| %>
         <%= link_to "#{letter} | ", entries_path(:letter => letter) %>
@@ -31,9 +32,9 @@
   
   <!-- Main body -->
   <div class="row">
-    <div class="col-md-offset-1 col-md-8">
+    <div class="col-md-offset-2 col-md-8">
       <% @entries.each do |entry| %>
-      <div class="individualsnippet"> 
+      <div class="individualentry"> 
         <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
         <p><%= sanitize(entry.description.truncate(100, seperator: /\n/)) %></p>
       
@@ -45,7 +46,7 @@
         </div><!-- individualpost -->
       
       
-      <div class="snippetseperator">
+      <div class="entryseperator">
         </div>
         <% end %> <!-- @snippets iteration -->
       <div class="paginatesnippets">
