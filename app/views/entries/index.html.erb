@@ -14,7 +14,7 @@
       <p><%= link_to 'ALL |', entries_path %>
         <!-- Needs putting into model somehow.... -->
         <% group = @all_entries.group_by{|entry| entry.title.first} %>
-        <% group.each do |letter, value| %>
+        <% group.sort.each do |letter, value| %>
         <%= link_to "#{letter} | ", entries_path(:letter => letter) %>
       <% end %>
       </p>
