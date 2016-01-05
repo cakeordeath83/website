@@ -47,8 +47,8 @@
       <div class="entryseperator">
         </div>
         <% end %> <!-- @snippets iteration -->
-      <div class="paginatesnippets">
-        <!-- NEED PAGINATION CODE HERE!!-->
+      <div class="paginateentries">
+        <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>
     </div><!-- col-md -->
 

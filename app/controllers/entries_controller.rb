@@ -5,9 +5,10 @@ class EntriesController < ApplicationController
   def index
     @all_entries = Entry.all
     if params[:letter] 
-      @entries = Entry.select{|entry| entry.title.first == params[:letter]}
+      add_breadcrumb "#{params[:letter].upcase}", :entries_path
+      @entries = Entry.select{|entry| entry.title.first == params[:letter]}.paginate(page: params[:page], :per_page => 6)
     else
-    @entries = Entry.all
+    @entries = Entry.all.paginate(page: params[:page], :per_page => 5)
     end
   end
   
