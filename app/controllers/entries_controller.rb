@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
     end
   end
   
-  def new
+  def new 
     @entry = Entry.new
   end
   
