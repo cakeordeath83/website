@@ -6,14 +6,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'posts#index'
+  # root 'posts#index'
 	
 	devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-	
-  get 'homepage' => "static_pages#welcome"
-  get 'about' => "static_pages#about"
+
   get 'snippetcategory' => "snippets#snippetcategory"
   get "/404" => "errors#not_found"
   get "/500" => "errors#internal_server_error"

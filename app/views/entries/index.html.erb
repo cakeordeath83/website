@@ -1,11 +1,7 @@
 <div class="container-fluid" %>
-  
   <% provide(:title, "| Jargon Buster") %>
 	
-	
-
-	
-  <!-- Headings -->
+	<!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8 headings" id="entry">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">JARGON BUSTER</h1>
@@ -17,11 +13,7 @@
       <% end %>
       </p>
 		</div>
-    
-	</div>
-	
-  
- 
+  </div>
 	
   <!-- ADMIN -->
        <% if user_signed_in? %>
@@ -34,26 +26,21 @@
       <% @entries.each do |entry| %>
       <div class="individualentry"> 
         <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
-        <p><%= sanitize(entry.description.truncate(100, seperator: /\n/)) %></p>
-      
-   
-      <!-- ADMIN -->
-         <% if user_signed_in? %>
-        <%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
-         <% end %>
-        </div><!-- individualpost -->
-      
+        <p><%= sanitize(entry.description.split("\n")[0]) %></p>
+        <!-- ADMIN -->
+        <% if user_signed_in? %>
+          <%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
+        <% end %>
+      </div><!-- individualentry -->
       
       <div class="entryseperator">
         </div>
         <% end %> <!-- @snippets iteration -->
+      
+      <!-- PAGINATION -->
       <div class="paginateentries">
         <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>
     </div><!-- col-md -->
-
-    <!-- Side navigation -->
-    
-  
   </div><!-- row -->
 </div><!-- container -->
