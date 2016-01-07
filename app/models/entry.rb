@@ -1,8 +1,17 @@
 class Entry < ActiveRecord::Base
   
-    
-  def letters(thing)
-    thing.title
-  end
+  before_validation :create_slug  
+  
+  def to_param
+		slug
+	end
+  
+  def create_slug
+    if self.title =~ /^[!?.%&:;]/
+      self.slug = "character"
+    else
+		  self.slug = self.title.parameterize
+    end
+	end
   
 end
