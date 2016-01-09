@@ -9,15 +9,8 @@ class PostsController < ApplicationController
 	
   
   def index
-    if params[:category]
-      add_breadcrumb "#{params[:category].upcase}"
-      @posts = Post.where(:category => params[:category]).order(created_at: :desc).paginate(page: params[:page], :per_page => 3) 
-    elsif params[:month]
-      add_breadcrumb "#{params[:month].upcase}"
-      @posts = Post.where("trim(to_char(created_at, 'month')) = ?", params[:month].downcase).order(created_at: :desc).paginate(page: params[:page], :per_page => 3)
-    else
-      @posts = Post.all.order(created_at: :desc).paginate(page: params[:page], :per_page => 5)
-    end
+    @posts = Post.all
+    @current_post = @posts.find{|post| post.start_time < DateTime.now}
  end
   
   def new
@@ -27,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to posts_path
     else
       flash[:error]="Post was not saved"
       render :new
@@ -63,11 +56,11 @@ private
   end
   
   def post_params
-    params.require(:post).permit(:title, :content, :category, :image, :created_at, :slug)
+    params.require(:post).permit(:project, :description, :start_time, :end_time, :notes, :important)
   end
   
   def find_post
-    @post = Post.find_by_slug(params[:id])
+    @post = Post.find(params[:id])
   end
   
 end

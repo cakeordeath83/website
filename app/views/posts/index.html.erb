@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">CODING WITH CLAIR</h1>
-			<p class="opening-paragraph-<%= params[:controller]%>">Hello and welcome to my Blog/Portfolio! I'm currently teaching myself to code and...well...it's tough. This blog is my place to vent, question and generally comment on what I'm learning. If you are able to help answer any of the questions, please add your suggestions in the comments. If you are learning to code then I have some guides full of things that I've learnt and, of course, feel free to check out my portfolio!</p>
+      <p class="opening-paragraph-<%= params[:controller]%>">What I am currently working on: <%= @current_post.project %></p>
 		</div>
 	</div>
   
@@ -27,19 +27,16 @@
         
         <div class="row">
           <div class="col-md-3">
-						<div style="text-align: center;" >
-							<%= link_to image_tag(post.image.url(:thumb),  class:"img-responsive image center-block"), post %> 
+						<div style="text-align: center;">
+              <h3><%= post.project %> - <%= post.description %></h3>
+              
+              From <%= post.start_time.strftime("%H:%M") %> to <%= post.end_time.strftime("%H:%M") %>
+             
 						</div>
           </div>
-          <div class="col-md-8">
-						<p class="center-block"><strong style="font-size: large;"><%= link_to post.title, post_path(post)%></strong> &nbsp; &nbsp;  Posted on  <%= post.created_at.to_date %></p>
+          
 						
-						<!-- Workaround for stupid testing  -->
-						<% if post.content != nil %>
-						<p><%= sanitize(post.content.truncate(500)) %></p>
-						<% end %>
-          </div>
-        </div><!-- row -->
+						
         
         <!-- ADMIN -->
         <% if user_signed_in? %>
@@ -52,13 +49,11 @@
       
       <% end %> <!-- @posts iteration -->
 			
-      <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+      
 				
    </div> <!-- col-md -->
    
 
-    <!-- Side navigation -->
-    <%= render partial: 'layouts/sidenav' %>
     
   </div><!-- row --> 
  

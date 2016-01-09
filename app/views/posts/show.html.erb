@@ -1,10 +1,10 @@
-<% provide(:title, "| #{@post.title}") %>
+<% provide(:title, "| #{@post.project}") %>
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-offset-2 col-md-8" >
       <p style="text-align: center;"><%= image_tag @post.image.url(:medium)%></p>
-      <h1><%= @post.title %></h1>
+      <h1><%= @post.projety %></h1>
       <h5>Posted on <%= @post.created_at.to_date %></h5>
       <div class="postseperator">
 			</div>
@@ -15,7 +15,7 @@
        <%= render 'disqus' %>
     </div>
   
-     <%=link_to "Back to blog", posts_path, class: "btn btn-default" %>
+    <%=link_to "Back to daily thing", posts_path, class: "btn btn-default" %>
     
   </div>  
 </div>
