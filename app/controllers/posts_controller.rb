@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-    @current_post = @posts.find{|post| post.start_time < DateTime.now}
+    @live_post = @posts.find{|post| post.start_time < DateTime.now && post.end_time > DateTime.now}
+    
  end
   
   def new

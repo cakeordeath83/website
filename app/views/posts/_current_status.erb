@@ -1,0 +1,12 @@
+
+
+
+
+<% if @live_post != nil %>
+  <p class="opening-paragraph-<%= params[:controller]%>"><%="I am currently working on #{@live_post.project}"%></p>
+<% elsif %>
+  <%  Time.now.strftime("%H:%M") > "18:30" %>
+  <p class="opening-paragraph-<%= params[:controller]%>"><%="I am not working at the moment"%></p>
+<% else %>
+   <p class="opening-paragraph-<%= params[:controller]%>"><%="I am currently on a break but will be back shortly!"%>
+<% end %>
