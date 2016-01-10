@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   end
   
   def self.total_time(date)
-    posts = self.select{|post| post.start_time.strftime("%D") == date.strftime("%D")}
+    posts = self.select{|post| post.start_time.to_date == date}
     arr = []
     posts.each do |post|
       arr.push(post.end_time - post.start_time)

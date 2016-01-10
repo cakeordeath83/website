@@ -18,15 +18,14 @@
 
   
   <!-- Main body -->
-	  <div class="col-md-offset-1 col-md-8">
-      <div class="row" >
-         <div class="col-md-8" style="text-align: center;">
+	  <div class="col-md-offset-1 col-md-8", >
+      <div class="row" style="border: red 1px solid;">
+         
            <% p = @posts.group_by{|post| post.start_time.to_date} %>
               <% p.each do |post, value| %>
-          
+          <div class="col-md-8" style="text-align: center; border: blue 1px solid;">
            <h5><%= post.to_date %></h5>
-           
-						<table class="table">
+           <table class="table">
                 <thead>
                   <tr>
                     <td>Project</td>
@@ -37,7 +36,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
                   <% value.each do |posty| %>
                   <tr>
                     <td><%= posty.project %></td>
@@ -53,12 +51,13 @@
                 </tbody>
               </table>
            
-            </div> <!-- col-md -->
-        <div class="col-md-2">
-          <h5>Total time today: %></h5>
-           <p>Lovely chart going here</p>
-        </div>
-       <% end %>
+          </div> <!-- col-md-8 -->
+          <div class="col-md-2">
+            <h5>Total time today: <%= @posts.total_time(post) %></h5>
+          <p>Lovely chart going here</p>
+          </div> <!-- chart div -->
+      <% end %>
+       
       </div><!-- don't know why, stops page going too far horizontally -->
         
  </div><!-- row --> 
