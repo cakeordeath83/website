@@ -23,7 +23,9 @@
          <div class="col-md-8" style="text-align: center;">
            <% p = @posts.group_by{|post| post.start_time.to_date} %>
               <% p.each do |post, value| %>
+          
            <h5><%= post.to_date %></h5>
+           
 						<table class="table">
                 <thead>
                   <tr>
@@ -44,18 +46,20 @@
                     <td><%= posty.end_time.strftime("%H:%M") %></td>
                     
                       <% if user_signed_in? %>
-                        <td><%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %></td>
+                        <td><%= link_to "Edit", edit_post_path(posty), class:"btn btn-default" %></td>
                       <% end %>
                     <% end %>
                   </tr>
                 </tbody>
               </table>
-           <% end %>
+           
             </div> <!-- col-md -->
         <div class="col-md-2">
-           <p>Lovely picture going here</p>
+          <h5>Total time today: %></h5>
+           <p>Lovely chart going here</p>
         </div>
-        
+       <% end %>
       </div><!-- don't know why, stops page going too far horizontally -->
+        
  </div><!-- row --> 
 </div><!-- container -->
