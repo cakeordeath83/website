@@ -18,43 +18,44 @@
 
   
   <!-- Main body -->
-	<div class="row">
-    <div class="col-md-offset-1 col-md-8">
-    
-      <% @posts.each do |post| %>
-      <div class="individualpost" id="<%= dom_id(post)%>">
+	  <div class="col-md-offset-1 col-md-8">
+      <div class="row" >
+         <div class="col-md-8" style="text-align: center;">
+           <% p = @posts.group_by{|post| post.start_time.to_date} %>
+              <% p.each do |post, value| %>
+           <h5><%= post.to_date %></h5>
+						<table class="table">
+                <thead>
+                  <tr>
+                    <td>Project</td>
+                    <td>Description</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
+                    <td></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <% value.each do |posty| %>
+                  <tr>
+                    <td><%= posty.project %></td>
+                    <td><%= posty.description %></td>
+                    <td><%= posty.start_time.strftime("%H:%M") %></td>
+                    <td><%= posty.end_time.strftime("%H:%M") %></td>
+                    
+                      <% if user_signed_in? %>
+                        <td><%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %></td>
+                      <% end %>
+                    <% end %>
+                  </tr>
+                </tbody>
+              </table>
+           <% end %>
+            </div> <!-- col-md -->
+        <div class="col-md-2">
+           <p>Lovely picture going here</p>
+        </div>
         
-        
-        <div class="row">
-          <div class="col-md-3">
-						<div style="text-align: center;">
-              <h3><%= post.project %> - <%= post.description %></h3>
-              
-              From <%= post.start_time.strftime("%H:%M") %> to <%= post.end_time.strftime("%H:%M") %>
-             
-						</div>
-          </div>
-          
-						
-						
-        
-        <!-- ADMIN -->
-        <% if user_signed_in? %>
-          <%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %><br>
-        <% end %>
-        
-       </div><!-- individual post -->
-       <div class="postseperator">
-       </div>
-      
-      <% end %> <!-- @posts iteration -->
-			
-      
-				
-   </div> <!-- col-md -->
-   
-
-    
-  </div><!-- row --> 
- 
+      </div><!-- don't know why, stops page going too far horizontally -->
+ </div><!-- row --> 
 </div><!-- container -->
