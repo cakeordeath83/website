@@ -24,7 +24,6 @@
         <% p.sort_by{|post,value| post}.reverse.each do |post, value| %>
           <div class="col-md-8" style="text-align: center;">
             <h5><%= post.to_date %></h5>
-           
            <table class="table">
                 <thead>
                   <tr>
@@ -32,7 +31,7 @@
                     <td>Description</td>
                     <td>Start Time</td>
                     <td>End Time</td>
-                    <td></td>
+                    <td>Minutes</td>
                   </tr>
                 </thead>
                 <tbody>
@@ -42,6 +41,7 @@
                     <td><%= posty.description %></td>
                     <td><%= posty.start_time.strftime("%H:%M") %></td>
                     <td><%= posty.end_time.strftime("%H:%M") %></td>
+                    <td><%= posty.total_minutes %></td>
                     
                       <% if user_signed_in? %>
                         <td><%= link_to "Edit", edit_post_path(posty), class:"btn btn-default" %></td>
@@ -52,8 +52,9 @@
               </table>
            
           </div> <!-- col-md-8 -->
-          <div class="col-md-2">
-            <h5>Total time today: <%= @posts.total_time(post) %></h5>
+          <div class="col-md-4">
+            <h5>Total time today </h5>
+            <p><%= (@posts.total_time(post) / 3600).floor %> hours, <%= ((@posts.total_time(post) % 3600) / 60).round %> minutes</p>
           <p>Lovely chart going here</p>
           </div> <!-- chart div -->
       <% end %>
