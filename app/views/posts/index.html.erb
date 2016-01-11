@@ -19,12 +19,12 @@
   
   <!-- Main body -->
 	  <div class="col-md-offset-1 col-md-8", >
-      <div class="row" style="border: red 1px solid;">
-         
-           <% p = @posts.group_by{|post| post.start_time.to_date} %>
-              <% p.each do |post, value| %>
-          <div class="col-md-8" style="text-align: center; border: blue 1px solid;">
-           <h5><%= post.to_date %></h5>
+      <div class="row">
+        <% p = @posts.group_by{|post| post.start_time.to_date}%>
+        <% p.sort_by{|post,value| post}.reverse.each do |post, value| %>
+          <div class="col-md-8" style="text-align: center;">
+            <h5><%= post.to_date %></h5>
+           
            <table class="table">
                 <thead>
                   <tr>
