@@ -22,4 +22,12 @@ class Post < ActiveRecord::Base
     return arr.reduce(:+) 
   end
   
+  def self.projects
+    projects = []
+    self.each do |p|
+      projects.push(p.project)
+    end
+    projects
+  end
+  
 end

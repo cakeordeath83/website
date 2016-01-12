@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">CODING WITH CLAIR</h1>
-      <%= render partial: 'current_status' %>
+      <%= render partial: 'layouts/current_status' %>
 		</div>
 	</div>
   
@@ -55,10 +55,12 @@
           <div class="col-md-4">
             <h5>Total time today </h5>
             <p><%= (@posts.total_time(post) / 3600).floor %> hours, <%= ((@posts.total_time(post) % 3600) / 60).round %> minutes</p>
-          <p>Lovely chart going here</p>
+          <img src="<%= Gchart.pie_3d(:size => '200x100',
+  :data => [1,2,3,4,5], :labels => ["DHH", "Rob", "Matt"] )%>" />
           </div> <!-- chart div -->
       <% end %>
        
+         
       </div><!-- don't know why, stops page going too far horizontally -->
         
  </div><!-- row --> 

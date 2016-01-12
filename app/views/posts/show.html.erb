@@ -11,6 +11,7 @@
 			<div class="content">
       	<p> <%= sanitize @post.content %></p>
 			</div>
+     
 			<%= render_shareable :buttons=> ['twitter', 'facebook'] %>
        <%= render 'disqus' %>
     </div>

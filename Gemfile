@@ -24,7 +24,7 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'shareable'
 gem 'aws-sdk', '< 2.0'
-
+gem 'googlecharts', '~> 1.6', '>= 1.6.12', :require => "gchart"
 gem 'figaro'
 
 
