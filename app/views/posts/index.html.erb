@@ -6,7 +6,7 @@
   <!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
-			<h1 style="margin-top: 0px; margin-bottom: 50px;">CODING WITH CLAIR</h1>
+			<h1 style="margin-top: 0px; margin-bottom: 50px;">SCHEDULE</h1>
       <%= render partial: 'layouts/current_status' %>
 		</div>
 	</div>
@@ -18,24 +18,24 @@
 
   
   <!-- Main body -->
-	  <div class="col-md-offset-1 col-md-8", >
+	  <div class="col-md-offset-1 col-md-10", >
       <div class="row">
         <% p = @posts.group_by{|post| post.start_time.to_date}%>
         <% p.sort_by{|post,value| post}.reverse.each do |post, value| %>
-          <div class="col-md-8" style="text-align: center;">
-            <h5><%= post.to_date %></h5>
-           <table class="table">
+          <div class="col-md-8" >
+            <h4><%= post.to_date %></h4>
+           <table class="table", style="text-align: center;">
                 <thead>
                   <tr>
-                    <td>Project</td>
-                    <td>Description</td>
-                    <td>Start Time</td>
-                    <td>End Time</td>
-                    <td>Minutes</td>
+                    <td><strong>Project</strong></td>
+                    <td><strong>Description</strong></td>
+                      <td><strong>Start Time</strong></td>
+                      <td><strong>End Time</strong></td>
+                      <td><strong>Minutes</strong></td>
                   </tr>
                 </thead>
                 <tbody>
-                  <% value.each do |posty| %>
+                  <% value.sort_by{|p| p.start_time}.each do |posty| %>
                   <tr>
                     <td><%= posty.project %></td>
                     <td><%= posty.description %></td>
@@ -52,7 +52,7 @@
               </table>
            
           </div> <!-- col-md-8 -->
-          <div class="col-md-4">
+          <div class="col-md-4" style="text-align:center; margin-top: 50px;">
             <h5>Total time today </h5>
             <p><%= (@posts.total_time(post) / 3600).floor %> hours, <%= ((@posts.total_time(post) % 3600) / 60).round %> minutes</p>
           <img src="<%= Gchart.pie_3d(:size => '200x100',

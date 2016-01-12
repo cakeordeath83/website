@@ -1,12 +1,10 @@
-
-
-
-
-<% if @live_post != nil %>
-  <p class="opening-paragraph-<%= params[:controller]%>"><%="I am currently working on #{@live_post.project}"%></p>
+<% if live_post != nil %>
+<p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am working on #{live_post.project}"%></p>
+  
 <% elsif %>
   <%  Time.now.strftime("%H:%M") > "18:30" %>
-  <p class="opening-paragraph-<%= params[:controller]%>"><%="I am not working at the moment"%></p>
+  <p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am not currently working. If its late I'm probably asleep, if not I'm probably watching TV or messing around on the internet. Either way, I'm not studying"%></p>
 <% else %>
    <p class="opening-paragraph-<%= params[:controller]%>"><%="I am currently on a break but will be back shortly!"%>
+<p>Live post: <%= @live_post.inspect %></p>
 <% end %>

@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   end
   
   def total_minutes
-    (self.end_time - self.start_time) / 60
+    ((self.end_time - self.start_time) / 60).floor
   end
   
   def total_seconds
@@ -29,5 +29,7 @@ class Post < ActiveRecord::Base
     end
     projects
   end
+  
+ 
   
 end
