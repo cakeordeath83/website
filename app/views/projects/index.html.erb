@@ -1,7 +1,9 @@
-<h1>Projects</h1>
+<div class="container">
+  <h1>Projects</h1>
 
-<% @projects.each do |p| %>
-  <%= p.title %>
-  <%= p.link %>
-  <%= image_tag p.image.url %>
-<% end %>
+  <% @projects.each do |p| %>
+    <%= p.title %>
+    <%= p.link %>
+    <%= image_tag p.image.url %>
+  <% end %>
+</div>

@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  
+  belongs_to :project
   #Something to do with all of this.... but not quite working
  # def start_time_date
   #  self.start_time.to_date

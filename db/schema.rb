@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116163103) do
+ActiveRecord::Schema.define(version: 20160116165154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,10 @@ ActiveRecord::Schema.define(version: 20160116163103) do
     t.datetime "end_time"
     t.text     "notes"
     t.string   "important"
+    t.integer  "project_id"
   end
+
+  add_index "posts", ["project_id"], name: "index_posts_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -100,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160116163103) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "entries", "projects"
+  add_foreign_key "posts", "projects"
   add_foreign_key "taggings", "snippets"
   add_foreign_key "taggings", "tags"
 end

@@ -1,5 +1,5 @@
 <% if live_post != nil %>
-<p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am working on #{live_post.project}"%></p>
+<p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am working on #{live_post.project.title}"%></p>
   
 <% elsif %>
   <%  Time.now.strftime("%H:%M") > "18:30" %>

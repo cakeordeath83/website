@@ -1,5 +1,6 @@
 
-<% if live_post && live_post.project == "Programming book" %>
-  <%= image_tag("post_images/programming_ruby.jpg", height: '300', width: '200',class:"img-responsive image" ) %>
+<% if live_post %>
+<%= image_tag live_post.project.image.url %><br>
+<a href=<%= live_post.project.link %>>Link here</a>
 <% end %>
 
