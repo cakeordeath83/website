@@ -1,5 +1,7 @@
 class Entry < ActiveRecord::Base
  
+  belongs_to :project
+  
   before_validation :create_slug  
   
   def to_param
