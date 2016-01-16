@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   resources :posts
 	resources :snippets 
 	resources :tags
-  resources :entries
+  resources :entries 
+  resources :projects
   
 
   # Example resource route with options:
