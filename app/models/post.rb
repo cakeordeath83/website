@@ -1,6 +1,13 @@
 class Post < ActiveRecord::Base
- 
-  def total_hours
+  #Something to do with all of this.... but not quite working
+ # def start_time_date
+  #  self.start_time.to_date
+ # end
+  
+ # scope :posts_on_date, -> (date) {where(:start_time_date => date) }
+  
+  def total_hours(date)
+    posts = self.select{|post| post.start_time.to_date == date}
     (self.end_time - self.start_time) / 3600
   end
   
@@ -12,11 +19,10 @@ class Post < ActiveRecord::Base
     (self.end_time - self.start_time)
   end
 
-  
   def self.total_time(date)
-    posts = self.select{|post| post.start_time.to_date == date}
+    post = self.select{|post| post.start_time.to_date == date}
     arr = []
-    posts.each do |post|
+    post.each do |post|
       arr.push(post.total_seconds)
     end
     return arr.reduce(:+) 
@@ -30,6 +36,5 @@ class Post < ActiveRecord::Base
     projects
   end
   
- 
   
 end

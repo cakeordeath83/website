@@ -26,7 +26,7 @@ gem 'shareable'
 gem 'aws-sdk', '< 2.0'
 gem 'googlecharts', '~> 1.6', '>= 1.6.12', :require => "gchart"
 gem 'figaro'
-
+gem 'httparty', '~> 0.13.7'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

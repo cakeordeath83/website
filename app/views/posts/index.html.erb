@@ -1,9 +1,7 @@
 <div class="container-fluid">
+  <% provide(:title, "| Blog") %>
   
-		<% provide(:title, "| Blog") %>
-	
-	
-  <!-- Headings -->
+	<!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">SCHEDULE</h1>
@@ -12,56 +10,51 @@
 	</div>
   
   <!-- ADMIN -->
-       <% if user_signed_in? %>
-      <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
-      <% end %>
+  <% if user_signed_in? %>
+    <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
+  <% end %>
 
-  
   <!-- Main body -->
-	  <div class="col-md-offset-1 col-md-10", >
-      <div class="row">
-        <% p = @posts.group_by{|post| post.start_time.to_date}%>
-        <% p.sort_by{|post,value| post}.reverse.each do |post, value| %>
-          <div class="col-md-8" >
-            <h4><%= post.to_date %></h4>
-           <table class="table", style="text-align: center;">
-                <thead>
-                  <tr>
-                    <td><strong>Project</strong></td>
-                    <td><strong>Description</strong></td>
-                      <td><strong>Start Time</strong></td>
-                      <td><strong>End Time</strong></td>
-                      <td><strong>Minutes</strong></td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% value.sort_by{|p| p.start_time}.each do |posty| %>
-                  <tr>
-                    <td><%= posty.project %></td>
-                    <td><%= posty.description %></td>
-                    <td><%= posty.start_time.strftime("%H:%M") %></td>
-                    <td><%= posty.end_time.strftime("%H:%M") %></td>
-                    <td><%= posty.total_minutes %></td>
-                    
-                      <% if user_signed_in? %>
-                        <td><%= link_to "Edit", edit_post_path(posty), class:"btn btn-default" %></td>
-                      <% end %>
-                    <% end %>
-                  </tr>
-                </tbody>
-              </table>
-           
-          </div> <!-- col-md-8 -->
-          <div class="col-md-4" style="text-align:center; margin-top: 50px;">
-            <h5>Total time today </h5>
-            <p><%= (@posts.total_time(post) / 3600).floor %> hours, <%= ((@posts.total_time(post) % 3600) / 60).round %> minutes</p>
-          <img src="<%= Gchart.pie_3d(:size => '200x100',
-  :data => [1,2,3,4,5], :labels => ["DHH", "Rob", "Matt"] )%>" />
-          </div> <!-- chart div -->
-      <% end %>
-       
-         
-      </div><!-- don't know why, stops page going too far horizontally -->
-        
- </div><!-- row --> 
+  <div class="col-md-offset-1 col-md-10", >
+    <div class="row">
+      <% grouped_posts = @posts.group_by{|post| post.start_time.to_date}%>
+      <% grouped_posts.sort_by{|date,value| date}.reverse.each do |date, posts| %>
+        <div class="col-md-8" >
+          <h4><%= date.to_date %></h4>
+          <table class="table", style="text-align: center;">
+            <thead>
+              <tr>
+                  <td><strong>Project</strong></td>
+                  <td><strong>Description</strong></td>
+                  <td><strong>Start Time</strong></td>
+                  <td><strong>End Time</strong></td>
+                  <td><strong>Minutes</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+              <% posts.sort_by{|post| post.start_time}.each do |post| %>
+              <tr>
+                <td><%= post.project %></td>
+                <td><%= post.description %></td>
+                <td><%= post.start_time.strftime("%H:%M") %></td>
+                <td><%= post.end_time.strftime("%H:%M") %></td>
+                <td><%= post.total_minutes %></td>
+                <% if user_signed_in? %>
+                <td><%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %></td>
+                <% end %>
+              <% end %> <!--post.each-->
+                </tr>
+            </tbody>
+          </table>
+        </div> <!-- col-md-8 -->
+      
+        <div class="col-md-4" style="text-align:center; margin-top: 50px;">
+          <h5>Total time today </h5>
+          <p><%= (@posts.total_time(date) / 3600) %> hours, <%= ((@posts.total_time(date) % 3600) / 60).round %> minutes</p>
+          <%= posts %>
+          <img src="<%= Gchart.pie_3d(:size => '200x100', :data => [1,2,3,4,5], :labels => ["DHH", "Rob", "Matt"] )%>" />
+        </div><!-- col-md-4 -->
+      <% end %><!-- grouped_post.each -->
+     </div><!-- row -->
+  </div><!-- col-md-10 --> 
 </div><!-- container -->

@@ -1,29 +1,4 @@
-<head>
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Description', 'Minutes'],
-          ['<%=@posty.description%>', <%=@posty.total_minutes%>],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-
-        var options = {
-          title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-</head>
-<body>
-    <div id="piechart" style="width: 90px; height: 50px;"></div>
-</body>
+<img src="<%= Gchart.pie_3d(:size => '200x100', :data => [1,2,3,4,5], :labels => ["DHH", "Rob", "Matt"] )%>" />
+<%= @posts %>
+<br>
