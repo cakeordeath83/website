@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body > div.container > div > div > p > a {
+  color: white;
+}
+
 
 body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.active > span {
   background-color: #27ae60;
@@ -96,6 +100,7 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 
 body{
   font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px,
 }
 
 .content {
@@ -111,6 +116,10 @@ body{
 
 .individual-entry {
   margin-top: 20px;
+}
+
+body > div.container > div > div > p > a {
+  color: white;
 }
 
 /* POSTS */

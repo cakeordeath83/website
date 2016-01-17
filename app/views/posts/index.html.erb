@@ -34,7 +34,7 @@
             <tbody>
               <% posts.sort_by{|post| post.start_time}.each do |post| %>
               <tr>
-                <td><%= post.project %></td>
+                <td><%= post.project.title %></td>
                 <td><%= post.description %></td>
                 <td><%= post.start_time.strftime("%H:%M") %></td>
                 <td><%= post.end_time.strftime("%H:%M") %></td>
@@ -55,6 +55,7 @@
           <img src="<%= Gchart.pie_3d(:size => '200x100', :data => [1,2,3,4,5], :labels => ["DHH", "Rob", "Matt"] )%>" />
         </div><!-- col-md-4 -->
       <% end %><!-- grouped_post.each -->
+      
      </div><!-- row -->
   </div><!-- col-md-10 --> 
 </div><!-- container -->

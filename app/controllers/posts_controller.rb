@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 	
   before_action :find_post, only: [:show, :edit, :update, :delete]
   before_action :allposts
+  before_action :project_options, only: [:new, :edit, :update, :create]
   add_breadcrumb "ALL POSTS", :posts_path
   
 	
@@ -50,11 +51,15 @@ private
   end
   
   def post_params
-    params.require(:post).permit(:project, :description, :start_time, :end_time, :notes, :important)
+    params.require(:post).permit(:project, :description, :start_time, :end_time, :notes, :important, :project_id)
   end
   
   def find_post
     @post = Post.find(params[:id])
   end
+  
+  def project_options
+    @project_options = Project.all.map{|p| [p.title, p.id]}
+    end
   
 end
