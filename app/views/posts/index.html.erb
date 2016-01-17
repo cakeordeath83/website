@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <% provide(:title, "| Blog") %>
+  <% provide(:title, "| Schedule") %>
   
 	<!-- Headings -->
 	<div class="row">
@@ -11,7 +11,7 @@
   
   <!-- ADMIN -->
   <% if user_signed_in? %>
-    <%= link_to "Add new post", new_post_path, class: "btn btn-default" %>
+    <%= link_to "Add new activity", new_post_path, class: "btn btn-default" %>
   <% end %>
 
   <!-- Main body -->
@@ -49,10 +49,8 @@
         </div> <!-- col-md-8 -->
       
         <div class="col-md-4" style="text-align:center; margin-top: 50px;">
-          <h5>Total time today </h5>
-          <p><%= (@posts.total_time(date) / 3600) %> hours, <%= ((@posts.total_time(date) % 3600) / 60).round %> minutes</p>
-          <%= posts %>
-          <img src="<%= Gchart.pie_3d(:size => '200x100', :data => [1,2,3,4,5], :labels => ["DHH", "Rob", "Matt"] )%>" />
+          <h4>Total time today </h4>
+          <p><%= (@posts.total_time(date) / 3600).round %> hours, <%= ((@posts.total_time(date) % 3600) / 60).round %> minutes</p>
         </div><!-- col-md-4 -->
       <% end %><!-- grouped_post.each -->
       

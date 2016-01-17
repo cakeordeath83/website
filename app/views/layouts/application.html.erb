@@ -1,87 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Coding with Clair <%=yield(:title) %></title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-	
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	
-	<%= favicon_link_tag 'favicon.ico' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	
-	<nav class="navbar navbar-default header" id="<%= params[:controller]%>">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="navbar-brand" id="Home">
-        <%= link_to "HOME", page_path('welcome') %>
-      </div>
-    </div>
+  <html>
+    <head>
+      <title>Coding with Clair <%=yield(:title) %></title>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+      <%= favicon_link_tag 'favicon.ico' %>
+      <%= csrf_meta_tags %>
+    </head>
+    <body>
+      <nav class="navbar navbar-default header" id="<%= params[:controller]%>">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand" id="Home">
+              <%= link_to "HOME", page_path('welcome') %>
+            </div>
+        </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
-				
-        <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
-        <li><%= link_to "JARGON BUSTER", entries_path%></li>
-        <li><%= link_to "SCHEDULE", posts_path %></li>
-        <li><%= link_to "PORTFOLIO", page_path('portfolio') %></li>
-      </ul>
-			
-			
-			
-      
-      <ul class="nav navbar-nav navbar-right">
-         <% if user_signed_in? %>
-         <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %> </li>
-				<li><%= link_to "ASSIGN TAG CATEGORIES", tags_path %> </li>
-        <% end %>
-           <li><a href="http://github.com/cakeordeath83">GITHUB</a></li>
-           <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
-         <li><%= link_to "ABOUT", page_path('about') %></li>
-       </ul>
-        
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-  
- 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
+            <li><%= link_to "JARGON BUSTER", entries_path%></li>
+            <li><%= link_to "SCHEDULE", posts_path %></li>
+            <li><%= link_to "PORTFOLIO", page_path('portfolio') %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %> </li>
+              <li><%= link_to "ASSIGN TAG CATEGORIES", tags_path %> </li>
+            <% end %>
+              <li><a href="http://github.com/cakeordeath83">GITHUB</a></li>
+              <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
+              <li><%= link_to "ABOUT", page_path('about') %></li>
+          </ul>
+      </div><!-- /.navbar-header -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
   <div class="flash"><%= render 'layouts/messages' %></div>
-  
-  <ol class="breadcrumb">
-    <%= render_breadcrumbs :tag => :li, :separator => "" %>
-  </ol>
+    <ol class="breadcrumb">
+      <%= render_breadcrumbs :tag => :li, :separator => "" %>
+    </ol>
 
-  
-<%= yield %>
-  
-  <footer class="footer" id="<%= params[:controller]%>">
-    <div class="container">
-      <div class="row" style="padding-top:20px;">
-				<div class="text-center">
-         <ul style="text-alignment: center">
-           
-            <li style="display:inline; padding-left:20px;"><%= link_to('BLOG', posts_path)%></li>
-					  <li style="display:inline; padding-left:20px;"><%= link_to('LEARNING GUIDES', snippets_path)%></li>
-            <li style="display:inline; padding-left:20px;"><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
-            <li style="display:inline; padding-left:20px;"><a href="http://github.com/clairgriffiths">GITHUB</a> </li>
-           <% if !user_signed_in? %>
-            <li style="display:inline; padding-left:20px;"><%= link_to('SIGN IN', new_user_session_path)%></li>
-           <% end %>
-           
-        </ul>     
-				</div>
+  <%= yield %>
+
+    <footer class="footer" id="<%= params[:controller]%>">
+      <div class="container">
+        <div class="row" style="padding-top:20px;">
+          <div class="text-center">
+            <ul style="text-alignment: center">
+              <li style="display:inline; padding-left:20px;"><%= link_to('LEARNING GUIDES', snippets_path)%></li>
+              <li style="display:inline; padding-left:20px;"><%= link_to('JARGON BUSTER', snippets_path)%></li>
+              <li style="display:inline; padding-left:20px;"><%= link_to('SCHEDULE', posts_path)%></li>
+              <li style="display:inline; padding-left:20px;"><%= link_to('PORTFOLIO', page_path('portfolio'))%></li>
+              <li style="display:inline; padding-left:20px;"><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
+              <li style="display:inline; padding-left:20px;"><a href="http://github.com/clairgriffiths">GITHUB</a> </li>
+                <% if !user_signed_in? %>
+              <li style="display:inline; padding-left:20px;"><%= link_to('SIGN IN', new_user_session_path)%></li>
+                <% end %>
+            </ul>     
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

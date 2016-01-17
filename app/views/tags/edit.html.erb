@@ -1,16 +1,11 @@
 <div class="container">
-<h1>Edit tag category</h1><br>
-
-	<div class="margin: 10px;">
-		<h5><strong>Tag name: </strong><%= @tag.name %></h5><br>
-
-<%= form_for @tag do |f| %>
-<%= f.label :category %>
-<%= f.text_field :category %><br>
-<%= f.submit %>
-<% end %>
-	</div><br>
-	
-
-
+  <h1>Edit tag category</h1><br>
+  <div class="margin: 10px;">
+    <h5><strong>Tag name: </strong><%= @tag.name %></h5><br>
+    <%= form_for @tag do |f| %>
+    <%= f.label :category %>
+    <%= f.text_field :category %><br>
+    <%= f.submit %>
+    <% end %>
+  </div><br>
 </div>

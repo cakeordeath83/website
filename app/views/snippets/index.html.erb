@@ -1,13 +1,12 @@
 <div class="container-fluid" %>
 	<% if params[:controller] == "snippets" %>
-	<% provide(:title, "| Guides") %>
+	  <% provide(:title, "| Guides") %>
 	<% else %>
-	<!-- this isn't working CODEBAR -->
-	<% provide(:title, "| Categories") %>
+	  <!-- this isn't working CODEBAR -->
+	  <% provide(:title, "| Categories") %>
 	<% end %>
 
-	
-  <!-- Headings -->
+	<!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 style="margin-top: 0px; margin-bottom: 50px;">LEARNING GUIDES</h1>
@@ -15,13 +14,10 @@
 		</div>
 	</div>
 	
-  
- 
-	
   <!-- ADMIN -->
-       <% if user_signed_in? %>
-      <%= link_to "Add new snippet", new_snippet_path, class: "btn btn-default" %>
-      <% end %>
+  <% if user_signed_in? %>
+    <%= link_to "Add new snippet", new_snippet_path, class: "btn btn-default" %>
+  <% end %>
   
   <!-- Main body -->
   <div class="row">
@@ -29,20 +25,19 @@
       <% @snippets.each do |snippet| %>
       <div class="individualsnippet">
         <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
-      
-   
-      <!-- ADMIN -->
-         <% if user_signed_in? %>
-           <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
-         <% end %>
-        </div><!-- individualpost -->
-      
+        <!-- ADMIN -->
+        <% if user_signed_in? %>
+          <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
+        <% end %>
+      </div><!-- individualpost -->
       
       <div class="snippetseperator">
-        </div>
-        <% end %> <!-- @snippets iteration -->
+      </div>
+      
+      <% end %> <!-- @snippets iteration -->
+      
       <div class="paginatesnippets">
-      <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+        <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>
     </div><!-- col-md -->
 

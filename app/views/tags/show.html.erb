@@ -1,29 +1,23 @@
 <div class="container-fluid">
 	<div class="row">
-		
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1><%= @tag.name.upcase %></h1>
-    
-  </div>
-		
-			<div class="col-md-offset-1 col-md-8">
-				<% @tag.snippets.each do |snippet| %>
-				<div class="individualsnippet">
-					<p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
-
+    </div>
+		<div class="col-md-offset-1 col-md-8">
+      <% @tag.snippets.each do |snippet| %>
+			  <div class="individualsnippet">
+				  <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
 
 				<!-- ADMIN -->
-					 <% if user_signed_in? %>
-						 <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
-					 <% end %>
-					</div><!-- individualpost -->
+					<% if user_signed_in? %>
+					  <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
+					<% end %>
+				</div><!-- individualpost -->
 
-
-				<div class="snippetseperator">
-					</div>
-					<% end %> <!-- @snippets iteration -->
-				
-			</div><!-- col-md -->
+        <div class="snippetseperator">
+				</div>
+			<% end %> <!-- @snippets iteration -->
+		</div><!-- col-md -->
 
 			<!-- Side navigation -->
 			<%= render partial: 'layouts/sidenav' %>

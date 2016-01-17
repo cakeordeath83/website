@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :delete]
   before_action :allposts
   before_action :project_options, only: [:new, :edit, :update, :create]
-  add_breadcrumb "ALL POSTS", :posts_path
+  add_breadcrumb "ALL ACTIVITIES", :posts_path
   
 	
   

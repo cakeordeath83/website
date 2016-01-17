@@ -247,12 +247,13 @@ body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li > a{
   color: #6F532A;
 }
 
-body > div.container-fluid > div:nth-child(3) > div > div.paginateentries > ul > li.active > span {
+body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul > li.active > span {
   background-color: #6F532A;
   border-color: #6F532A;
 }
 
-body > div.container-fluid > div:nth-child(3) > div > div.paginateentries > ul > li:nth-child(n) > a {
+
+body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul > li:nth-child(n) > a {
   color: #6F532A;
   border-color: #6F532A;
 }

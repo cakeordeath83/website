@@ -13,13 +13,11 @@
       <% end %>
       </p>
 		</div>
+      <% if user_signed_in? %>
+        <%= link_to "Add new entry", new_entry_path, class: "btn btn-default" %>
+      <% end %>
   </div>
 	
-  <!-- ADMIN -->
-       <% if user_signed_in? %>
-  <%= link_to "Add new entry", new_entry_path, class: "btn btn-default" %>
-      <% end %>
-
   <!-- Main body -->
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
@@ -27,22 +25,18 @@
       <div class="individualentry"> 
         <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
         <p><%= sanitize(entry.description.split("\n")[0]) %></p>
-        <!-- ADMIN -->
         <% if user_signed_in? %>
           <%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
         <% end %>
-      </div><!-- individualentry -->
-      
+      </div>
       <div class="entryseperator">
-        </div>
-        <% end %> <!-- @snippets iteration -->
+      </div>
+      <% end %> <!-- @entries iteration -->
       
       <!-- PAGINATION -->
       <div class="paginateentries">
         <%= will_paginate @entries, renderer: BootstrapPagination::Rails %>
       </div> 
-     
-     
     </div><!-- col-md -->
   </div><!-- row -->
 </div><!-- container -->

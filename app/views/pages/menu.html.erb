@@ -2,79 +2,72 @@
 	<% provide(:title, "| Menu") %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8" >
-    <h1 class="text-center">Menu app</h1><br>
-			
-			<div class="portfolioseperator">
+      <h1 class="text-center">Menu app</h1><br>
+		    <div class="portfolioseperator">
         </div>
-  
-  <div class="content">
-		<p><strong>Github link: </strong><a href="https://github.com/clairgriffiths/menu">Here</a></p>
-    <p><strong>Elevator pitch:</strong> A Just Eat clone for lunchtime without the delivery.</p>
-
-    <p><strong>Client: </strong>Local office workers that want a change from the usual Tesco mealdeal but don’t want to spend their lunch hour visiting lots of different places.</p>
-    
-    <p><strong>Features </strong></p>
-		<p>For the Visitor</p>
-    <ul>
-      <li>Search for closest by postcode.</li>
-      <li>A Randomiser that presents a potential lunch choice.</li>
-			<li>Search by category of food.  </li>
-		</ul>
-		
-		<p>For the Visitor</p>
-    <ul>
-      <li>Items can be selected as ‘Specials’ and are indicated at the top of the menu</li>
-		</ul>
-  </div>
+        <div class="content">
+		      <p><strong>Github link: </strong><a href="https://github.com/clairgriffiths/menu">Here</a></p>
+          <p><strong>Elevator pitch:</strong> A Just Eat clone for lunchtime without the delivery.</p>
+          <p><strong>Client: </strong>Local office workers that want a change from the usual Tesco mealdeal but don’t want to spend their lunch hour visiting lots of different places.</p>
+          <p><strong>Features </strong></p>
+		      <p>For the Visitor</p>
+          <ul>
+            <li>Search for closest by postcode.</li>
+            <li>A Randomiser that presents a potential lunch choice.</li>
+			      <li>Search by category of food.  </li>
+		      </ul>
+		      <p>For the Visitor</p>
+            <ul>
+              <li>Items can be selected as ‘Specials’ and are indicated at the top of the menu</li>
+		        </ul>
+        </div>
 			
-	<div class="portfolioseperator">
-  </div>
+	      <div class="portfolioseperator">
+        </div>
 		
-	<div class="content">
-				
-		<p><strong>Description</strong></p>
-			<p>WRITE ME! </p>
-			<p>WRITE ME!</p>
+	      <div class="content">
+			    <p><strong>Description</strong></p>
+			    <p>WRITE ME! </p>
+			    <p>WRITE ME!</p>
 		
-		<p><strong>Things I'm proud of </strong></p>
-			<ul>
-				<li>Randomiser function.</li>
-				<li>An ‘Add to randomiser’ checkbox when setting up a category (not necessarily proud of the functionality of the checkbox, more how I got round the problem of not wanting to offer Drinks or Cakes).</li>
-				<li>The dropdown box showing each category and then using this to filter results (category is an attribute of an item which belongs_to a retailer.</li>
-			</ul>
+		      <p><strong>Things I'm proud of </strong></p>
+			      <ul>
+				      <li>Randomiser function.</li>
+				      <li>An ‘Add to randomiser’ checkbox when setting up a category (not necessarily proud of the functionality of the checkbox, more how I got round the problem of not wanting to offer Drinks or Cakes).</li>
+				      <li>The dropdown box showing each category and then using this to filter results (category is an attribute of an item which belongs_to a retailer.</li>
+			      </ul>
     
-    
-    <p><strong>Future developments </strong></p>
-			<ul>
-				<li>Email with daily specials</li>
-				<li>Login for visitors that would then allow them to save preferences</li>
-				<li>Bulk update menus (rather than 1 item at a time)</li>
-			</ul>
+           <p><strong>Future developments </strong></p>
+			       <ul>
+				       <li>Email with daily specials</li>
+               <li>Login for visitors that would then allow them to save preferences</li>
+               <li>Bulk update menus (rather than 1 item at a time)</li>
+			       </ul>
     
 
-		<p><strong>Gems I used </strong></p>
-			<ul>
-				<li>Geocoder – To show the location of the theatre on a Google Map</li>
-				<li>Paperclip – To upload an image for each </li>
-				<li>Bootstrap and Bootstrap_form – For styling</li>
-				<li>AWS-SDK – For storing the uploaded images</li>
-				<li>Figaro – For authentication of the AWS account</li>
-			</ul>
+		      <p><strong>Gems I used </strong></p>
+			      <ul>
+              <li>Geocoder – To show the location of the theatre on a Google Map</li>
+              <li>Paperclip – To upload an image for each </li>
+              <li>Bootstrap and Bootstrap_form – For styling</li>
+              <li>AWS-SDK – For storing the uploaded images</li>
+              <li>Figaro – For authentication of the AWS account</li>
+			      </ul>
     
 
-   <p><strong>Potential future code cleanup </strong></p>
-			<ul>
-				<li>Testing!</li>
-				<li>Refactoring – I’m sure that the code is pretty ‘smelly’ and moving some of the methods into scopes or helpers/partials will make it easier to read</li>
-				<li>Changing the login system to use Devise</li>
-			</ul>
+        <p><strong>Potential future code cleanup </strong></p>
+          <ul>
+            <li>Testing!</li>
+            <li>Refactoring – I’m sure that the code is pretty ‘smelly’ and moving some of the methods into scopes or helpers/partials will make it easier to read</li>
+            <li>Changing the login system to use Devise</li>
+          </ul>
     
-		<div class="portfolioseperator">
-    </div>
+		  <div class="portfolioseperator">
+      </div>
 				
-		<div class="content">
-			<p><strong>Screenshots</strong></p>
-			</div>
+		  <div class="content">
+			  <p><strong>Screenshots</strong></p>
+		  </div>
 
 		<div class="col-md-12">
 			<p class="portfolioimages" style="text-align: center;"><%= image_tag "menu/Menu landing.PNG", height: '500', width: '800', class: "img-responsive image"%></p>
@@ -82,9 +75,7 @@
 			<p class="portfolioimages"><%= image_tag "menu/category.PNG", height: '500', width: '800', class: "img-responsive image"%></p>
 			<p class="portfolioimages"><%= image_tag "menu/Surprise me.PNG", height: '500', width: '800', class: "img-responsive image"%></p>
 			<p class="portfolioimages"><%= image_tag "menu/Show items.PNG", height: '500', width: '800', class: "img-responsive image"%></p>
-			
 		</div>
 
-    
-		</div><!-- row -->
+    </div><!-- row -->
 </div><!-- container -->

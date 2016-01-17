@@ -1,23 +1,19 @@
-<%= form_for @entry do |form| %>
-  <div class="formtitle">
+<div class="formtitle">
+  <%= form_for @entry do |form| %>
     <% if @entry.errors.any? %>
       <div id="error_explanation">
         <h5><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h5>
-
         <ul>
           <% @entry.errors.full_messages.each do |message| %>
           <li><%= message %></li>
-        <% end %>
+          <% end %>
         </ul>
-				
-      </div>
+			</div>
 		<% end %>
+  
     <%= form.label :title %>
     <%= form.text_field :title %>
-    
-		
-		  </div>
-  <%= form.cktext_area :description %><br>
- 
-  <%= form.submit %>
+    <%= form.cktext_area :description %><br>
+    <%= form.submit %>
   <% end %>
+</div>

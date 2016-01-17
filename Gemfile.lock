@@ -61,6 +61,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (1.4.1)
     ckeditor (4.1.4)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -91,6 +92,8 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     googlecharts (1.6.12)
+    groupdate (2.5.0)
+      activesupport (>= 3)
     high_voltage (2.4.0)
     httparty (0.13.7)
       json (~> 1.8)
@@ -231,11 +234,13 @@ DEPENDENCIES
   breadcrumbs_on_rails
   byebug
   capybara (~> 2.5.0)
+  chartkick (~> 1.4, >= 1.4.1)
   ckeditor
   coffee-rails (~> 4.1.0)
   devise
   figaro
   googlecharts (~> 1.6, >= 1.6.12)
+  groupdate
   high_voltage (~> 2.4.0)
   httparty (~> 0.13.7)
   jbuilder (~> 2.0)

@@ -2,20 +2,19 @@
 <div class = "container-fluid" >
   <div class="row">
     <div class="col-md-offset-2 col-md-8" >
-    <h1 class="text-center"><%= @snippet.title %></h1><br>
-			
-			<div class="snippetseperator">
-        </div>
-			
-			<div class="content">
-    <p><%= sanitize @snippet.content %></p>
-			</div>
+      <h1 class="text-center"><%= @snippet.title %></h1><br>
 
-    <% if user_signed_in? %>
-    <%= link_to "Edit", edit_snippet_path(@snippet), class: "btn btn-default" %>
-    <% end %>
-    
-      
+      <div class="snippetseperator">
+      </div>
+
+      <div class="content">
+        <p><%= sanitize @snippet.content %></p>
+      </div>
+
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_snippet_path(@snippet), class: "btn btn-default" %>
+      <% end %>
+
       <%= render_shareable :buttons=> ['twitter', 'facebook'] %>
       <%= render partial: 'snippets/disqus' %>
     </div>

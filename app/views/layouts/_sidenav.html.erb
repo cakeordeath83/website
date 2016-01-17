@@ -1,28 +1,11 @@
 <div class="col-md-2 side-column-<%=params[:controller] %>" style="padding-left: 40px;" >
-  <% if params[:controller] == "posts" %>
-  <h4>CATEGORIES</h4>
-    <% @allposts.group_by{|post| post.category}.each do |category, value| %>
-    <li class="list-unstyled"><%= link_to category, posts_path(:category => category) %></li>
-    <% end %>
-  <br>
-  
-	<h4>MONTHS </h4>
-	<% @allposts.order(created_at: :desc).group_by{|post| post.created_at.strftime("%B")}.each do |month, values| %>
-    <li class="list-unstyled"><%= link_to month, posts_path(:month => month) %></li>
-    <% end %>
-  
-  <% else %>
-    
-		<h4 style="padding-bottom: 10px;">TAGS</h4>
-			<% Tag.all.group_by{|tag| tag.category}.each do |category, value| %>
-	<h5 style="margin-bottom: 10px;"><%= category.upcase %></h5>
-				<% value.each do |value| %>
-					<ul style="padding-left: 20px; margin: 2px;">
-						<li class="list-unstyled"><%= link_to value.name, tag_path(value.id) %></li>
-					</ul>
-				<% end %>
-	    <% end %>
-	
-  <% end %>
-  
+  <h4 style="padding-bottom: 10px;">TAGS</h4>
+    <% Tag.all.group_by{|tag| tag.category}.each do |category, value| %>
+	    <h5 style="margin-bottom: 10px;"><%= category.upcase %></h5>
+			<% value.each do |value| %>
+			<ul style="padding-left: 20px; margin: 2px;">
+			  <li class="list-unstyled"><%= link_to value.name, tag_path(value.id) %></li>
+			</ul>
+			<% end %>
+	  <% end %>
 </div>

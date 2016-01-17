@@ -1,15 +1,12 @@
-
 <%= form_for @post do |form| %>
   <div class="formtitle">
-    
     <% if @post.errors.any? %>
       <div id="error_explanation">
         <h5><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h5>
-
         <ul>
-        <% @post.errors.full_messages.each do |message| %>
+          <% @post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
-        <% end %>
+          <% end %>
         </ul>
       </div>
     <% end %>
@@ -24,12 +21,9 @@
     <%= form.text_field :notes %><br>
     <%= form.label :important %>
     <%= form.text_field :important %><br>
-		
+	  <%= form.submit %>
   </div>
-   
- 
-  <%= form.submit %>
-  <% end %>
+<% end %>
   
   
 
