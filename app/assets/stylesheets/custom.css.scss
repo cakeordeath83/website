@@ -1,10 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$coding-green: #00A885; 
+$coding-purple: #655F7E;
+$coding-blue: #2980b9;
+$coding-brown: #6F532A;
+
+
 body > div.container > div > div > p > a {
   color: white;
 }
-
 
 body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.active > span {
   background-color: #27ae60;
@@ -13,6 +18,10 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 /* ALL */
 * {
   border-radius: 0 !important;
+}
+
+.body {
+  margin-bottom: 60px;
 }
 
 .a {
@@ -25,7 +34,7 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 }
 
 .header {
-  background-color: #00A885;
+  background-color: $coding-green;
 }
 
 .breadcrumb {
@@ -34,23 +43,23 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 }
 
 #static_pages {
-  background-color: #00A885;
+  background-color: $coding-green;
 }
 
 #posts {
-  background-color: #655F7E;
+  background-color: $coding-purple;
 }
 
 #snippets {
-  background-color: #2980b9;
+  background-color: $coding-blue;
 }
 
 #entries {
-  background-color: #6F532A;
+  background-color: $coding-brown;
 }
 
 #tags {
-  background-color: #2980b9;
+  background-color: $coding-blue;
 }
 
 #error_explanation {
@@ -59,14 +68,15 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 
 /* HEADINGS */
 
-.headings > h1 {
-  text-align:center; 
-  margin-bottom: 30px;
-	padding-left: 0px;
-}
-
-.headings > p {
-  margin-bottom: 40px;
+.headings {
+  h1 {
+    text-align:center; 
+    margin-bottom: 30px;
+	  padding-left: 0px;
+  }
+  p {
+    margin-bottom: 40px;
+  }
 }
 
 /* WELCOME PAGE */
@@ -74,8 +84,7 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
   text-align: center;
 }
 
-/* NAVBAR */
-
+/* NAVIGATION */
 /* TEXT */
 #bs-example-navbar-collapse-1 > ul > li > a {
   color: white;
@@ -89,8 +98,6 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 	color: white;
 }
 
-
-
 #Home > a {
   color: white;
   text-decoration: none;
@@ -100,26 +107,15 @@ body > div > div.row > div.col-md-offset-2.col-md-6 > div.paginate > ul > li.act
 
 body{
   font-family: "Roboto", Arial, sans-serif;
-  font-size: 16px,
+  font-size: 16px;
 }
-
-.content {
-	padding: 20px 0px;
-}
-
-
-/* ALL PAGES */
 
 .heading {
   text-align: center;
 }
 
-.individual-entry {
-  margin-top: 20px;
-}
-
-body > div.container > div > div > p > a {
-  color: white;
+.content {
+	padding: 20px 0px;
 }
 
 /* POSTS */
@@ -127,163 +123,132 @@ body > div.container > div > div > p > a {
 .opening-paragraph-posts {
 	padding: 30px;
 	font-size: 16px;
-	border: 2px solid #655F7E;
-}
-
-.side-column-posts {
-  background-color: #655F7E ;
-  color: white;
-  margin-top: 10px;
-  padding: 20px;
-}
-
-.side-column-posts li > a{
-  text-decoration: none;
-  color: white;
+	border: 2px solid $coding-purple;
 }
 
 .postseperator{
-  border-bottom: solid 1px #655F7E;  
+  border-bottom: solid 1px $coding-purple;  
 }
 
 .individualpost {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-right: 20px;
+  div > div p > strong > a {
+    color: $coding-purple;
+  }
 }
 
-.individualpost > div > div p > strong > a {
-  color: #655F7E;
-}
-
-
-.image {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-
-/* Pagination */
+/* Pagination  DROP THIS IF YOU DECIDE NOT TO PAGINATE THE POSTS PAGE!!*/
 body > div.container-fluid > div.row > div.col-md-offset-1.col-md-8 > ul > li.active > span {
-  background-color: #655F7E;
-  border-color: #655F7E;
+  background-color: $coding-purple;
+  border-color: $coding-purple;
 }
 
-body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li:nth-child > a {
-  color: #655F7E;
+body > div > div.row > div.col-md-offset-1.col-md-8 > ul {
+  li:nth-child > a {
+  color: $coding-purple;
+  }
+  li > a{
+  color: $coding-purple;
+  }
 }
 
-body > div > div.row > div.col-md-offset-1.col-md-8 > ul > li > a{
-  color: #655F7E;
-}
 
 /* SNIPPETS */
 
 .opening-paragraph-snippets {
 	padding: 30px;
 	font-size: 16px;
-	border: 2px solid #2980b9;
-}
-.side-column-tags {
-  background-color: #2980b9;
-  color: white;
-  padding: 10px;
-}
-
-.side-column-tags li > a{
-  text-decoration: none;
-  color: white;
-}
-.side-column-snippets {
-  background-color: #2980b9;
-  color: white;
-  padding: 10px;
-}
-
-.side-column-snippets li > a{
-  text-decoration: none;
-  color: white;
+	border: 2px solid $coding-blue;
 }
 
 .snippetseperator{
-  border-bottom: solid 1px #54ACD2;
-  
+  border-bottom: solid 1px $coding-blue;
 }
 
 .individualsnippet {
-  
   padding-top: 20px;
   padding-bottom: 20px;
   padding-right: 20px;
+  p > strong > a {
+    color: $coding-blue;
+  }
 }
 
-.individualsnippet > p > strong > a {
-  color: #54ACD2;
+.side-column-tags {
+  background-color: $coding-blue;
+  color: white;
+  padding: 10px;
+    li > a {
+      text-decoration: none;
+      color: white;
+    }
 }
 
-/* ENTRIES */ **********************************************************************************
+.side-column-snippets {
+  background-color: $coding-blue;
+  color: white;
+  padding: 10px;
+  li > a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* ENTRIES */ 
 
 .opening-paragraph-entries {
 	padding: 30px;
 	font-size: 16px;
-	border: 2px solid #6F532A;
+	border: 2px solid $coding-brown;
 }
 
 .entryseperator{
-  border-bottom: solid 1px #6F532A;  
+  border-bottom: solid 1px $coding-brown;  
 }
 
 .individualentry {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
+  padding: 20px 0px 20px 20px;
+  p > strong > a {
+    color: $coding-brown;
+  }
 }
 
-.individualentry > p > strong > a {
-  color: #6F532A;
-}
-
+/* ALPHABET */
 #entry > p > a {
-  color: #6F532A;
+  color: $coding-brown;
 }
 
-body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul > li.active > span {
-  background-color: #6F532A;
-  border-color: #6F532A;
+/* PAGINATION */
+body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul {
+  li.active > span {
+    background-color: $coding-brown;
+    border-color: $coding-brown;
+  }
+  li:nth-child(n) > a {
+    color: $coding-brown;
+    border-color: $coding-brown;
+  }
 }
 
-
-body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul > li:nth-child(n) > a {
-  color: #6F532A;
-  border-color: #6F532A;
-}
-
-body > div.container-fluid > div:nth-child(3) > div > div.paginateentries > ul > li.prev.disabled > span {
-  color: #6F532A;
-  border-color: #6F532A;
-}
-
-body > div.container-fluid > div:nth-child(3) > div > div.paginateentries > ul > li.next.disabled > span {
-  color: #6F532A;
-  border-color: #6F532A;
-}
 /* PORTFOLIO */
 
 .opening-paragraph-portfolio {
 	padding: 30px;
 	font-size: 16px;
-	border: 2px solid #00A885;
+	border: 2px solid $coding-green;
 	margin-bottom: 20px;
 }
 
 .portfolioseperator {
-	border-bottom: solid 1px #00A885;
+	border-bottom: solid 1px $coding-green;
 	
 }
 
 /* links */
 .individualportfolio {
-  color: #00A885;
+  color: $coding-green;
 }
 
 .portfolioimages {
@@ -310,13 +275,13 @@ nav.share iframe {border:0; margin-top:0; padding-top:0;} /* if using medium siz
 }
 
 .form-categories-posts {
-  border: solid 2px #655F7E;
+  border: solid 2px $coding-purple;
   margin-top: 10px;
   padding: 10px;
 }
 
 .form-categories-snippets {
- border: solid 2px #54ACD2;
+ border: solid 2px $coding-blue;
  margin-top: 10px;
  padding: 10px;
 }
@@ -334,36 +299,28 @@ html {
   padding-bottom: 70px;
 }
 
-
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #00A885;
+  background-color: $coding-green;
   padding: auto;
   margin-top: 40px;
+  div > div > div >ul > li > a {
+    text-decoration: none;
+    color: white;
+  }
+  &:hover{
+    text-decoration: none;
+    background-color: #990000;
+  }
+  &:visited{
+    text-decoration: none;
+    background-color: #990000;
+    color: white;
+  }
 }
 
 
-
-.footer > div > div > div >ul > li > a {
-  text-decoration: none;
-  color: white;
-}
-.footer > div > div > div >ul > li > a:hover {
-  text-decoration: none;
-  background-color: #990000;
-}
-.footer > div > div > div >ul > li > a:visited {
-  text-decoration: none;
-  background-color: #990000;
-  color: white;
-}
