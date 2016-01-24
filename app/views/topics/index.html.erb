@@ -5,16 +5,13 @@
 	    <thead>
         <tr>
           <td>Name</td>
-          <td>Category</td>
           <td></td>
         </tr>
       </thead>
 	    <tbody>
         <tr>
         <% @topics.each do |topic| %>
-          <td><%= topic.name %></td>
-          <td><%= topic.category %></td>
-          <td><%= link_to "Assign category", edit_topic_path(topic) %></td>
+					<td><%= link_to "#{topic.name}", topic_path(topic) %></td>
           <td><%= link_to "Delete", topic_path(topic), method: :delete, data: {confirm: "Are you sure?"} %></td>
         </tr>
 	      <% end %>

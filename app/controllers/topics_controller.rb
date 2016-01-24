@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
 	
 	before_action :find_topic, only: [:show, :edit, :update, :destroy]
 	
-	add_breadcrumb "LEARNING GUIDES", :entries_path
+	add_breadcrumb "JARGON BUSTER", :entries_path
 	
 	def show
 		add_breadcrumb "#{@topic.name.upcase}"
