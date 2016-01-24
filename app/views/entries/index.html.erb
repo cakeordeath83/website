@@ -13,7 +13,7 @@
       <% end %>
       </p>
 			<% @topics.each do |topic| %>
-			<%= link_to "#{topic.name}", topic_path(topic) %>
+			<%= link_to "#{topic.name}", topic_path(topic), class:"btn btn-primary btn-xs", id:"#{topic.name}"  %>
 			<% end %>
 		</div>
       <% if user_signed_in? %>
@@ -26,12 +26,13 @@
     <div class="col-md-offset-2 col-md-8">
       <% @entries.sort.each do |entry| %>
       <div class="individualentry"> 
-        <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong>
-																						 <% entry.topics.each do |topic| %>
-																						 <%= link_to "#{topic.name}", topic_path(topic) %>
-																						 <% end %>
-				</p>
+        <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
+																						 
         <p><%= sanitize(entry.description.split("\n")[0]) %></p>
+				<p><% entry.topics.each do |topic| %>
+					<%= link_to "#{topic.name}", topic_path(topic), class:"btn btn-primary btn-xs", id:"#{topic.name}" %> 
+				<% end %>
+				</p>
 				<% if user_signed_in? %>
           <%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
         <% end %>
