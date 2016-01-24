@@ -18,7 +18,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
-      redirect_to entry_path(@entry)
+      redirect_to topics_path
     else
       render 'new'
     end
@@ -48,7 +48,7 @@ class EntriesController < ApplicationController
 private
   
   def entry_params
-    params.require(:entry).permit(:title, :description)
+    params.require(:entry).permit(:title, :description, :topic_list, :slug)
   end
   
   def find_entry

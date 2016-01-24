@@ -1,0 +1,25 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 headings">
+			<h1><%= @topic.name.upcase %></h1>
+    </div>
+		<div class="col-md-offset-1 col-md-8">
+			<% @topic.entries.each do |entry| %>
+			  <div class="individualentry">
+					<p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong> &nbsp; &nbsp; Added <%= entry.created_at.to_date %></p>
+
+				<!-- ADMIN -->
+					<% if user_signed_in? %>
+					<%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
+					<% end %>
+				</div><!-- individualpost -->
+
+        <div class="entryseperator">
+				</div>
+			<% end %> <!-- @snippets iteration -->
+		</div><!-- col-md -->
+
+			<!-- Side navigation -->
+			#<%= render partial: 'layouts/sidenav' %>
+	</div>
+</div>

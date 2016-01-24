@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 	resources :tags
   resources :entries 
   resources :projects
-  
+	resources :topics
 
   # Example resource route with options:
   #   resources :products do
