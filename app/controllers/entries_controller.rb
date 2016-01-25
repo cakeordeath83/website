@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
-      redirect_to topics_path
+			redirect_to entries_path
     else
       render 'new'
     end
