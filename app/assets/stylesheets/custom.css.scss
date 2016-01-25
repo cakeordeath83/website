@@ -318,11 +318,11 @@ html {
   }
   &:hover{
     text-decoration: none;
-    background-color: #990000;
+    background-color: $coding-green;
   }
   &:visited{
     text-decoration: none;
-    background-color: #990000;
+    background-color: $coding-green;
     color: white;
   }
 }
