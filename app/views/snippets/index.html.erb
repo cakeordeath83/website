@@ -1,15 +1,10 @@
 <div class="container-fluid" %>
-	<% if params[:controller] == "snippets" %>
-	  <% provide(:title, "| Guides") %>
-	<% else %>
-	  <!-- this isn't working CODEBAR -->
-	  <% provide(:title, "| Categories") %>
-	<% end %>
-
+	 <% provide(:title, "| Guides") %>
+	
 	<!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
-			<h1 style="margin-top: 0px; margin-bottom: 50px;">LEARNING GUIDES</h1>
+			<h1 class="heading-text">LEARNING GUIDES</h1>
 			<p class="opening-paragraph-<%= params[:controller] %>">These mini how to guides are very short instructions on how to perform certain actions within your Ruby or Rails code. They are pretty much just the pure code and where to put it, but if anyone needs any more help then please leave a comment and I'll try to help. Enjoy!</p>
 		</div>
 	</div>
@@ -24,7 +19,7 @@
     <div class="col-md-offset-1 col-md-8">
       <% @snippets.each do |snippet| %>
       <div class="individualsnippet">
-        <p><strong style="font-size: large;"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
+        <p><strong class="bold"><%= link_to snippet.title, snippet_path(snippet) %></strong> &nbsp; &nbsp; Added <%= snippet.created_at.to_date %></p>
         <!-- ADMIN -->
         <% if user_signed_in? %>
           <%= link_to "Edit", edit_snippet_path(snippet), class:"btn btn-default" %><br>
@@ -40,7 +35,7 @@
         <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
       </div>
     </div><!-- col-md -->
-
+	
     <!-- Side navigation -->
     <%= render partial: 'layouts/sidenav' %>
   

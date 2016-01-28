@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   def index
     @all_entries = Entry.all
     if params[:letter]
-      @entries = Entry.select{|entry| entry.title.first == params[:letter]}.paginate(page: params[:page], :per_page => 2)
+      @entries = Entry.select{|entry| entry.title.first == params[:letter]}.paginate(page: params[:page], :per_page => 5)
     else
       @entries = Entry.all.order(created_at: :desc).paginate(page: params[:page], :per_page => 5)
     end

@@ -1,3 +1,33 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$pages-green: #00A885; 
+
+.opening-paragraph-portfolio {
+	padding: 30px;
+	font-size: 16px;
+	border: 2px solid $pages-green;
+	margin-bottom: 20px;
+}
+
+.portfolioseperator {
+	border-bottom: solid 1px $pages-green;
+	
+}
+
+/* links */
+.individualportfolio {
+  color: $pages-green;
+}
+
+.portfolioimages {
+  text-align: center; 
+	margin: 25px;
+}
+
+/* ABOUT */
+
+.about-header {
+  text-align: center;
+}

@@ -1,34 +1,17 @@
 <div class="container-fluid" %>
   <% provide(:title, "| Jargon Buster") %>
 	
-	<!-- Headings -->
-	<div class="row">
-		<div class="col-md-offset-2 col-md-8 headings" id="entry">
-			<h1 style="margin-top: 0px; margin-bottom: 50px;">JARGON BUSTER</h1>
-      <p><%= link_to 'ALL |', entries_path %>
-        <!-- Needs putting into model somehow.... -->
-				<% group = @all_entries.group_by{|entry| entry.title.first.upcase} %>
-        <% group.sort.each do |letter, value| %>
-        <%= link_to "#{letter} | ", entries_path(:letter => letter) %>
-      <% end %>
-      </p>
-			<% @topics.each do |topic| %>
-			<%= link_to "#{topic.name}", topic_path(topic), class:"btn btn-primary btn-xs", id:"#{topic.name}"  %>
-			<% end %>
-		</div>
-      <% if user_signed_in? %>
-        <%= link_to "Add new entry", new_entry_path, class: "btn btn-default" %>
-      <% end %>
-  </div>
+	<!-- links to letters and topictags -->
+	<%= render 'alphabet_links' %>
+      
 	
   <!-- Main body -->
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <% @entries.sort.each do |entry| %>
       <div class="individualentry"> 
-        <p><strong style="font-size: large;"><%= link_to entry.title, entry_path(entry) %></strong></p>
-																						 
-        <p><%= sanitize(entry.description.split("\n")[0]) %></p>
+        <p><strong class="bold"><%= link_to entry.title, entry_path(entry) %></strong></p>
+				<p><%= sanitize(entry.description.split("\n")[0]) %></p>
 				<p><% entry.topics.each do |topic| %>
 					<%= link_to "#{topic.name}", topic_path(topic), class:"btn btn-primary btn-xs", id:"#{topic.name}" %> 
 				<% end %>
@@ -37,7 +20,8 @@
           <%= link_to "Edit", edit_entry_path(entry), class:"btn btn-default" %><br>
         <% end %>
       </div>
-      <div class="entryseperator">
+      
+			<div class="entryseperator">
       </div>
       <% end %> <!-- @entries iteration -->
       
@@ -45,6 +29,7 @@
       <div class="paginateentries">
         <%= will_paginate @entries, renderer: BootstrapPagination::Rails %>
       </div> 
+			
     </div><!-- col-md -->
   </div><!-- row -->
 </div><!-- container -->

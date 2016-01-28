@@ -1,3 +1,53 @@
 // Place all the styles related to the snippets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$snippets-blue: #2980b9;
+
+
+.opening-paragraph-snippets {
+	padding: 30px;
+	font-size: 16px;
+	border: 2px solid $snippets-blue;
+}
+
+.snippetseperator{
+  border-bottom: solid 1px $snippets-blue;
+}
+
+.individualsnippet {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  p > strong > a {
+    color: $snippets-blue;
+  }
+}
+
+.side-column-tags {
+  background-color: $snippets-blue;
+  color: white;
+  padding: 10px;
+    li > a {
+      text-decoration: none;
+      color: white;
+    }
+}
+
+.side-column-snippets {
+  background-color: $snippets-blue;
+  color: white;
+  padding: 10px;
+  li > a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* FORM */
+.form-categories-snippets {
+ border: solid 2px $snippets-blue;
+ margin-top: 10px;
+ padding: 10px;
+}
