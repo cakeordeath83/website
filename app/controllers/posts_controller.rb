@@ -7,15 +7,15 @@ class PostsController < ApplicationController
   before_action :project_options, only: [:new, :edit, :update, :create]
   add_breadcrumb "ALL ACTIVITIES", :posts_path
   
-	
-  
+	 
    def index
-    @posts = Post.all
-		@url = "https://toggl.com/api/v8/time_entries?start_date=2016-01-26T15%3A42%3A46%2B02%3A00&end_date=2016-01-27T15%3A42%3A46%2B02%3A00"
-
-		request = HTTParty.get(@url, {basic_auth: {username: 'f89f3fac7a437c624ec0964143b62c02', password: 'api_token'}})
-		
-		@body = JSON.parse(request.body)
+		 week_ago = Date.today - 7
+		 now = "#{Date.today.iso8601}T#{Time.now.strftime("%H")}%3A#{Time.now.strftime("%M")}%3A#{Time.now.strftime("%S")}%2B00%3A00"
+     last_week = "#{week_ago.iso8601}T00%3A00%3A00%2B00%3A00"
+		 @posts = Post.all
+		 @url = "https://toggl.com/api/v8/time_entries?start_date=#{last_week}&end_date=#{now}"
+		 request = HTTParty.get(@url, {basic_auth: {username: 'f89f3fac7a437c624ec0964143b62c02', password: 'api_token'}})
+		 @body = JSON.parse(request.body)
   end
   
   def new

@@ -35,8 +35,14 @@
               <tr>
 								<td><%= post["description"] %></td>
 								<td><%= post["start"].to_time.strftime("%H:%M") %></td>
-								<td><%= post["stop"].to_time.strftime("%H:%M") %></td>
-								<td><%= (post["duration"] / 60) %></td>
+								<% if post["stop"] != nil %>
+									<td><%= post["stop"].to_time.strftime("%H:%M") %></td>
+									<td><%= (post["duration"] / 60) %></td>
+								<% else %>
+								<td>Currently working!</td>
+								<td></td>
+								<% end %>
+								
                 <% if user_signed_in? %>
                 <td><%= link_to "Edit", edit_post_path(post), class:"btn btn-default" %></td>
                 <% end %>
@@ -50,7 +56,9 @@
 					<% this_date = @body.select{|post| post["start"].to_date == date.to_date} %>
 					<% total = [] %>
 					<% this_date.each do |date| %>
-						<% total.push(date["duration"]) %>
+						<% if date["duration"].to_i > 0 %>
+							<% total.push(date["duration"]) %>
+						<% end %>
 					<% end %>
 				
 					<p><%= (total.reduce(:+) / 3600).round %> hours, <%=((total.reduce(:+) % 3600)/60).round %> minutes</p>
@@ -59,5 +67,6 @@
         
       <% end %><!-- grouped_post.each -->
 		</div><!-- row -->
+		
   </div><!-- col-md-10 --> 
 </div><!-- container -->

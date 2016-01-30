@@ -8,5 +8,7 @@ class ApplicationController < ActionController::Base
   def live_post
     Post.find{|post| post.start_time < DateTime.now && post.end_time > DateTime.now}
   end
+
+	
 	
 end
