@@ -5,10 +5,14 @@ class ApplicationController < ActionController::Base
 	
   helper_method :live_post
   
-  def live_post
-    Post.find{|post| post.start_time < DateTime.now && post.end_time > DateTime.now}
-  end
+  #def live_post
+   # Post.find{|post| post.start_time < DateTime.now && post.end_time > DateTime.now}
+  #end
 
-	
+	def live_post
+		if @body.last["stop"] == nil
+			@body.last
+		end
+	end
 	
 end

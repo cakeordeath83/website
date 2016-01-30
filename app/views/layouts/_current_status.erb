@@ -1,5 +1,5 @@
 <% if live_post != nil %>
-  <p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am working on #{live_post.project.title}"%></p>
+  <p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am working on #{live_post["description"]}"%></p>
 <% elsif %>
   <%  Time.now.strftime("%H:%M") > "18:30" %>
   <p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am not currently working. If its late I'm probably asleep, if not I'm probably watching TV or messing around on the internet. Either way, I'm not studying"%></p>
