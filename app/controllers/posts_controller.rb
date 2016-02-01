@@ -17,8 +17,7 @@ class PostsController < ApplicationController
 		 request = HTTParty.get(@url, {basic_auth: {username: 'f89f3fac7a437c624ec0964143b62c02', password: 'api_token'}})
 		 @body = JSON.parse(request.body)
 
-		#Won't need this soon
-		@posts = Post.all
+		
   end
   
   def new
