@@ -15,10 +15,10 @@ class PostsController < ApplicationController
 		 
 		 @url = "https://toggl.com/api/v8/time_entries?start_date=#{last_week}&end_date=#{now}"
 		 request = HTTParty.get(@url, {basic_auth: {username: 'f89f3fac7a437c624ec0964143b62c02', password: 'api_token'}})
-		 @body = JSON.parse(request.body)
+		 @body = JSON.parse(request.body) 
+		 
 
-		
-  end
+	end
   
   def new
      @post = Post.new
