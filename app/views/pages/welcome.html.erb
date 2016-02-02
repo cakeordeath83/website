@@ -14,8 +14,8 @@
       <p>A <%= link_to "SCHEDULE", posts_path %> which tracks what I've been studying (and what I'm currently studying...in real time!) </p>
       <p>My <%= link_to "PORTFOLIO", page_path('portfolio') %> showcasing some of the projects I've been working on.</p>
     </div>
-    <div class="col-md-offset-2 col-md-5" style="text-align:center; border: #00A885 2px solid;">
-      <p><%= render partial: 'layouts/current_status' %></p>
+    <div class="col-md-offset-2 col-md-5 text-center" style="background-color:#00A885; padding: 15px;">
+			<p><%= render partial: 'layouts/current_status' %></p>
       <p><%= render partial: 'pages/live_post_image' %></p>
     </div>
   </div><!-- row -->

@@ -1,13 +1,8 @@
 <% if live_post != nil %>
-<% project = Project.find_by_title("#{live_post["description"]}") %>
-  <p class="opening-paragraph-<%= params[:controller]%>", id="live_project_link">
-		<%="Right now (#{Time.now.strftime("%H:%M")}) I am working on"%> <%= link_to "#{live_post["description"]}", "http://#{project.link}"%>
-</p>
+  <p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am working on #{live_post["description"]}"%></p>
 <% elsif %>
   <%  Time.now.strftime("%H:%M") > "18:30" %>
   <p class="opening-paragraph-<%= params[:controller]%>"><%="Right now (#{Time.now.strftime("%H:%M")}) I am not currently working. If its late I'm probably asleep, if not I'm probably watching TV or messing around on the internet. Either way, I'm not studying"%></p>
 <% else %>
    <p class="opening-paragraph-<%= params[:controller]%>"><%="I am currently on a break but will be back shortly!"%>
 <% end %>
-
-		 

@@ -23,8 +23,7 @@
           <table class="table", style="text-align: center;">
             <thead>
               <tr>
-                  <td><strong>Project</strong></td>
-								  <td><strong>Topic</strong></td>
+                  <td><strong>Project</strong></td>								
                   <td><strong>Start Time</strong></td>
                   <td><strong>End Time</strong></td>
                   <td><strong>Minutes</strong></td>
@@ -34,8 +33,6 @@
 							<% posts.sort_by{|post| post["start"].to_time}.each do |post| %>
               <tr>
 								<td><%= post["description"] %></td>
-								<td><%= Project.find_by_pid(post["pid"]).title %></td>
-								
 								<td><%= post["start"].to_time.strftime("%H:%M") %></td>
 								<% if post["stop"] != nil %>
 									<td><%= post["stop"].to_time.strftime("%H:%M") %></td>
