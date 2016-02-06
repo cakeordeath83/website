@@ -1,5 +1,6 @@
 
 <div class="formtitle">
+  <% if user_signed_in? %>
   <%= form_for @project do |form| %>
     <% if @project.errors.any? %>
       <div id="error_explanation">
