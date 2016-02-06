@@ -1,4 +1,4 @@
-<% if @body && live_post(@body) %>
-	<% project = Project.find_by_title("#{live_post["description"]}") %>
-	<%= image_tag project.image.url(:medium) %><br>
+<% if the_live_post = live_post(Post.all) %>
+  <% project = Project.find_by_title("#{the_live_post.description}") %>
+  <%= image_tag project.image.url(:medium) %><br>
 <% end %>
