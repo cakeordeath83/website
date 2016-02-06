@@ -1,4 +1,13 @@
+<% if user_signed_in? %>
 <div class="container">
   <h1>Add new project</h1>
   <%= render 'form' %>
 </div>
+<% else %>
+  <div class="container">
+		<h1 class="text-align: center;">Uh uh uh!</h1>
+		<p class="text-align: center;">You didn't say the magic word!</p>
+		<p class="text-align: center;"><%= link_to image_tag('magic word'), '/'%></p><br>
+		<p class="text-align: center;">Sorry, this page is restricted. The rest of the site is open to you though!</p>
+	</div>
+<% end %>

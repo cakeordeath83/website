@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
+	
   get 'snippetcategory' => "snippets#snippetcategory"
   get "/404" => "errors#not_found"
   get "/500" => "errors#internal_server_error"

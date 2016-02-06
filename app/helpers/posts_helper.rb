@@ -10,4 +10,8 @@ module PostsHelper
 		@projectbody = JSON.parse(request.body)
 		@projectbody["data"]["name"]
 	end
+	
+	def live_post(time_entries)
+		time_entries.last["stop"].nil? ? time_entries.last : nil
+	end
 end
