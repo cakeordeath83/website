@@ -34,6 +34,14 @@ class Post
     params["stop"]
   end
 
+  def start
+    params["start"]
+  end
+
+  def duration
+    params["duration"]
+  end
+
 
   def finished?
     params['stop'].nil?
