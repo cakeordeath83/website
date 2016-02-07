@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   resources :entries 
   resources :projects
 	resources :topics
+  resources :time_entries
 
   # Example resource route with options:
   #   resources :products do

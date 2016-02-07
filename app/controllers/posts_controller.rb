@@ -11,5 +11,24 @@ class PostsController < ApplicationController
   #request = HTTParty.get(@url, {basic_auth: {username: "#{api}", password: 'api_token'}})
   #@body = JSON.parse(request.body) 
   end
+  
+  def new
+  end
+  
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render 'new'
+    end
+  end
 
+private
+    
+    def post_params
+      params.require(:post).permit(:description)
+    end
+    
+    
 end
