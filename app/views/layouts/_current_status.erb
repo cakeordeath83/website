@@ -6,9 +6,9 @@
     <p class="opening-paragraph-<%= params[:controller]%>", id="live_project_link">
       <%="Right now (#{Time.now.strftime("%H:%M")}) I am working on:"%> <br>
       <% if !project.link.empty? %>
-      <strong><%= link_to "#{the_live_post.description}", "http://#{project.link}"%></strong>
+        <%= link_to "#{the_live_post.description}", "http://#{project.link}"%>
       <% else %>
-      <strong><%= "#{the_live_post.description}" %></strong>
+        <%= "#{the_live_post.description}" %>
       <% end %>
       <p><%= project.description %></p>
   <% elsif %>
@@ -18,4 +18,3 @@
      <p class="opening-paragraph-<%= params[:controller]%>"><%="I am currently on a break but will be back shortly!"%>
   <% end %>
 
-		 
