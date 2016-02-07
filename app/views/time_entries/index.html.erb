@@ -9,6 +9,7 @@
 		</div>
 	</div>
   
+  
   <!-- ADMIN -->
   <% if user_signed_in? %>
     <%= link_to "Add new activity", new_post_path, class: "btn btn-default" %>
@@ -50,7 +51,7 @@
         </div> <!-- col-md-8 -->
       	<div class="col-md-4" style="text-align:center; margin-top: 50px;">
           <h4>Total time today </h4>
-					<% this_date = Post.all.select{|post| post.start.to_date == date.to_date} %>
+          <% this_date = @time_entries.select{|post| post.start.to_date == date.to_date} %>
 					<% total = [] %>
 					<% this_date.each do |date| %>
           <% if date.duration.to_i > 0 %>
