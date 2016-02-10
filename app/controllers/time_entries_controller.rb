@@ -9,7 +9,7 @@ class TimeEntriesController < ApplicationController
     @url = "https://toggl.com/api/v8/time_entries?start_date=#{last_week}&end_date=#{now}"
     request = HTTParty.get(@url, {basic_auth: {username: "#{api}", password: 'api_token'}})
 
-    @new_time_entries = JSON.parse(request.body)
+    @today_time_entries = JSON.parse(request.body)
      
   end
   

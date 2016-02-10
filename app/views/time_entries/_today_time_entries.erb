@@ -1,20 +1,6 @@
-<div class="container-fluid">
-  <% provide(:title, "| Schedule") %>
-  
-	<!-- Headings -->
-	<div class="row">
-		<div class="col-md-offset-1 col-md-10 headings">
-			<h1 class="heading-text">SCHEDULE</h1>
-      <%= render partial: 'layouts/current_status' %>
-		</div>
-	</div>
-  
-  
-  <!-- Main body -->
-  <div class="col-md-offset-1 col-md-10", >
-    <div class="row">
-      <%= render partial: 'today_time_entries' %>
-			<% grouped_time_entries.sort_by{|date,value| date}.reverse.each do |date, posts| %>
+<!-- Main body -->
+
+      <% today_grouped_time_entries.sort_by{|date,value| date}.reverse.each do |date, posts| %>
         <div class="col-md-8" >
           <h4><%= date %></h4>
           <table class="table", style="text-align: center;">
@@ -27,13 +13,13 @@
                 </tr>
             </thead>
             <tbody>
-							<% posts.sort_by{|post| post.start.to_time}.each do |post| %>
+							<% posts.sort_by{|post| post["start"].to_time}.each do |post| %>
               <tr>
-								<td><%= post.description %></td>
-								<td><%= post.start.to_time.strftime("%H:%M") %></td>
-								<% if post.stop != nil %>
-									<td><%= post.stop.to_time.strftime("%H:%M") %></td>
-									<td><%= (post.duration / 60) %></td>
+                <td><%= post["description"] %></td>
+								<td><%= post["start"].to_time.strftime("%H:%M") %></td>
+								<% if post["stop"] != nil %>
+									<td><%= post["stop"].to_time.strftime("%H:%M") %></td>
+                <td><%= (post["duration"] / 60) %></td>
 								<% else %>
 								<td>Currently working!</td>
 								<td></td>
@@ -47,11 +33,12 @@
         </div> <!-- col-md-8 -->
       	<div class="col-md-4" style="text-align:center; margin-top: 50px;">
           <h4>Total time today </h4>
-          <% this_date = @time_entries.select{|post| post.start.to_date == date.to_date} %>
+          <% this_date = @today_time_entries.select{|post| post["start"].to_date == date.to_date} %>
+          
 					<% total = [] %>
 					<% this_date.each do |date| %>
-          <% if date.duration.to_i > 0 %>
-          <% total.push(date.duration) %>
+          <% if date["duration"].to_i > 0 %>
+          <% total.push(date["duration"]) %>
 						<% end %>
 					<% end %>
 				
@@ -60,7 +47,3 @@
         </div><!-- col-md-4 -->
         
       <% end %><!-- grouped_post.each -->
-		</div><!-- row -->
-		
-  </div><!-- col-md-10 --> 
-</div><!-- container -->
