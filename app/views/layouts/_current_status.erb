@@ -1,14 +1,13 @@
 
 
-
 <% if live_post != nil %>
-<% project = Project.find_by_title("#{live_post.description}") %>
+<% project = Project.find_by_title("#{live_post["description"]}") %>
     <p class="opening-paragraph-<%= params[:controller]%>", id="live_project_link">
       <%="Right now (#{Time.now.strftime("%H:%M")}) I am working on:"%> <br>
       <% if !project.link.empty? %>
-        <%= link_to "#{live_post.description}", "http://#{project.link}"%>
+      <%= link_to "#{live_post["description"]}", "http://#{project.link}"%>
       <% else %>
-        <%= "#{live_post.description}" %>
+      <%= "#{live_post["description"]}" %>
       <% end %>
       <p><%= project.description %></p>
   <% elsif %>

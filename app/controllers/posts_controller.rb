@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-	
+  
+  # Probably need to get rid of!
+=begin
 	add_breadcrumb "ALL ACTIVITIES", :posts_path
   
   def index
@@ -10,6 +12,7 @@ class PostsController < ApplicationController
   #@url = "https://toggl.com/api/v8/time_entries?start_date=#{last_week}&end_date=#{now}"
   #request = HTTParty.get(@url, {basic_auth: {username: "#{api}", password: 'api_token'}})
   #@body = JSON.parse(request.body) 
+    @time_entries = TimeEntry.all
   end
   
   def new
@@ -29,6 +32,6 @@ private
     def post_params
       params.require(:post).permit(:description)
     end
-    
+=end    
     
 end

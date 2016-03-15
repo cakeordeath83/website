@@ -56,4 +56,7 @@ end
   
   # Devise configuration
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  # Stop annoying server output
+  config.web_console.whiny_requests = false
 end

@@ -1,4 +1,4 @@
 <% if live_post != nil %>
-  <% project = Project.find_by_title("#{live_post.description}") %>
+<% project = Project.find_by_title("#{live_post["description"]}") %>
   <%= image_tag project.image.url(:medium) %><br>
 <% end %>
