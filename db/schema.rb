@@ -31,16 +31,7 @@ ActiveRecord::Schema.define(version: 20160207133032) do
     t.string   "slug"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "description"
-    t.datetime "start"
-    t.datetime "stop"
-    t.integer  "duration"
-    t.integer  "api_id"
-    t.integer  "pif"
-  end
+  
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
