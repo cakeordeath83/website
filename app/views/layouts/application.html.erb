@@ -21,17 +21,17 @@
             <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand" id="Home">
-              <%= link_to "HOME", page_path('welcome') %>
+              <%= link_to "HOME", root_path %>
             </div>
         </div>
-
+  
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
             <li><%= link_to "JARGON BUSTER", entries_path%></li>
             <li><%= link_to "SCHEDULE", time_entries_path %></li>
-            <li><%= link_to "PORTFOLIO", page_path('portfolio') %></li>
+            <li><%= link_to "PORTFOLIO", "pages/portfolio" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -40,7 +40,7 @@
             <% end %>
               <li><a href="http://github.com/clairgriffiths">GITHUB</a></li>
               <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
-              <li><%= link_to "ABOUT", page_path('about') %></li>
+              <li><%= link_to "ABOUT", "pages/about" %></li>
           </ul>
       </div><!-- /.navbar-header -->
     </div><!-- /.container-fluid -->
@@ -62,7 +62,7 @@
               <li><%= link_to('LEARNING GUIDES', snippets_path)%></li>
               <li><%= link_to('JARGON BUSTER', snippets_path)%></li>
               <li><%= link_to('SCHEDULE', posts_path)%></li>
-              <li><%= link_to('PORTFOLIO', page_path('portfolio'))%></li>
+              <li><%= link_to "PORTFOLIO", "pages/portfolio" %></li>
               <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
               <li><a href="http://github.com/clairgriffiths">GITHUB</a> </li>
                 <% if !user_signed_in? %>

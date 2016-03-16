@@ -7,6 +7,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'posts#index'
+  
+  #high_voltage
+  get "/pages/portfolio" => 'pages#portfolio' 
+  get "/pages/about" => 'pages#about'
+  get "/pages/menu" => 'pages#menu'
+  get "/pages/musicals" => 'pages#musicals'
+  get "/pages/website" => 'pages#website'
+  root to: 'pages#welcome', id: 'welcome'
 	
 	devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
