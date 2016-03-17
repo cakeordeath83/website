@@ -7,4 +7,6 @@ class Project < ActiveRecord::Base
 		project = @projects.find_by(:pid, pid)
 		project.title
 	end
+  
+  
 end

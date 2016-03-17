@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/pages/menu" => 'pages#menu'
   get "/pages/musicals" => 'pages#musicals'
   get "/pages/website" => 'pages#website'
+  get "/pages/inventory" => 'pages#inventory'
   root to: 'pages#welcome', id: 'welcome'
 	
 	devise_scope :user do
