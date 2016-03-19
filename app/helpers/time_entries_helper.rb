@@ -11,6 +11,31 @@ module TimeEntriesHelper
   def live_post
     @today_time_entries.last["stop"].nil? ? @today_time_entries.last : nil
   end
+  
+  def total_time_this_week
+     time_today + time_this_week
+  end
+  
+  def time_today
+    today = @today_time_entries.map{|entry| entry["duration"]}
+    if today.last < 0
+      today[0..-2].reduce(:+)
+    else
+      today.reduce(:+)
+    end
+  end
+  
+  def time_this_week
+    Date.beginning_of_week = :saturday
+    this_week = @time_entries.select{|entry| entry.start > Date.today.beginning_of_week}
+    this_week.map{|entry| entry.duration}.reduce(:+)
+  end
+  
+  def hours_and_minutes(seconds)
+    hours = (seconds / 3600).round
+    minutes = ((seconds % 3600)/60).round
+    "#{hours} hours and #{minutes} minutes"
+  end
     
   
 end

@@ -39,7 +39,7 @@
 						<% end %>
 					<% end %>
 				
-					<p><%= (total.reduce(:+) / 3600).round %> hours, <%=((total.reduce(:+) % 3600)/60).round %> minutes</p>
+					<p><%= hours_and_minutes(total.reduce(:+)) %></p>
 			
         </div><!-- col-md-4 -->
         
