@@ -1,0 +1,10 @@
+<% if live_post != nil %>
+  <% project = Project.find_by_title("#{live_post["description"]}") %>
+  <% if project == nil %>
+    <%= image_tag "working.jpg", class:"break-image"%>
+  <% else %>
+    <%= image_tag project.image.url(:medium), style:"margin-top: 8px;"%><br>
+  <% end %>
+<% else %>
+  <%= image_tag "break.jpg", class:"break-image"%><br>
+<% end %>

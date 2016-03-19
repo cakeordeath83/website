@@ -11,6 +11,10 @@ $pages-green: #00A885;
 	margin-bottom: 20px;
 }
 
+.opening-paragraph-pages {
+  margin-bottom: 10px;
+}
+
 .portfolioseperator {
 	border-bottom: solid 1px $pages-green;
 	
@@ -28,11 +32,26 @@ $pages-green: #00A885;
 
 #live_project_link > a {
   color: white;
+  margin-bottom: 8px;
 }
+
+.break-image {
+  height: 250px; 
+  width: 300px;
+  margin-top: 10px;
+}
+
 
 
 /* ABOUT */
 
 .about-header {
+  text-align: center;
+}
+
+.welcome-box{
+  background-color:#00A885; 
+  padding: 15px;
+  height: 330px;
   text-align: center;
 }
