@@ -14,11 +14,11 @@ class Entry < ActiveRecord::Base
 	end
   
   def create_slug
-    if self.title =~ /^[!?.%&:;]/
-      self.slug = "character"
-    else
+   # if self.title =~ /^[!?.%&:;]/
+    #  self.slug = "character"
+   # else
 		  self.slug = self.title.parameterize
-    end
+   # end
 	end
 	
 	def topic_list
