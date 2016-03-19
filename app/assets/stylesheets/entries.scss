@@ -22,9 +22,14 @@ $jargon-brown: #6F532A;
 }
 
 /* ALPHABET */
-#entry > p > a {
-  color: $jargon-brown;
+#entry {
+  margin-bottom: 20px;
+  a {
+    color: $jargon-brown;
+  }
 }
+
+
 
 /* PAGINATION */
 body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul {
@@ -36,4 +41,52 @@ body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul {
     color: $jargon-brown;
     border-color: $jargon-brown;
   }
+}
+
+
+/* BUTTONS */
+#Ruby {
+	background-color: #CC0000;
+	border: 0.5px #CC0000 solid;
+}
+
+#Rails {
+	background-color: #8C001A;
+	border: 0.5px #8C001A solid;
+}
+
+#Employment {
+	background-color: #f39c12;
+	border: 0.5px #f39c12 solid;
+	color: black;
+}
+
+#Html {
+	background-color: #2980b9;
+	border: 0.5px #2980b9 solid;
+}
+
+#Css {
+	background-color: #27ae60;
+	border: 0.5px #27ae60 solid;
+}
+
+#Compsci {
+	background-color: #2c3e50;
+	border: 0.5px #2c3e50 solid;
+}
+
+#Cheatsheet {
+  background-color: #006600;
+	border: 0.5px #2c3e50 solid;
+}
+
+#Database {
+  background-color: #666666;
+	border: 0.5px #2c3e50 solid;
+}
+
+#Security {
+  background-color: #660066;
+	border: 0.5px #2c3e50 solid;
 }

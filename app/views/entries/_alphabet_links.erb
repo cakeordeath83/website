@@ -1,17 +1,28 @@
 <div class="row">
-		<div class="col-md-offset-2 col-md-8 headings" id="entry">
-			<h1 class="heading-text">JARGON BUSTER</h1>
-			<p>
-				<%= link_to 'ALL |', entries_path %>
-				<% group.sort.each do |letter, value| %>
-					<%= link_to "#{letter} | ", entries_path(:letter => letter) %>
-				<% end %>
-			</p>
-			<% @topics.each do |topic| %>
-				<%= link_to "#{topic.name}", topic_path(topic), class:"btn btn-primary btn-xs", id:"#{topic.name}"  %>
-			<% end %>
-		</div>
-      <% if user_signed_in? %>
-        <%= link_to "Add new entry", new_entry_path, class: "btn btn-default" %>
-      <% end %>
+  <div class="col-md-offset-3 col-md-6 headings">
+    <h1 class="heading-text">JARGON BUSTER</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6 headings" id="entry">
+    <%= link_to 'ALL |', entries_path %>
+    <% group.sort.each do |letter, value| %>
+    <%= link_to "#{letter} | ", entries_path(:letter => letter) %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-7 headings">
+  <% @topics.each do |topic| %>
+  <%= link_to "#{topic.name}", topic_path(topic), class:"btn btn-primary btn-s", id:"#{topic.name}"  %>
+  <% end %>
+       </div>
+</div>
+
+<div>
+  <% if user_signed_in? %>
+  <%= link_to "Add new entry", new_entry_path, class: "btn btn-default" %>
+  <% end %>
 </div>
