@@ -32,7 +32,7 @@ $jargon-brown: #6F532A;
 
 
 /* PAGINATION */
-body > div.container-fluid > div:nth-child(2) > div > div.paginateentries > ul {
+.paginateentries {
   li.active > span {
     background-color: $jargon-brown;
     border-color: $jargon-brown;
