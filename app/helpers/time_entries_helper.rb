@@ -13,7 +13,7 @@ module TimeEntriesHelper
   end
   
   def total_time_this_week
-     time_today + time_this_week
+     time_today.to_i + time_this_week.to_i
   end
   
   def time_today
@@ -36,6 +36,13 @@ module TimeEntriesHelper
     minutes = ((seconds % 3600)/60).round
     "#{hours} hours and #{minutes} minutes"
   end
-    
+  
+  def time_left_today
+    21600 - time_today.to_i
+  end
+  
+  def time_left_this_week
+    129_600 - time_this_week.to_i
+  end
   
 end

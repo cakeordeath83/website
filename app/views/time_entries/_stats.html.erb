@@ -1,3 +1,9 @@
-<p> You still have x more minutes to go today </p>
-<p>This week you still have to complete x more hours_and_minutes </p>
-  <%= hours_and_minutes(total_time_this_week) %>
+<div class="row">
+  <p class="opening-paragraph-<%= params[:controller]%>", id="live_project_link">
+    You still have <%= hours_and_minutes(time_left_today) %> to go today <br>
+      This week you still have to complete <%= hours_and_minutes(time_left_this_week) %>
+  </p>
+</div>
+
+
+
