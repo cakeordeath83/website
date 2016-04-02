@@ -1,6 +1,21 @@
 <% grouped_time_entries.sort_by{|date,value| date}.reverse.each do |date, posts| %>
-        <div class="col-md-8" >
-          <h4><%= date %></h4>
+
+<div class="col-md-4">
+  <h4><%= date.strftime('%A %d %b %Y')  %></h4><br>
+          <h5>Total time today </h5>
+          <% this_date = @time_entries.select{|post| post.start.to_date == date.to_date} %>
+					<% total = [] %>
+					<% this_date.each do |date| %>
+          <% if date.duration.to_i > 0 %>
+          <% total.push(date.duration) %>
+						<% end %>
+					<% end %>
+				
+					<p><%= hours_and_minutes(total.reduce(:+)) %></p>
+			
+        </div><!-- col-md-4 -->
+        <div class="col-md-8 time-entry-table" >
+          
           <table class="table", style="text-align: center;">
             <thead>
               <tr>
@@ -29,19 +44,8 @@
             </tbody>
           </table>
         </div> <!-- col-md-8 -->
-      	<div class="col-md-4" style="text-align:center; margin-top: 50px;">
-          <h4>Total time today </h4>
-          <% this_date = @time_entries.select{|post| post.start.to_date == date.to_date} %>
-					<% total = [] %>
-					<% this_date.each do |date| %>
-          <% if date.duration.to_i > 0 %>
-          <% total.push(date.duration) %>
-						<% end %>
-					<% end %>
-				
-					<p><%= hours_and_minutes(total.reduce(:+)) %></p>
-			
-        </div><!-- col-md-4 -->
+
+      	
         
       <% end %><!-- grouped_post.each -->
 		</div><!-- row -->

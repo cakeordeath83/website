@@ -42,7 +42,7 @@ module TimeEntriesHelper
   end
   
   def time_left_this_week
-    129_600 - time_this_week.to_i
+    129_600 - total_time_this_week
   end
   
 end
