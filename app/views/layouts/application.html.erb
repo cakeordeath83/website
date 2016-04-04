@@ -31,7 +31,7 @@
             <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
             <li><%= link_to "JARGON BUSTER", entries_path%></li>
             <li><%= link_to "SCHEDULE", time_entries_path %></li>
-            <li><%= link_to "PORTFOLIO", "pages/portfolio" %></li>
+            <li><%= link_to "PORTFOLIO",  pages_portfolio_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
@@ -40,7 +40,7 @@
             <% end %>
               <li><a href="http://github.com/clairgriffiths">GITHUB</a></li>
               <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
-              <li><%= link_to "ABOUT", "pages/about" %></li>
+              <li><%= link_to "ABOUT", pages_about_path %></li>
           </ul>
       </div><!-- /.navbar-header -->
     </div><!-- /.container-fluid -->
