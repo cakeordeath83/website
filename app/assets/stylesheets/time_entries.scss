@@ -26,8 +26,6 @@ body > div > div.row > div.col-md-offset-1.col-md-8 > ul {
   }
 }
 
-.time-entry-table {
-  background-color: #655F7E;
-  color: white;
-  margin-bottom: 10px;
+.timeentryseperator{
+  border-bottom: solid 1px $posts-purple;  
 }
