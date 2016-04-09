@@ -1,45 +1,43 @@
 <div class = "container-fluid" >
-	<% provide(:title, "| Inventory") %>
+  <% provide(:title, "| Inventory") %>
   <div class="row">
+    
     <div class="col-md-offset-2 col-md-8" >
       <h1 class="text-center">Inventory app</h1><br>
-		    <div class="portfolioseperator">
-        </div>
-        <div class="content">
-		      <p><strong>Github link: </strong><a href="https://github.com/clairgriffiths/inventory">Here</a></p>
-          <p><strong>Elevator pitch:</strong> A cupboard management and recipe suggestion app.</p>
-          <p><strong>Client: </strong>Me. I've been wanting to make this ever since I first started learning how to code</p>
-          <p><strong>Features </strong></p>
-		      <ul>
-            <li>Scan barcodes using a 3rd party Android app.</li>
-            <li>An API call will try to find the relevant product. If successful it will return the name of the product, if not it will save it to the database ready for extra information.</li>
-			      <li>Once retrieved, I then catalogue the items, assigning them a cupboard and category.</li>
-            <li>When I use an item I lower the quantity by 1. If the quantity gets below a predetermined number, it is automatically added to the shopping list.</li>
-            <li>A Recipe module suggests recipes I can make using the items available to me.</li>
-            <li>I can also enter ingredients and it shows me the possible recipes I could make if I had them.</li>
-		      </ul>
-		      
-        </div>
-			
-	      <div class="portfolioseperator">
-        </div>
-		
-	      <div class="content">
-			    <p><strong>Description</strong></p>
-			    
-           
-    
-		  <div class="portfolioseperator">
+      <div class="portfolioseperator">
       </div>
-				
-		  <div class="content">
-			  <p><strong>Screenshots</strong></p>
-		  </div>
+      <div class="content">
+        <p><strong>Github link: </strong><a href="https://github.com/clairgriffiths/inventory">Here</a></p>
+        <p><strong>Elevator pitch:</strong> A cupboard management and recipe suggestion app.</p>
+        <p><strong>Client: </strong>Me. I've been wanting to make this ever since I first started learning how to code</p>
+        <p><strong>Features </strong></p>
+        <ul>
+          <li>Scan barcodes using a 3rd party Android app.</li>
+          <li>An API call will try to find the relevant product. If successful it will return the name of the product, if not it will save it to the database ready for extra information.</li>
+          <li>Once retrieved, I then catalogue the items, assigning them a cupboard and category.</li>
+          <li>When I use an item I lower the quantity by 1. If the quantity gets below a predetermined number, it is automatically added to the shopping list.</li>
+          <li>A Recipe module suggests recipes I can make using the items available to me.</li>
+          <li>I can also enter ingredients and it shows me the possible recipes I could make if I had them.</li>
+        </ul>
+    </div>
 
-		<div class="col-md-12">
-			<p class="portfolioimages"><%= image_tag "inventory/inventory.PNG", height: '500', width: '800', class: "img-responsive image"%></p>
-			<p class="portfolioimages"><%= image_tag "inventory/Tins inventory.PNG", height: '500', width: '800', class: "img-responsive image"%></p>
-		</div>
+    <div class="portfolioseperator">
+    </div>
 
-    </div><!-- row -->
+    <div class="content">
+    <p><strong>Description</strong></p>
+
+    <div class="portfolioseperator">
+    </div>
+
+    <div class="content">
+    <p><strong>Screenshots</strong></p>
+    </div>
+
+    <div class="col-md-12">
+    <p class="portfolioimages"><%= image_tag "inventory/inventory.PNG", height: '500', width: '800', class: "img-responsive image center-block"%></p>
+    <p class="portfolioimages"><%= image_tag "inventory/Tins inventory.PNG", height: '500', width: '800', class: "img-responsive image center-block"%></p>
+    </div>
+
+  </div><!-- row -->
 </div><!-- container -->
