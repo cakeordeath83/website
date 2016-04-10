@@ -41,13 +41,33 @@ $pages-green: #00A885;
   margin-top: 10px;
 }
 
+/* SKILLS */
 .book {
-  margin-right: 60px;
+  margin-left: 40px;
   margin-top: 40px;
 }
 
+.course-table-title{
+  text-align: center;
+}
 
+.table {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
+.table > tbody > tr > td {
+    vertical-align: middle !important;
+}
+
+.first-col{
+    min-width: 60px;
+  }
+
+.table-text {
+  text-align: center;
+  min-width: 480px;
+}
 
 /* ABOUT */
 

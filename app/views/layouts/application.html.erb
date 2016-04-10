@@ -31,7 +31,13 @@
             <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
             <li><%= link_to "JARGON BUSTER", entries_path%></li>
             <li><%= link_to "SCHEDULE", time_entries_path %></li>
+            <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PORTFOLIO <span class="caret"></span></a>
+          <ul class="dropdown-menu">
             <li><%= link_to "PORTFOLIO",  pages_portfolio_path %></li>
+            <li><%= link_to "SKILLS",  "pages/skills" %></li>
+            <li><a href="http://github.com/clairgriffiths">GITHUB</a></li>
+              </ul>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
