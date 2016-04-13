@@ -47,17 +47,28 @@ $pages-green: #00A885;
   margin-top: 40px;
 }
 
+.skills-box {
+  background-color: $pages-green;
+  padding: 10px;
+  margin: 10px;
+}
+
 .course-table-title{
   text-align: center;
+  margin-bottom: 25px;
+  color: white;
 }
 
 .table {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .table > tbody > tr > td {
     vertical-align: middle !important;
+  a{
+    color: white;
+  }
 }
 
 .first-col{
