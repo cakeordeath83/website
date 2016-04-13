@@ -9,6 +9,7 @@ class Entry < ActiveRecord::Base
   validates :title, presence: true
 	validates_presence_of :topics
   
+  # Overriding built-in to_param method (normally returns the id as a string)
   def to_param
 		slug
 	end
