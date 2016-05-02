@@ -9,6 +9,6 @@ class TimeEntriesController < ApplicationController
   end
 
   def dashboard
-    @time_entries = TimeEntry.all
+    @time_entries = TogglApi.get_dashboard_info
   end
 end

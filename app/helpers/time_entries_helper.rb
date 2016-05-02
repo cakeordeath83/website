@@ -9,7 +9,7 @@ module TimeEntriesHelper
   end
   
   def total_grouped_time_entries
-    TimeEntry.all.group_by{|entry| entry.description}
+    TimeEntry.all.group_by{|entry| entry.pid}
 	end
 
   def live_post

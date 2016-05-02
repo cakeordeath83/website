@@ -9,4 +9,12 @@ module TogglApi
     JSON.parse(request.body)
   end
 
+  def self.get_dashboard_info
+    today = Time.now.strftime("%Y-%d-%m")
+    api = ENV["TOGGL_API_USERNAME"]
+    url = "https://toggl.com/reports/api/v2/summary?workspace_id=543572&since=2015-05-01&until=#{today}&user_agent=api_test"
+    request = HTTParty.get(url, {basic_auth: {username: "#{api}", password: 'api_token'}})
+    JSON.parse(request.body)
+  end
+
 end
