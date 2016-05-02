@@ -8,8 +8,8 @@ module TimeEntriesHelper
     @today_time_entries.group_by{|entry| entry["start"].to_date}
   end
   
-  def total_grouped_time_entries
-    TimeEntry.all.group_by{|entry| entry.pid}
+  def dashboard_grouped_by_title
+    @time_entries["data"]
 	end
 
   def live_post

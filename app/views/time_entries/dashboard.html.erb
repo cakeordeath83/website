@@ -1,1 +1,39 @@
-<%= @time_entries %>
+
+
+<div class="container-fluid">
+  <% provide(:title, "| Schedule") %>
+  
+	<!-- Headings -->
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 headings">
+			<h1 class="heading-text">DASHBOARD</h1>
+		</div>
+	</div>
+  
+  
+  <!-- Main body -->
+  <div class="col-md-offset-1 col-md-5", >
+    <div class="row">
+      
+    
+      <table class="table", style="text-align: center;">
+        <thead>
+        <tr>
+          <td><strong>Project</strong></td>
+          <td><strong>Total Time</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+          <% dashboard_grouped_by_title.each do |project| %>
+          <tr>
+            
+            <td><%= project["title"]["project"] %></td>
+            <td><%= project["time"] %></td>
+          <% end %> <!--post.each-->
+          </tr>
+        </tbody>
+      </table>
+    </div> <!-- col-md-8 -->
+    </div>
+  </div>
+</div>
