@@ -1,5 +1,5 @@
 
-<% grouped_time_entries.sort_by{|date,value| date}.reverse.each do |date, posts| %>
+<% grouped_time_entries_this_week.sort_by{|date,value| date}.reverse.each do |date, posts| %>
   <div class="col-md-8" >
     <h4><%= date %></h4>
     <table class="table", style="text-align: center;">

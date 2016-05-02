@@ -1,6 +1,6 @@
 module TimeEntriesHelper
   
-  def grouped_time_entries
+  def grouped_time_entries_this_week
     TimeEntry.all.where('created_at >= ?', 1.week.ago).group_by{|entry| entry.start.to_date}
 	end
   
@@ -8,6 +8,10 @@ module TimeEntriesHelper
     @today_time_entries.group_by{|entry| entry["start"].to_date}
   end
   
+  def total_grouped_time_entries
+    TimeEntry.all.group_by{|entry| entry.description}
+	end
+
   def live_post
     if @today_time_entries.empty?
       nil

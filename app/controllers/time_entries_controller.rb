@@ -9,5 +9,6 @@ class TimeEntriesController < ApplicationController
   end
 
   def dashboard
+    @time_entries = TimeEntry.all
   end
 end
