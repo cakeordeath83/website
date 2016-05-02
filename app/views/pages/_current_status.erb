@@ -2,11 +2,11 @@
   <% project = Project.find_by_title("#{live_post["description"]}") %>
   <% if project == nil %>
     <p class="opening-paragraph-<%= params[:controller]%>", id="live_project_link">
-    <%="Right now (#{Time.now.strftime("%H:%M")}) I am working on:"%> <br>
+    <%="Right now (#{Time.zone.now.strftime("%H:%M")}) I am working on:"%> <br>
      <%= "#{live_post["description"]}" %><br>
   <% else %>
     <p class="opening-paragraph-<%= params[:controller]%>", id="live_project_link">
-    <%="Right now (#{Time.now.strftime("%H:%M")}) I am working on:"%> <br>
+    <%="Right now (#{Time.zone.now.strftime("%H:%M")}) I am working on:"%> <br>
     <% if !project.link.empty? %>
       <%= link_to "#{live_post["description"]}", "http://#{project.link}"%>
     <% else %>
