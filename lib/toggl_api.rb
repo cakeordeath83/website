@@ -1,5 +1,5 @@
 module TogglApi
-      
+
   def self.get_time_entries(from:, to:)
     from = from.iso8601
     to = to.iso8601
@@ -8,5 +8,5 @@ module TogglApi
     request = HTTParty.get(url, {basic_auth: {username: "#{api}", password: 'api_token'}})
     JSON.parse(request.body)
   end
-  
+
 end

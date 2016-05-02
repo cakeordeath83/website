@@ -9,7 +9,11 @@ module TimeEntriesHelper
   end
   
   def live_post
-    @today_time_entries.last["stop"].nil? ? @today_time_entries.last : nil
+    if @today_time_entries.empty?
+      nil
+    else
+      @today_time_entries.last["stop"].nil? ? @today_time_entries.last : nil
+    end
   end
   
   def total_time_this_week
