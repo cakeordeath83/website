@@ -3,7 +3,7 @@
   <% if project == nil %>
     <%= image_tag "working.jpg", class:"break-image"%>
   <% else %>
-    <%= image_tag project.image.url(:medium), style:"margin-top: 8px;"%><br>
+    <%= image_tag project.image.url(:medium), style:"margin-top: 8px; height: 150px;"%><br>
   <% end %>
 <% else %>
   <%= image_tag "break.jpg", class:"break-image"%><br>
