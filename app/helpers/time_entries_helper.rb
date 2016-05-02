@@ -1,7 +1,7 @@
 module TimeEntriesHelper
   
   def grouped_time_entries
-    TimeEntry.all.group_by{|entry| entry.start.to_date}
+    TimeEntry.all.where('created_at >= ?', 1.week.ago).group_by{|entry| entry.start.to_date}
 	end
   
   def today_grouped_time_entries
