@@ -1,0 +1,54 @@
+inherit_from: ../.rubocop.yml
+
+Rails:
+  Enabled: true
+Documentation:
+    Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/ParallelAssignment:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
+Style/SignalException:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/FileName:
+  Enabled: false
+Style/PerlBackrefs:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/SingleLineBlockParams:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/ParameterLists:
+  Enabled: false
+Lint/RescueException:
+  Enabled: false
+Lint/Void:
+  Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+Performance/StringReplacement:
+  Enabled: false
+Performance/Detect:
+  Enabled: false
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - vendor/bundle/**/*
