@@ -53,4 +53,12 @@ module TimeEntriesHelper
     129_600 - total_time_this_week
   end
   
+  def hash_for_chart
+    hsh = Hash.new
+    dashboard_grouped_by_title.each do |project|
+      hsh[project["title"]["project"]] = project["time"]
+    end
+    hsh
+  end
+  
 end
