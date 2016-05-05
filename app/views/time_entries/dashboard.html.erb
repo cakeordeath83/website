@@ -28,7 +28,7 @@
           <tr>
             
             <td><%= project["title"]["project"] %></td>
-            <td><%= project["time"] %></td>
+            <td><%= hours_and_minutes(project["time"] / 1000) %></td>
           <% end %> <!--post.each-->
           </tr>
         </tbody>
