@@ -1,0 +1,11 @@
+
+
+<div class="row">
+  <div style="text-align: center;">
+    <%= link_to "This week", time_entries_dashboard_path(:from => 1.week.ago.strftime("%Y-%m-%d"), :to => Time.now.strftime("%Y-%m-%d")), class:"btn btn-default" %>
+    <%= link_to "Last week", time_entries_dashboard_path(:from => 2.weeks.ago.strftime("%Y-%m-%d"), :to => 1.week.ago.strftime("%Y-%m-%d")), class:"btn btn-default" %>
+    <%= link_to "This month", time_entries_dashboard_path(:from => Time.now.beginning_of_month.strftime("%Y-%m-%d"), :to => Time.now.end_of_month.strftime("%Y-%m-%d")), class:"btn btn-default" %>
+    <%= link_to "Last month", time_entries_dashboard_path(:from => Time.now.last_month.beginning_of_month.strftime("%Y-%m-%d"), :to => Time.now.last_month.end_of_month.strftime("%Y-%m-%d")), class:"btn btn-default" %>
+    <%= link_to "This year", time_entries_dashboard_path(:from => "2016-01-01", :to => Time.now.strftime("%Y-%m-%d")), class:"btn btn-default" %>
+  </div>
+</div>

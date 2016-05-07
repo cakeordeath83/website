@@ -10,13 +10,9 @@
 		</div>
 	</div>
   
-  <div>
-    <%= button_to "This week", action: "dashboard", params: { from: 1.week.ago.strftime("%Y-%m-%d"), to: Time.now.strftime("%Y-%m-%d")}  %>
-    <%= button_to "Last week", action: "dashboard", params: { from: 2.weeks.ago.strftime("%Y-%m-%d"), to: 1.week.ago.strftime("%Y-%m-%d")}  %>
-    <%= button_to "This month", action: "dashboard", params: { from: Time.now.beginning_of_month.strftime("%Y-%m-%d"), to: Time.now.end_of_month.strftime("%Y-%m-%d")}  %>
-    <%= button_to "Last month", action: "dashboard", params: { from: Time.now.last_month.beginning_of_month.strftime("%Y-%m-%d"), to: Time.now.last_month.end_of_month.strftime("%Y-%m-%d")}  %>
-  </div>
-  <!-- Main body -->
+
+    <%= render 'dashboard_buttons' %>
+<br>
   
     <div class="row">
       <div class="col-md-offset-1 col-md-5" >
