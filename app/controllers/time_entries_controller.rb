@@ -9,8 +9,8 @@ class TimeEntriesController < ApplicationController
   end
 
   def dashboard
-    from = params[:from]
-    to = params[:to]
+    from = params[:from].present? ? params[:from] : "2015-07-08"
+    to = "2016-05-07" || params[:to]
     @time_entries = TogglApi.get_dashboard_info(from: from, to: to)
   end
 end
