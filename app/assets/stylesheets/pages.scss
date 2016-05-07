@@ -48,15 +48,15 @@ $pages-green: #00A885;
 }
 
 .skills-box {
-  background-color: $pages-green;
-  padding: 10px;
-  margin: 10px;
+  border: 1px solid $pages-green;
+  padding: 0px 10px;
+  margin: 15px;
 }
 
 .course-table-title{
   text-align: center;
   margin-bottom: 25px;
-  color: white;
+  color: $pages-green;
 }
 
 .table {
@@ -64,20 +64,16 @@ $pages-green: #00A885;
   margin-bottom: 10px;
 }
 
-.table > tbody > tr > td {
-    vertical-align: middle !important;
+.table > tbody > tr > td{
+  vertical-align: middle !important;
+  text-align: center;
   a{
-    color: white;
+    color: $pages-green;
   }
 }
 
 .first-col{
-    min-width: 60px;
-  }
-
-.table-text {
-  text-align: center;
-  min-width: 480px;
+  height: 60px;
 }
 
 /* ABOUT */

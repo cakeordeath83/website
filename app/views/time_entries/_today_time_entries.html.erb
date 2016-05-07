@@ -13,14 +13,14 @@
       <tbody>
         <% posts.sort_by{|post| post["start"].to_time}.each do |post| %>
         <tr>
-          <td><%= post["description"] %></td>
-          <td><%= post["start"].to_time.strftime("%H:%M") %></td>
+          <td class="col-md-4"><%= post["description"] %></td>
+          <td class="col-md-2"><%= post["start"].to_time.strftime("%H:%M") %></td>
             <% if post["stop"] != nil %>
-              <td><%= post["stop"].to_time.strftime("%H:%M") %></td>
-              <td><%= (post["duration"] / 60) %></td>
+              <td class="col-md-2"><%= post["stop"].to_time.strftime("%H:%M") %></td>
+              <td class="col-md-2"><%= (post["duration"] / 60) %></td>
             <% else %>
-              <td>Currently working!</td>
-              <td></td>
+              <td class="col-md-2">Currently working!</td>
+              <td class="col-md-2"></td>
             <% end %>
         <% end %> <!--post.each-->
         </tr>

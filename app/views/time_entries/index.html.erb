@@ -4,7 +4,6 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 class="heading-text">SCHEDULE</h1>
-      <div style= "text-align: center;"> <%= link_to "See Dashboard", time_entries_dashboard_path, class: "btn btn-default" %> </div>
       <% if user_signed_in? %>
         <%= render partial: 'stats' %>
       <% else %>
@@ -12,6 +11,7 @@
       <% end %>
 		</div>
 	</div>
+  <div style= "text-align: center;"> <%= link_to "See Dashboard", time_entries_dashboard_path, class: "btn btn-default" %> </div>
 
   <!-- Main body -->
   <div class="col-md-offset-1 col-md-10", >
