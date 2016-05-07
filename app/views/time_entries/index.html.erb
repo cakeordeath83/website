@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <% provide(:title, "| Schedule") %>
-  
 	<!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
@@ -12,13 +11,18 @@
       <% end %>
 		</div>
 	</div>
-  
-  
+
   <!-- Main body -->
   <div class="col-md-offset-1 col-md-10", >
     <div class="row">
-      <%= render partial: 'today_time_entries' %>
-      <%= render partial: 'past_time_entries' %>
-    </div>
-	</div><!-- col-md-10 --> 
+      <div class="row">
+        <% if @time_entries.empty? %>
+        <p>Shocking! There hasn't been any studying this week!</p>
+        <% else %>
+          <%= render partial: 'today_time_entries' %>
+          <%= render partial: 'past_time_entries' %>
+        <% end %>
+     </div>
+   </div>
+	</div><!-- col-md-10 -->
 </div><!-- container -->

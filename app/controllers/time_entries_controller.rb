@@ -2,8 +2,7 @@ require 'toggl_api'
 
 class TimeEntriesController < ApplicationController
   def index
-    @time_entries = TimeEntry.all
-
+    @time_entries = TimeEntry.where("start >= ?", 1.week.ago )
     to = Time.zone.now
     from = Time.zone.now.beginning_of_day
     @today_time_entries = TogglApi.get_time_entries(from: from, to: to)
