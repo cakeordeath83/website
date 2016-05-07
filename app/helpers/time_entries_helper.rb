@@ -1,7 +1,7 @@
 module TimeEntriesHelper
   
   def grouped_time_entries
-    TimeEntry.all.group_by{|entry| entry.start.to_date}
+    @time_entries.all.group_by{|entry| entry.start.to_date}
 	end
   
   def today_grouped_time_entries
