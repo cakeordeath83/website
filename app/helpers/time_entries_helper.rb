@@ -1,13 +1,17 @@
 module TimeEntriesHelper
-  
-  def grouped_time_entries
-    @time_entries.all.group_by{|entry| entry.start.to_date}
+
+  def grouped_time_entries_this_week
+    TimeEntry.all.where('start >= ?', 1.week.ago).group_by{|entry| entry.start.to_date}
 	end
   
   def today_grouped_time_entries
     @today_time_entries.group_by{|entry| entry["start"].to_date}
   end
   
+  def dashboard_grouped_by_title
+    @time_entries["data"]
+	end
+
   def live_post
     if @today_time_entries.empty?
       nil
@@ -47,6 +51,14 @@ module TimeEntriesHelper
   
   def time_left_this_week
     129_600 - total_time_this_week
+  end
+  
+  def hash_for_chart
+    hsh = Hash.new
+    dashboard_grouped_by_title.each do |project|
+      hsh[project["title"]["project"]] = project["time"]
+    end
+    hsh
   end
   
 end

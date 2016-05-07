@@ -4,7 +4,7 @@
     <table class="table", style="text-align: center;">
       <thead>
         <tr>
-          <td><strong>Project</strong></td>								
+          <td><strong>Project</strong></td>
           <td><strong>Start Time</strong></td>
           <td><strong>End Time</strong></td>
           <td><strong>Minutes</strong></td>
@@ -33,8 +33,10 @@
     <% this_date = @today_time_entries.select{|post| post["start"].to_date == date.to_date} %>		
     <% total = [0] %>		
     <% this_date.each do |date| %>		
+   
       <% if date["duration"].to_i > 0 %>		
         <% total.push(date["duration"]) %>		
+    
       <% end %>		
     <% end %>		
     <p><%= (total.reduce(:+) / 3600).round %> hours, <%=((total.reduce(:+) % 3600)/60).round %> minutes</p>		
