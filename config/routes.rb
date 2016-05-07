@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get "/500" => "errors#internal_server_error"
   get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
   get "/time_entries/dashboard" => 'time_entries#dashboard'
+  post "/time_entries/dashboard" => 'time_entries#dashboard'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

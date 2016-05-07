@@ -9,8 +9,8 @@ class TimeEntriesController < ApplicationController
   end
 
   def dashboard
-    from = 1.day.ago.strftime("%Y-%m-%d")
-    to = Time.now.strftime("%Y-%m-%d")
+    from = params[:from]
+    to = params[:to]
     @time_entries = TogglApi.get_dashboard_info(from: from, to: to)
   end
 end

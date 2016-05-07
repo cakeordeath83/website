@@ -10,7 +10,12 @@
 		</div>
 	</div>
   
-  
+  <div>
+    #NOT WORKING!
+    <%= button_to "This week", action: "dashboard", params: { from: 1.week.ago.strftime("%Y-%m-%d"), to: Time.now.strftime("%Y-%m-%d")}, class: "btn btn-primary"  %>
+    
+      
+  </div>
   <!-- Main body -->
   
     <div class="row">
