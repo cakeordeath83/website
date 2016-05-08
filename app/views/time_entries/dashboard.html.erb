@@ -1,19 +1,14 @@
-
-
 <div class="container-fluid">
   <% provide(:title, "| Schedule") %>
-  
 	<!-- Headings -->
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 class="heading-text">DASHBOARD</h1>
 		</div>
 	</div>
-  
 
     <%= render 'dashboard_buttons' %>
-<br>
-  
+    <br>
     <div class="row">
       <div class="col-md-offset-1 col-md-5" >
         <table class="table", style="text-align: center;">
@@ -32,9 +27,17 @@
             </tr>
           </tbody>
         </table>
+         
       </div> <!-- col-md-8 -->
+      
       <div class="col-md-6">
         <%= pie_chart(hash_for_chart) %>
+        <br>
+        <div style="text-align: center;">
+          <%= link_to "Back to Schedule", time_entries_path, class: "btn btn-default"%>
+        </div>
       </div>
+     
     </div>
+  
 </div>
