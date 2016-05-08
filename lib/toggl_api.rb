@@ -1,4 +1,3 @@
-
 module TogglApi
 
   def self.get_time_entries(from:, to:)
