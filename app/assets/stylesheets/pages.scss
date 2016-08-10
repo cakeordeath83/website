@@ -17,15 +17,33 @@ $pages-green: #00A885;
 
 .portfolioseperator {
 	border-bottom: solid 1px $pages-green;
-	
 }
 
 .opening-statement {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-top: -20px;
+  text-align: center;
 }
 
 .headline {
   margin-bottom: 50px;
+}
+
+.welcome-quarter {
+  background-color: $pages-green;
+  height: 300px;
+  text-align: center;
+  border: 10px white solid;
+  a {
+  color: white;
+  }
+  img {
+    height: 100px;
+  }
+}
+
+.welcome-image {
+  margin-top: 20px;
 }
 
 /* links */

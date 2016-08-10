@@ -2,49 +2,43 @@
 	<% provide(:title, "") %>
 
   <div class="opening-statement">
-    
       <img src="assets/avatar.jpg", class="center-block">
       <h1 class="text-center headline">Welcome to Coding with Clair!</h1>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
+    <div class="row opening-paragraphs">
+      <div class="col-md-12">
       <p>I'm a Junior Ruby Engineer who took the strange path of teaching myself how to code using as many free and cheap resources as I could find!</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-     <p>I originally set up this website as a project to help me learn to code, but now it is a place to store things I'm learning, any new coding vocab I'm coming across and blogpost documenting some of the things I'm encountering as a new developer. Feel free to contact me if you have any questions or just let me know how you came across the site
+      <div class="col-md-12">
+     <p>I originally set up this website as a project to help me learn to code, but now it is a place to store things I'm learning, any new coding vocab I'm coming across and a blog documenting some of the things I'm encountering as a new developer. If you'd like to know how I went about teaching myself how to code then click here for answers to some of the questions I'm most frequently asked.
      </p>
       </div>
     </div>
   </div>
 
+  <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <div class="welcome-box">
-      <h3>Blogposts</h3>
-      <p><%= link_to "LEARNING GUIDES", snippets_path %> which contains plain english descriptions of bits of code I've picked up along the way</p>
-      </div>
+    <div class="col-md-4 welcome-quarter">
+      <img src="assets/info.png" class="welcome-image">
+        <h3><%= link_to "How to...", snippets_path %></h3>
+        <p>A place for me to save simple code snippets as a reminder of how to do something (usually following a decent amount of googling the answer and failing to find it)</p>
+     
     </div>
-    <div class="col-md-3">
-      <div class="welcome-box">
-        <h3>Jargon Buster</h3>
-        <p><%= link_to "LEARNING GUIDES", snippets_path %> which contains plain english descriptions of bits of code I've picked up along the way</p>
-      </div>
+    <div class="col-md-4 welcome-quarter">
+       <img src="assets/dictionary.png" class="welcome-image">
+        <h3><%= link_to "Jargon Buster", snippets_path %></h3>
+        <p>A dictionary of terms that I have encountered and my own explanations of what they are (becasue sometimes those book definitions are just too damn abstract!)</p>
+      
     </div>
-    <div class="col-md-3">
-      <div class="welcome-box">
-        <h3>How to guides</h3>
-        <p><%= link_to "LEARNING GUIDES", snippets_path %> which contains plain english descriptions of bits of code I've picked up along the way</p>
-      </div>
+    <div class="col-md-4 welcome-quarter">
+       <img src="assets/blog.png" class="welcome-image">
+      <h3><%= link_to "Blog", snippets_path %></h3>
+        <p>General musings about teaching myself to code, getting a job and life as a junior developer</p>
     </div>
-    <div class="col-md-3">
-      <div class="welcome-box">
-      <h3>About me</h3>
-      <p><%= link_to "LEARNING GUIDES", snippets_path %> which contains plain english descriptions of bits of code I've picked up along the way</p>
-      </div>
-    </div>
-   
   </div><!-- row -->
+  </div>
+  
 </div>
 
 
