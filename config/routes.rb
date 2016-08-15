@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #high_voltage
   root to: 'pages#welcome', id: 'welcome'
   get "/pages/portfolio" => 'pages#portfolio'
+  get "/pages/aboutme" => 'pages#aboutme'
   get "/pages/about" => 'pages#about'
   get "/pages/menu" => 'pages#menu'
   get "/pages/musicals" => 'pages#musicals'
