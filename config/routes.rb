@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root to: 'pages#welcome', id: 'welcome'
   get "/pages/aboutme" => 'pages#aboutme'
   get "/pages/resources" => 'pages#resources'
+  get "/pages/tools" => 'pages#tools'
 	devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
