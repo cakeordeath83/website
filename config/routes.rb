@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #high_voltage
   root to: 'pages#welcome', id: 'welcome'
   get "/pages/aboutme" => 'pages#aboutme'
+  get "/pages/resources" => 'pages#resources'
 	devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
