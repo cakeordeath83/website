@@ -1,4 +1,19 @@
-This repository holds the code for my own personal website at www.codingwithclair.co.uk
+This repository holds the code for my own personal website.
 
-The website contains 3 different areas: a Blog, Code snippets and my portfolio
+This website was built with 4 main areas in mind:
 
+Blog
+
+This area allowed me to post blogposts about interesting things I'd read about, along with a diary-like history of learning to code
+
+Code Snippets
+
+A searchable dictionary of coding terms and code snippets that I picked up as part of my studies
+
+Portfolio
+
+An area to demonstrate other projects I'd worked on whilst learning to code
+
+Welcome page
+
+The welcome page showed was I was studying in real time as it was integrated with the Toggl API which I was using to track areas of study.
