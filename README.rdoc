@@ -14,6 +14,7 @@ Portfolio
 
 An area to demonstrate other projects I'd worked on whilst learning to code
 
-Welcome page
+Dashboard
 
-The welcome page showed was I was studying in real time as it was integrated with the Toggl API which I was using to track areas of study.
+The dashboard showed what I had been studying each day. It was integrated with the Toggl API which I was using to track areas of 
+study and what I was studying in real time was displayed on the Homepage.
