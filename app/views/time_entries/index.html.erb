@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <% provide(:title, "| Schedule") %>
+	<!-- Headings -->
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 headings">
+			<h1 class="heading-text">SCHEDULE</h1>
+      <% if user_signed_in? %>
+        <%= render partial: 'stats' %>
+      <% else %>
+        <%= render partial: 'current_time_entry' %>
+      <% end %>
+		</div>
+	</div>
+  <div style= "text-align: center;"> <%= link_to "See Dashboard", time_entries_dashboard_path, class: "btn btn-default" %> </div>
+
+  <!-- Main body -->
+  <div class="col-md-offset-1 col-md-10", >
+    <div class="row">
+      <div class="row">
+        <%= render partial: 'today_time_entries' %>
+        <% if @time_entries.empty? %>
+          <p>Shocking! There hasn't been any studying this week!</p>
+        <% else %>
+          <%= render partial: 'past_time_entries' %>
+        </div>
+        <% end %>
+     </div>
+   </div>
+	</div><!-- col-md-10 -->
+</div><!-- container -->

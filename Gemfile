@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -13,22 +13,36 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# Styling
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootstrap_form', '~>2.3.0'
 gem 'ckeditor'
 gem 'breadcrumbs_on_rails'
-gem 'devise'
-gem 'high_voltage', '~> 2.4.0'
-gem "paperclip", "~> 4.3"
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
+
+# Security
+gem 'devise'
+gem 'figaro'
+
+# Functionality
+gem 'high_voltage', '~> 2.4.0'
 gem 'shareable'
+gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
 gem 'googlecharts', '~> 1.6', '>= 1.6.12', :require => "gchart"
-gem 'figaro'
-gem 'httparty', '~> 0.13.7'
 gem 'chartkick', '~> 1.4', '>= 1.4.1'
 gem 'groupdate'
+
+# API calls
+gem 'httparty', '~> 0.13.7'
+
+
+# For overnight Toggl API call
+gem 'resque'
+gem 'resque-scheduler'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -52,6 +66,8 @@ gem 'rails_12factor', group: :production
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry', '~> 0.10.3'
+  gem 'rubocop', require: false
   gem 'rspec-rails', '~> 3.3.3'
 
   

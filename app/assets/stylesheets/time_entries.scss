@@ -1,0 +1,31 @@
+// Place all the styles related to the TimeEntries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$posts-purple: #655F7E;
+
+.opening-paragraph-time_entries {
+	padding: 30px;
+	font-size: 16px;
+	border: 2px solid $posts-purple;
+  text-align: center;
+}
+
+
+/* Pagination  DROP THIS IF YOU DECIDE NOT TO PAGINATE THE POSTS PAGE!!*/
+body > div.container-fluid > div.row > div.col-md-offset-1.col-md-8 > ul > li.active > span {
+  background-color: $posts-purple;
+  border-color: $posts-purple;
+}
+
+body > div > div.row > div.col-md-offset-1.col-md-8 > ul {
+  li:nth-child > a {
+  color: $posts-purple;
+  }
+  li > a{
+  color: $posts-purple;
+  }
+}
+
+.timeentryseperator{
+  border-bottom: solid 1px $posts-purple;  
+}

@@ -11,9 +11,39 @@ $pages-green: #00A885;
 	margin-bottom: 20px;
 }
 
+.opening-paragraph-pages {
+  margin-bottom: 10px;
+}
+
 .portfolioseperator {
 	border-bottom: solid 1px $pages-green;
-	
+}
+
+.opening-statement {
+  margin-bottom: 30px;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.headline {
+  margin-bottom: 50px;
+}
+
+.welcome-quarter {
+  background-color: $pages-green;
+  height: 300px;
+  text-align: center;
+  border: 10px white solid;
+  a {
+  color: white;
+  }
+  img {
+    height: 100px;
+  }
+}
+
+.welcome-image {
+  margin-top: 20px;
 }
 
 /* links */
@@ -26,8 +56,61 @@ $pages-green: #00A885;
 	margin: 25px;
 }
 
+#live_project_link > a {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.break-image {
+  height: 250px; 
+  width: 300px;
+  margin-top: 10px;
+}
+
+/* SKILLS */
+.book {
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.skills-box {
+  border: 1px solid $pages-green;
+  padding: 0px 10px;
+  margin: 15px;
+}
+
+.course-table-title{
+  text-align: center;
+  margin-bottom: 25px;
+  color: $pages-green;
+}
+
+.table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.table > tbody > tr > td{
+  vertical-align: middle !important;
+  text-align: center;
+  a{
+    color: $pages-green;
+  }
+}
+
+.first-col{
+  height: 60px;
+}
+
 /* ABOUT */
 
 .about-header {
   text-align: center;
 }
+
+.welcome-box{
+  background-color:#00A885; 
+  padding: 15px;
+  text-align: center;
+}
+

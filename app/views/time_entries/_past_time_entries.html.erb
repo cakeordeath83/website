@@ -1,0 +1,46 @@
+
+<% grouped_time_entries_this_week.sort_by{|date,value| date}.reverse.each do |date, posts| %>
+  <div class="col-md-8" >
+    <h4><%= date %></h4>
+    <table class="table", style="text-align: center;">
+      <thead>
+      <tr>
+        <td><strong>Project</strong></td>
+        <td><strong>Start Time</strong></td>
+        <td><strong>End Time</strong></td>
+        <td><strong>Minutes</strong></td>
+      </tr>
+      </thead>
+      <tbody>
+      <% posts.sort_by{|post| post.start.to_time}.each do |post| %>
+        <tr>
+          <td class="col-md-4"><%= post.description %></td>
+          <td class="col-md-2"><%= post.start.to_time.strftime("%H:%M") %></td>
+          <% if post.stop != nil %>
+          <td class="col-md-2"><%= post.stop.to_time.strftime("%H:%M") %></td>
+          <td class="col-md-2"><%= (post.duration / 60) %></td>
+          <% else %>
+          <td class="col-md-2">Currently working!</td>
+          <td class="col-md-2"></td>
+          <% end %>
+        <% end %> <!--post.each-->
+        </tr>
+      </tbody>
+    </table>
+  </div> <!-- col-md-8 -->
+
+
+  <div class="col-md-4" style="text-align:center; margin-top: 50px;">		 
+    <h4>Total time today </h4>		      	
+    <% this_date = @time_entries.select{|post| post.start.to_date == date.to_date} %>		
+      <% total = [] %>		
+      <% this_date.each do |date| %>		
+        <% if date.duration.to_i > 0 %>		
+          <% total.push(date.duration) %>		
+        <% end %>		
+      <% end %>		
+    <p><%= hours_and_minutes(total.reduce(:+)) %></p>		
+  </div><!-- col-md-4 -->
+
+<% end %><!-- grouped_time_entry.each -->
+ 

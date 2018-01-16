@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
-  
 
-  devise_for :users
+
+  devise_for :users, only: :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'posts#index'
-	
+
+  #high_voltage
+  root to: 'pages#welcome', id: 'welcome'
+  get "/pages/portfolio" => 'pages#portfolio'
+  get "/pages/about" => 'pages#about'
+  get "/pages/menu" => 'pages#menu'
+  get "/pages/musicals" => 'pages#musicals'
+  get "/pages/website" => 'pages#website'
+  get "/pages/skills" => 'pages#skills'
+  get "/pages/inventory" => 'pages#inventory'
 	devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -16,6 +25,8 @@ Rails.application.routes.draw do
   get "/404" => "errors#not_found"
   get "/500" => "errors#internal_server_error"
   get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
+  get "/time_entries/dashboard" => 'time_entries#dashboard'
+  post "/time_entries/dashboard" => 'time_entries#dashboard'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -29,6 +40,7 @@ Rails.application.routes.draw do
   resources :entries 
   resources :projects
 	resources :topics
+  resources :time_entries
 
   # Example resource route with options:
   #   resources :products do

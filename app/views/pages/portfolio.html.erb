@@ -1,80 +1,65 @@
 <div class="container-fluid">
    <% provide(:title, "| Portfolio") %>
 	
-<div class="row">
+  <div class="row">
 		<div class="col-md-offset-1 col-md-10 headings">
 			<h1 class="heading-text">PORTFOLIO</h1>
 			<div class="opening-paragraph-portfolio">
-      <p>Since starting to learn to code, I've created 3 different apps. I find that, for me, the best way to learn is  by doing, so even though they are sample pretend apps, they've helped me to understand what I'm doing and put some of the things I've learned into practice</p>
+      <p>Here is a list of all of the personal projects I've worked on. Some of them are currently in use (my website and the Inventory app) and some were just ideas in order to try out some of the things I was learning.</p>
 
-			<p><strong>DISCLAIMER - </strong>I am no designer. I have no eye for design, knowing which colours go together or picking the best images. I figured this out right at the beginning and even now seem to far too long getting these sites to look passable. Please take the design of these sites with a pinch of salt and instead marvel at the functionality behind them. Life is too short to worry about margins and padding. </p>
-</div>
+			<p>You can find the list of topics I've covered during my studies and a list of books/courses I followed in order to learn them <%=link_to "here", "skills", class: "individualportfolio"%>  and my github profile can be found <a href="http://github.com/clairgriffiths" class="individualportfolio">here</a>. I am currently looking for work and would be very interested in hearing from anyone looking to hire a Junior Web Developer. Please get in touch!</p>
+      </div>
+		</div>
+	</div>
+  
+  <div class="row">
+		<div class="col-md-offset-1 col-md-5">
+			<p><%= link_to image_tag("inventory/inventory.PNG", height: '300', width: '500', class:"img-responsive image center-block"), "inventory" %></p>
+		</div>
+		<div class="col-md-5" style="padding: 35px;">
+			<h3><%=link_to "Inventory", "inventory", class: "individualportfolio"%> </h3>
+    	<p>A hackweek project - 1 week to create a useful app from scratch. This app allows you to log the items in your cupboards, automatically put them on the shoppping list when you are running low and suggest recipes you can make with the items you currently have</p>
+			<p><strong>Best feature: </strong>A couple of API calls allowing me to scan items in on my phone and look them up bfore adding them to the inventory </p>
+		</div>
+    <div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;"></div>
+	</div><!-- row -->
+	
+  <div class="row">
+		<div class="col-md-offset-1 col-md-5" style="padding: 35px;">
+			<h3><%=link_to "Website", "website", class: "individualportfolio"%></h3>
+    	<p>This very blog! A place to show off my portfolio, schedule, jargon buster and store useful code snippets I pick up along the way</p>
+			<p><strong>Best feature: </strong>Different colours depending on which part of the site you are visiting</p>
 		</div>
 	
-	</div>
+    <div class="col-md-5">
+      <p style="text-align: center;"><%= link_to image_tag("website/Websitejargon.PNG", height: '300', width: '500', class:"img-responsive image center-block"), "website" %></p>
+    </div>
 	
-
-	<div class="row">
+	  <div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;"></div>
+	</div><!-- row -->
+  
+  <div class="row">
+		<div class="col-md-offset-1 col-md-5">
+			<p style="text-align: center;"><%= link_to image_tag("menu/Menu landing.PNG", height: '250', width: '500', class:"img-responsive image center-block"), "menu" %></p>
+		</div>
+		<div class="col-md-5" style="padding: 35px;">
+			<h3><%=link_to "Menu", "menu", class: "individualportfolio"%> </h3>
+    	<p>A Just Eat clone without the delivery, designed for those that can't decide what to have for lunch</p>
+			<p><strong>Best feature: </strong>A randomiser for those indecisive people that don't quite know what they fancy for lunch. Only suggests items from certain categories</p>
+		</div>
+	</div><!-- row -->
+  
+  <div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;"></div>
+	
+  <div class="row">
 		<div class="col-md-offset-1 col-md-5 headings" style="padding: 35px;">
-    	<h3><%= link_to "Musicals", page_path('musicals'), class: "individualportfolio"%></h3>
+    	<h3><%= link_to "Musicals", "musicals", class: "individualportfolio"%></h3>
     	<p>My first ever app! A place to log the musicals that you have seen and the places you have seen them. Built in a week, full of rookie mistakes but up and running and currently being used by my mum.</p>
 			<p><strong>Best feature: </strong>Both the theatre name and city are passed as parameters to the Geocoder gem in order to render a map.</p>
 		</div>
 	
 		<div class="col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("musicals/indexpage.JPG", height: '300', width: '500',class:"img-responsive image" ), page_path('musicals') %></p>
-		</div>
-	</div><! -- row -->
-	
-	
-			<div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;">
-  		</div>
-
-		
-	
-	<div class="row">
-		<div class="col-md-offset-1 col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("menu/Menu landing.PNG", height: '250', width: '500', class:"img-responsive image"), page_path('menu') %></p>
-		</div>
-		<div class="col-md-5" style="padding: 35px;">
-			<h3><%=link_to "Menu", page_path('menu'), class: "individualportfolio"%> </h3>
-    	<p>A Just Eat clone without the delivery, designed for those that can't decide what to have for lunch</p>
-			<p><strong>Best feature: </strong>A randomiser for those indecisive people that don't quite know what they fancy for lunch. Only suggests items from certain categories</p>
+			<p style="text-align: center;"><%= link_to image_tag("musicals/indexpage.JPG", height: '300', width: '500',class:"img-responsive image center-block" ), "musicals" %></p>
 		</div>
 	</div><!-- row -->
-	
-  
-	
-	<div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;">
-  </div>
-	
-  <div class="row">
-		<div class="col-md-offset-1 col-md-5" style="padding: 35px;">
-			<h3><%=link_to "Website", page_path('website'), class: "individualportfolio"%></h3>
-    	<p>This very blog! A place to show off my portfolio, blog about learning to code and store useful code snippets I pick up along the way</p>
-			<p><strong>Best feature: </strong>Different colours depending on which part of the site you are visiting</p>
-		</div>
-	
-	
-	<div class="col-md-5">
-		<p style="text-align: center;"><%= link_to image_tag("website/posts.PNG", height: '300', width: '500', class:"img-responsive image"), page_path('musicals') %></p>
-		</div>
-	
-	<div class="portfolioseperator col-md-offset-1 col-md-10" style="margin-top:15px; margin-bottom: 15px;">
-  		</div>
-	</div><!-- row -->
-		
-	
-	<div class="row">
-		<div class="col-md-offset-1 col-md-5">
-			<p style="text-align: center;"><%= link_to image_tag("campaign/coming soon.jpg", height: '250', width: '500', class:"img-responsive image"), page_path('portfolio/campaign') %></p>
-		</div>
-		<div class="col-md-5" style="padding: 35px;">
-			<h3><%=link_to "Campaign Management", page_path('campaign'), class: "individualportfolio"%> </h3>
-    	<p>A campaign management app that would have helped me out in my old job!</p>
-			
-		</div>
-	</div><!-- row -->
-    
-		
-</div>
+</div><!-- container -->

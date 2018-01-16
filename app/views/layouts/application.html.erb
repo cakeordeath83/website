@@ -21,26 +21,32 @@
             <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand" id="Home">
-              <%= link_to "HOME", page_path('welcome') %>
+              <%= link_to "HOME", root_path %>
             </div>
         </div>
-
+  
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to "LEARNING GUIDES", snippets_path %></li>
             <li><%= link_to "JARGON BUSTER", entries_path%></li>
-            <li><%= link_to "SCHEDULE", posts_path %></li>
-            <li><%= link_to "PORTFOLIO", page_path('portfolio') %></li>
+            <li><%= link_to "SCHEDULE", time_entries_path %></li>
+            <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PORTFOLIO <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "PORTFOLIO",  pages_portfolio_path %></li>
+            <li><%= link_to "SKILLS", pages_skills_path %></li>
+            <li><a href="http://github.com/clairgriffiths">GITHUB</a></li>
+              </ul>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %> </li>
               <li><%= link_to "ASSIGN TAG CATEGORIES", tags_path %> </li>
             <% end %>
-              <li><a href="http://github.com/cakeordeath83">GITHUB</a></li>
+              <li><a href="http://github.com/clairgriffiths">GITHUB</a></li>
               <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
-              <li><%= link_to "ABOUT", page_path('about') %></li>
+              <li><%= link_to "ABOUT", pages_about_path %></li>
           </ul>
       </div><!-- /.navbar-header -->
     </div><!-- /.container-fluid -->
@@ -50,6 +56,7 @@
     <ol class="breadcrumb">
       <%= render_breadcrumbs :tag => :li, :separator => "" %>
     </ol>
+			
 
   <%= yield %>
 			
@@ -61,7 +68,7 @@
               <li><%= link_to('LEARNING GUIDES', snippets_path)%></li>
               <li><%= link_to('JARGON BUSTER', snippets_path)%></li>
               <li><%= link_to('SCHEDULE', posts_path)%></li>
-              <li><%= link_to('PORTFOLIO', page_path('portfolio'))%></li>
+              <li><%= link_to "PORTFOLIO", "pages/portfolio" %></li>
               <li><a href="http://twitter.com/codingwithclair">TWITTER</a></li>
               <li><a href="http://github.com/clairgriffiths">GITHUB</a> </li>
                 <% if !user_signed_in? %>

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <% provide(:title, "| Schedule") %>
+	<!-- Headings -->
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 headings">
+			<h1 class="heading-text">DASHBOARD</h1>
+		</div>
+	</div>
+
+    <%= render 'dashboard_buttons' %>
+    <br>
+    <div class="row">
+      <div class="col-md-offset-1 col-md-5" >
+        <table class="table", style="text-align: center;">
+          <thead>
+          <tr>
+            <td><strong>Project</strong></td>
+            <td><strong>Total Time</strong></td>
+          </tr>
+          </thead>
+          <tbody>
+            <% dashboard_grouped_by_title.each do |project| %>
+            <tr>
+              <td><%= project["title"]["project"] %></td>
+              <td><%= hours_and_minutes(project["time"] / 1000) %></td>
+            <% end %> <!--post.each-->
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- col-md-8 -->
+      
+      <div class="col-md-6">
+        <%= pie_chart(hash_for_chart) %>
+        <br>
+        <div style="text-align: center;">
+          <%= link_to "Back to Schedule", time_entries_path, class: "btn btn-default"%>
+        </div>
+      </div>
+     
+    </div>
+  
+</div>
